@@ -18,7 +18,12 @@ checkpoints/
 *.pt
 *.pth
 *.ckpt
+.pytest_cache/
+.ruff_cache/
+tmp*/
 
 # Keep directory descriptions in Git
 !data/raw/README.md
+!data/raw/dataset_manifest.json
 !data/processed/README.md
+!data/splits/README.md
