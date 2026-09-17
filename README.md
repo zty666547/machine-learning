@@ -54,6 +54,18 @@ python scripts/audit_course_data.py \
 
 当前复核结果见 `reports/data_audit_2026-09-17.md`。
 
+课程包中两套大肠杆菌数据的区别、长度分布和样例见
+`reports/ecoli_data_overview_2026-09-17.md`。其中连续强度主数据全部为
+50 bp；另一套二分类数据主要为 81 bp，不能将两者混为同一数据集。
+
+该专项记录可以用不依赖第三方库的脚本重新生成：
+
+```bash
+python scripts/summarize_ecoli_data.py \
+  --data-root /path/to/promoter \
+  --output reports/ecoli_data_overview.md
+```
+
 ## 在课程数据上训练开发基线
 
 数据目录中需要包含：
