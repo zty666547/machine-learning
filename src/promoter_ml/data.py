@@ -232,3 +232,56 @@ class KmerFeaturizer:
             if self.include_gc:
                 features[row, -1] = (sequence.count("G") + sequence.count("C")) / len(sequence)
         return features
+
+
+class PositionKmerFeaturizer:
+    """Encode nucleotide and dinucleotide identity together with position.
+
+    A global k-mer count cannot distinguish a motif at position 5 from the
+    same motif at position 35. This featurizer creates one-hot features for
+    each base at each position and each adjacent dinucleotide at each start
+    position, so the ridge baseline can learn position-specific effects.
+    """
+
+    def __init__(
+        self,
+        sequence_length: int = 50,
+        include_global_features: bool = True,
+        include_dinucleotide_features: bool = True,
+    ):
+        self.sequence_length = sequence_length
+        self.include_global_features = include_global_features
+        self.include_dinucleotide_features = include_dinucleotide_features
+        self._base_index = {base: index for index, base in enumerate(DNA_ALPHABET)}
+        self._dimer_index = {
+            "".join(chars): index
+            for index, chars in enumerate(product(DNA_ALPHABET, repeat=2))
+        }
+        self._global = KmerFeaturizer(k_min=1, k_max=3, include_gc=True)
+
+    @property
+    def position_feature_count(self) -> int:
+        return self.sequence_length * 4 + (
+            (self.sequence_length - 1) * 16 if self.include_dinucleotide_features else 0
+        )
+
+    @property
+    def feature_count(self) -> int:
+        return self.position_feature_count + (len(self._global.feature_names) if self.include_global_features else 0)
+
+    def transform(self, sequences: np.ndarray) -> np.ndarray:
+        values = np.asarray(sequences).astype(str)
+        if values.ndim != 1 or any(len(sequence) != self.sequence_length for sequence in values):
+            raise ValueError(f"Expected one-dimensional {self.sequence_length} bp sequences")
+        features = np.zeros((len(values), self.position_feature_count), dtype=np.float64)
+        dimer_offset = self.sequence_length * 4
+        for row, sequence in enumerate(values):
+            for position, base in enumerate(sequence):
+                features[row, position * 4 + self._base_index[base]] = 1.0
+            if self.include_dinucleotide_features:
+                for position in range(self.sequence_length - 1):
+                    dimer = sequence[position : position + 2]
+                    features[row, dimer_offset + position * 16 + self._dimer_index[dimer]] = 1.0
+        if self.include_global_features:
+            features = np.concatenate([features, self._global.transform(values)], axis=1)
+        return features

@@ -6,6 +6,13 @@
 
 ## 当前阶段：M2 数据与评估基础
 
+### 2026-09-17 — 位置感知强度预测器首轮探索
+
+- 新增位置岭回归、位置 MLP 和带位置分区的 motif CNN 三种可复现候选；
+- 位置岭回归与位置 MLP 均未超过全局 k-mer 岭回归；CNN 在验证集达到 MAE `0.4317`、Pearson `0.2607`，但开发期测试集 Pearson 为 `0.2139`，尚不满足冻结为独立评估器的条件；
+- 已将开发期测试集结果与限制写入 [位置预测器探索报告](reports/m2_position_predictor_2026-09-17.md)，后续调参只依据验证集；
+- 关联代码：`scripts/train_position_strength_predictor.py`、`scripts/train_position_mlp_predictor.py`、`scripts/train_motif_cnn_predictor.py`。
+
 ### 2026-09-17 — 正式 EDA 完成
 
 - 新增可复现 EDA 入口 [run_eda.py](scripts/run_eda.py)；
@@ -49,6 +56,6 @@
 
 ## 下一步
 
-- [ ] 实现位置感知强度预测器，并在固定测试集上报告结果；
-- [ ] 冻结可用的独立评估器及统一评价接口；
+- [x] 实现位置感知强度预测器，并在固定测试集上报告开发期结果；
+- [ ] 仅以验证集完善 motif CNN，并冻结可用的独立评估器及统一评价接口；
 - [ ] 实现无条件生成基线，进入 M3 最小闭环。

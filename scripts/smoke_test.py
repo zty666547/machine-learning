@@ -11,7 +11,7 @@ import numpy as np
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
-from promoter_ml.data import KmerFeaturizer
+from promoter_ml.data import KmerFeaturizer, PositionKmerFeaturizer
 from promoter_ml.logging_utils import configure_logging
 from promoter_ml.metrics import regression_metrics
 from promoter_ml.models import RidgeStrengthPredictor
@@ -39,6 +39,9 @@ def main() -> None:
 
     if not np.all(np.isfinite(predictions)) or metrics["pearson"] < 0.95:
         raise AssertionError(f"Unexpected smoke test result: {metrics}")
+    position_features = PositionKmerFeaturizer(sequence_length=50).transform(sequences[:2])
+    if position_features.shape != (2, 1069) or not np.allclose(position_features[:, :200].sum(axis=1), 50):
+        raise AssertionError("Position-aware feature encoding failed")
     print("Smoke test passed")
 
 

@@ -102,6 +102,30 @@ python scripts/train_strength_baseline.py \
 - `outputs/ridge_strength_dev/model.npz`：模型参数；
 - `outputs/ridge_strength_dev/metrics.json`：验证集和测试集指标。
 
+## 训练位置感知强度预测器
+
+该模型使用每个位置的单碱基、相邻二碱基以及全局 k-mer/GC 特征。它是位置感知的线性候选基线。
+
+```bash
+python scripts/train_position_strength_predictor.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/position_strength_predictor
+```
+
+脚本只通过验证集选择正则强度，随后一次性报告测试集结果。
+
+也可运行两种非线性候选：位置 MLP 和带位置分区的 motif CNN。三种方案的当前结论见 [M2 位置预测器探索报告](reports/m2_position_predictor_2026-09-17.md)。
+
+```bash
+python scripts/train_position_mlp_predictor.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/position_mlp
+
+python scripts/train_motif_cnn_predictor.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/motif_cnn
+```
+
 ## 配置
 
 共享配置位于 `configs/base.toml`。随机种子、数据文件名、划分比例、特征范围、模型正则强度和日志位置均从配置读取。修改实验设置时，应新增配置文件或提交明确的配置修改，避免只在个人命令中保留参数。
