@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from itertools import product
+import csv
+from itertools import combinations, product
 from pathlib import Path
 import numpy as np
 
@@ -52,6 +53,151 @@ def split_indices(
     train_end = int(sample_count * train_ratio)
     validation_end = train_end + int(sample_count * validation_ratio)
     return indices[:train_end], indices[train_end:validation_end], indices[validation_end:]
+
+
+class _UnionFind:
+    """Small disjoint-set structure used for similarity components."""
+
+    def __init__(self, size: int):
+        self.parent = np.arange(size, dtype=np.int64)
+        self.rank = np.zeros(size, dtype=np.int8)
+
+    def find(self, index: int) -> int:
+        while self.parent[index] != index:
+            self.parent[index] = self.parent[self.parent[index]]
+            index = int(self.parent[index])
+        return index
+
+    def union(self, left: int, right: int) -> bool:
+        left_root, right_root = self.find(left), self.find(right)
+        if left_root == right_root:
+            return False
+        if self.rank[left_root] < self.rank[right_root]:
+            left_root, right_root = right_root, left_root
+        self.parent[right_root] = left_root
+        if self.rank[left_root] == self.rank[right_root]:
+            self.rank[left_root] += 1
+        return True
+
+
+def similarity_cluster_labels(
+    sequences: np.ndarray,
+    threshold: float,
+) -> tuple[np.ndarray, dict[str, int | float]]:
+    """Cluster equal-length sequences by aligned Hamming similarity.
+
+    Two sequences are connected when their aligned identity is at least
+    ``threshold``. Candidate generation uses five ten-base blocks and all
+    eight-position masks within each block. Any pair with at most ten
+    mismatches must share at least one such mask, so this remains exact for
+    the project's 80%, 85% and 90% thresholds without an all-pairs scan.
+    """
+    values = np.asarray(sequences).astype(str)
+    if values.ndim != 1 or len(values) == 0:
+        raise ValueError("Expected a non-empty one-dimensional sequence array")
+    length = len(values[0])
+    if length != 50 or any(len(sequence) != length for sequence in values):
+        raise ValueError("Similarity clustering currently requires 50 bp sequences")
+    if not 0 < threshold <= 1:
+        raise ValueError("threshold must be in (0, 1]")
+
+    max_mismatches = int(np.floor((1.0 - threshold) * length + 1e-9))
+    if max_mismatches > 10:
+        raise ValueError("The exact candidate scheme supports thresholds of 80% or higher")
+
+    union_find = _UnionFind(len(values))
+    checked_pairs = 0
+    similarity_edges = 0
+    masks = tuple(combinations(range(10), 8))
+
+    for block_start in range(0, length, 10):
+        block_values = [sequence[block_start : block_start + 10] for sequence in values]
+        for mask in masks:
+            buckets: dict[str, list[int]] = {}
+            for index, block in enumerate(block_values):
+                signature = "".join(block[position] for position in mask)
+                buckets.setdefault(signature, []).append(index)
+            for members in buckets.values():
+                if len(members) < 2:
+                    continue
+                for left, right in combinations(members, 2):
+                    checked_pairs += 1
+                    mismatches = sum(a != b for a, b in zip(values[left], values[right]))
+                    if mismatches <= max_mismatches and union_find.union(left, right):
+                        similarity_edges += 1
+
+    roots = np.array([union_find.find(index) for index in range(len(values))])
+    root_to_label: dict[int, int] = {}
+    labels = np.empty(len(values), dtype=np.int64)
+    for index, root in enumerate(roots):
+        if root not in root_to_label:
+            root_to_label[root] = len(root_to_label)
+        labels[index] = root_to_label[root]
+
+    sizes = np.bincount(labels)
+    return labels, {
+        "threshold": threshold,
+        "max_mismatches": max_mismatches,
+        "cluster_count": int(len(sizes)),
+        "largest_cluster": int(sizes.max()),
+        "singleton_clusters": int(np.sum(sizes == 1)),
+        "similarity_edges": similarity_edges,
+        "candidate_pairs_checked": checked_pairs,
+    }
+
+
+def assign_clusters_to_splits(
+    cluster_labels: np.ndarray,
+    train_ratio: float,
+    validation_ratio: float,
+    test_ratio: float,
+) -> np.ndarray:
+    """Assign entire similarity components to train, validation and test."""
+    labels = np.asarray(cluster_labels, dtype=np.int64)
+    ratios = np.array([train_ratio, validation_ratio, test_ratio], dtype=np.float64)
+    if not np.isclose(ratios.sum(), 1.0):
+        raise ValueError("Split ratios must sum to one")
+
+    members: dict[int, list[int]] = {}
+    for index, cluster in enumerate(labels):
+        members.setdefault(int(cluster), []).append(index)
+    ordered_clusters = sorted(members.items(), key=lambda item: (-len(item[1]), item[0]))
+    targets = ratios * len(labels)
+    counts = np.zeros(3, dtype=np.int64)
+    assignment = np.empty(len(labels), dtype="U10")
+    names = ("train", "validation", "test")
+
+    for _, indices in ordered_clusters:
+        size = len(indices)
+        penalties = []
+        for split_index in range(3):
+            proposed = counts.copy()
+            proposed[split_index] += size
+            penalties.append(float(np.sum(((proposed - targets) / targets) ** 2)))
+        chosen = min(range(3), key=lambda split_index: (penalties[split_index], counts[split_index]))
+        assignment[indices] = names[chosen]
+        counts[chosen] += size
+    return assignment
+
+
+def load_fixed_split_indices(
+    split_file: str | Path,
+    sample_count: int,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Load and validate a versioned sample-index split definition."""
+    rows: list[dict[str, str]]
+    with Path(split_file).open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    if len(rows) != sample_count:
+        raise ValueError(f"Split file has {len(rows)} rows but expected {sample_count}")
+    indices = np.array([int(row["sample_index"]) for row in rows], dtype=np.int64)
+    if set(indices.tolist()) != set(range(sample_count)):
+        raise ValueError("Split file must contain each sample_index exactly once")
+    split_values = np.array([row["split"] for row in rows])
+    expected = {"train", "validation", "test"}
+    if set(split_values).difference(expected):
+        raise ValueError("Split file contains an unknown split name")
+    return tuple(indices[split_values == name] for name in ("train", "validation", "test"))
 
 
 class KmerFeaturizer:

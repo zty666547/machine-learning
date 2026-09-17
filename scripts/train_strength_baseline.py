@@ -13,7 +13,12 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 from promoter_ml.config import load_config
-from promoter_ml.data import KmerFeaturizer, load_promoter_arrays, split_indices
+from promoter_ml.data import (
+    KmerFeaturizer,
+    load_fixed_split_indices,
+    load_promoter_arrays,
+    split_indices,
+)
 from promoter_ml.logging_utils import configure_logging
 from promoter_ml.metrics import regression_metrics
 from promoter_ml.models import RidgeStrengthPredictor
@@ -25,6 +30,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", default="configs/base.toml")
     parser.add_argument("--data-dir", required=True)
     parser.add_argument("--output-dir", default="outputs/ridge_strength_dev")
+    parser.add_argument(
+        "--split-file",
+        default=None,
+        help="Versioned split CSV. Defaults to data.split_file in the configuration when present.",
+    )
     return parser.parse_args()
 
 
@@ -52,14 +62,23 @@ def main() -> None:
         sequence_length=int(data_config["sequence_length"]),
     )
     targets = np.log10(strengths)
-    train_idx, validation_idx, test_idx = split_indices(
-        len(sequences),
-        float(data_config["train_ratio"]),
-        float(data_config["validation_ratio"]),
-        seed,
-    )
+    split_setting = args.split_file or data_config.get("split_file")
+    if split_setting:
+        split_path = Path(split_setting)
+        if not split_path.is_absolute():
+            split_path = REPOSITORY_ROOT / split_path
+        train_idx, validation_idx, test_idx = load_fixed_split_indices(split_path, len(sequences))
+        split_source = str(split_path)
+    else:
+        train_idx, validation_idx, test_idx = split_indices(
+            len(sequences),
+            float(data_config["train_ratio"]),
+            float(data_config["validation_ratio"]),
+            seed,
+        )
+        split_source = "deterministic random development split"
     logger.info(
-        "Development split created: train=%d validation=%d test=%d",
+        "Split loaded: train=%d validation=%d test=%d",
         len(train_idx), len(validation_idx), len(test_idx),
     )
 
@@ -78,9 +97,10 @@ def main() -> None:
     test_metrics = regression_metrics(targets[test_idx], model.predict(features[test_idx]))
 
     result = {
-        "status": "development_baseline_not_final_evaluation",
+        "status": "fixed_split_strength_baseline",
         "seed": seed,
         "split_strategy": data_config["split_strategy"],
+        "split_source": split_source,
         "sample_counts": {
             "all": len(sequences),
             "train": len(train_idx),

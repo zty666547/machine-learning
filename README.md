@@ -17,7 +17,7 @@
 - CVAE 与自回归模型共用的生成器接口；
 - 不依赖课程数据的端到端检查脚本。
 
-岭回归模型用于验证数据、训练、评价、日志和保存流程是否连通。它是开发基线，不是最终的独立评估器。正式实验将使用相似性聚类划分替代当前的确定性随机划分，并比较更适合序列建模的预测器。
+岭回归模型用于验证数据、训练、评价、日志和保存流程是否连通。它是开发基线，不是最终的独立评估器。正式实验使用版本化的相似性聚类划分，并将比较更适合序列建模的预测器。
 
 ## 环境
 
@@ -80,6 +80,8 @@ python scripts/train_strength_baseline.py \
   --data-dir /path/to/course/data \
   --output-dir outputs/ridge_strength_dev
 ```
+
+当 `configs/base.toml` 指向 `data/splits/ecoli_similarity_split.csv` 时，程序自动使用固定的相似性聚类划分；也可以使用 `--split-file` 指定另一份经过复核的划分文件。
 
 程序会生成：
 

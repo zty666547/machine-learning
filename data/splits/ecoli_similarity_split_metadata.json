@@ -1,0 +1,48 @@
+{
+  "source": "promoter.npy and gene_expression.npy",
+  "sample_count": 11884,
+  "sequence_length": 50,
+  "selected_threshold": 0.9,
+  "threshold_comparison": [
+    {
+      "threshold": 0.8,
+      "max_mismatches": 10,
+      "cluster_count": 11823,
+      "largest_cluster": 10,
+      "singleton_clusters": 11781,
+      "similarity_edges": 61,
+      "candidate_pairs_checked": 747411
+    },
+    {
+      "threshold": 0.85,
+      "max_mismatches": 7,
+      "cluster_count": 11841,
+      "largest_cluster": 4,
+      "singleton_clusters": 11808,
+      "similarity_edges": 43,
+      "candidate_pairs_checked": 747411
+    },
+    {
+      "threshold": 0.9,
+      "max_mismatches": 5,
+      "cluster_count": 11851,
+      "largest_cluster": 4,
+      "singleton_clusters": 11826,
+      "similarity_edges": 33,
+      "candidate_pairs_checked": 747411
+    }
+  ],
+  "split_counts": {
+    "train": 8318,
+    "validation": 1783,
+    "test": 1783
+  },
+  "training_log10_strength": {
+    "mean": 2.281915789444964,
+    "std": 0.6365718556554173,
+    "tertile_boundaries": [
+      1.9322538532478437,
+      2.3830310134780084
+    ]
+  }
+}
