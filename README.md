@@ -66,6 +66,17 @@ python scripts/summarize_ecoli_data.py \
   --output reports/ecoli_data_overview.md
 ```
 
+## 运行正式 EDA
+
+固定相似性划分生成后，运行：
+
+```bash
+python scripts/run_eda.py \
+  --data-dir /path/to/promoter/strenth/data
+```
+
+报告和 SVG 图表将写入 `reports/eda/`。
+
 ## 在课程数据上训练开发基线
 
 数据目录中需要包含：
