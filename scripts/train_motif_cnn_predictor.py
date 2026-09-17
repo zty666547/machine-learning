@@ -34,13 +34,36 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", default="configs/base.toml")
     parser.add_argument("--data-dir", required=True)
     parser.add_argument("--output-dir", default="outputs/motif_cnn_strength_predictor")
-    parser.add_argument("--epochs", type=int, default=150)
+    parser.add_argument("--epochs", type=int)
+    parser.add_argument("--filters", type=int)
+    parser.add_argument("--kernel-size", type=int)
+    parser.add_argument("--location-bins", type=int)
+    parser.add_argument("--hidden-size", type=int)
+    parser.add_argument("--learning-rate", type=float)
+    parser.add_argument("--weight-decay", type=float)
+    parser.add_argument(
+        "--evaluate-test",
+        action="store_true",
+        help="Report test metrics only after the architecture has been frozen.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     config = load_config(REPOSITORY_ROOT / args.config)
+    model_config = config.get("motif_cnn", {})
+    def setting(name: str, fallback: int | float) -> int | float:
+        argument_value = getattr(args, name)
+        return argument_value if argument_value is not None else model_config.get(name, fallback)
+
+    epochs = int(setting("epochs", 150))
+    filters = int(setting("filters", 32))
+    kernel_size = int(setting("kernel_size", 7))
+    location_bins = int(setting("location_bins", 5))
+    hidden_size = int(setting("hidden_size", 64))
+    learning_rate = float(setting("learning_rate", 1e-3))
+    weight_decay = float(setting("weight_decay", 1e-4))
     seed = int(config["project"]["seed"])
     set_random_seed(seed)
     logger = configure_logging("train_motif_cnn_predictor", REPOSITORY_ROOT / config["logging"]["directory"])
@@ -49,7 +72,16 @@ def main() -> None:
     train_idx, validation_idx, test_idx = load_fixed_split_indices(REPOSITORY_ROOT / data_config["split_file"], len(sequences))
     features = one_hot_sequences(sequences)
     targets = np.log10(strengths)
-    predictor = MotifCNNStrengthPredictor(epochs=args.epochs, seed=seed)
+    predictor = MotifCNNStrengthPredictor(
+        filters=filters,
+        kernel_size=kernel_size,
+        location_bins=location_bins,
+        hidden_size=hidden_size,
+        learning_rate=learning_rate,
+        weight_decay=weight_decay,
+        epochs=epochs,
+        seed=seed,
+    )
     predictor.fit(features[train_idx], targets[train_idx], validation=(features[validation_idx], targets[validation_idx]))
     output_dir = Path(args.output_dir)
     if not output_dir.is_absolute():
@@ -58,9 +90,16 @@ def main() -> None:
     predictor.save(output_dir / "model.npz")
     metrics = {
         "status": "position_aware_motif_cnn_candidate",
-        "architecture": "7-bp convolution, 32 filters, five location bins, 64-unit ReLU head",
+        "architecture": {
+            "kernel_size": kernel_size,
+            "filters": filters,
+            "location_bins": location_bins,
+            "hidden_size": hidden_size,
+            "learning_rate": learning_rate,
+            "weight_decay": weight_decay,
+        },
         "validation": regression_metrics(targets[validation_idx], predictor.predict(features[validation_idx])),
-        "test": regression_metrics(targets[test_idx], predictor.predict(features[test_idx])),
+        "test": regression_metrics(targets[test_idx], predictor.predict(features[test_idx])) if args.evaluate_test else None,
         "epochs_completed": len(predictor.history),
         "best_validation_mae": min(row.get("validation_mae", float("inf")) for row in predictor.history),
     }

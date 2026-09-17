@@ -126,6 +126,16 @@ python scripts/train_motif_cnn_predictor.py \
   --output-dir outputs/motif_cnn
 ```
 
+完成验证集选择后，使用冻结配置并显式加入 `--evaluate-test` 才会输出测试集指标：
+
+```bash
+python scripts/train_motif_cnn_predictor.py \
+  --config configs/m2_motif_cnn_selected.toml \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/m2_motif_cnn_selected \
+  --evaluate-test
+```
+
 ## 配置
 
 共享配置位于 `configs/base.toml`。随机种子、数据文件名、划分比例、特征范围、模型正则强度和日志位置均从配置读取。修改实验设置时，应新增配置文件或提交明确的配置修改，避免只在个人命令中保留参数。

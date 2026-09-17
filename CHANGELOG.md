@@ -14,6 +14,13 @@
 - 关联代码：`scripts/train_position_strength_predictor.py`、`scripts/train_position_mlp_predictor.py`、`scripts/train_motif_cnn_predictor.py`。
 - Git 提交：`6db4702`。
 
+### 2026-09-17 — motif CNN 验证集选择完成
+
+- 以验证集 MAE 为唯一主选择指标，比较 5 bp、7 bp、9 bp 卷积窗口与 32/64 过滤器配置；
+- 选定 7 bp 卷积窗口、32 个过滤器、五个位置区间和 64 单元预测头，固定配置见 `configs/m2_motif_cnn_selected.toml`；
+- 固定结构后测试集 Pearson 为 `0.2139`，未超过全局 k-mer 基线，因此 CNN 仍是后续改进的候选结构，不作为最终独立评估器；
+- 结果见 [CNN 选择记录](reports/m2_motif_cnn_selection_2026-09-17.md)。
+
 ### 2026-09-17 — 正式 EDA 完成
 
 - 新增可复现 EDA 入口 [run_eda.py](scripts/run_eda.py)；
