@@ -41,6 +41,19 @@ python scripts/smoke_test.py
 Smoke test passed
 ```
 
+## 复核课程数据
+
+安装分析依赖后，可以重新生成数据核验记录：
+
+```bash
+python -m pip install -e '.[analysis]'
+python scripts/audit_course_data.py \
+  --data-root /path/to/promoter \
+  --output reports/data_audit.md
+```
+
+当前复核结果见 `reports/data_audit_2026-09-17.md`。
+
 ## 在课程数据上训练开发基线
 
 数据目录中需要包含：
