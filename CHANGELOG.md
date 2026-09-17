@@ -12,6 +12,7 @@
 - 位置岭回归与位置 MLP 均未超过全局 k-mer 岭回归；CNN 在验证集达到 MAE `0.4317`、Pearson `0.2607`，但开发期测试集 Pearson 为 `0.2139`，尚不满足冻结为独立评估器的条件；
 - 已将开发期测试集结果与限制写入 [位置预测器探索报告](reports/m2_position_predictor_2026-09-17.md)，后续调参只依据验证集；
 - 关联代码：`scripts/train_position_strength_predictor.py`、`scripts/train_position_mlp_predictor.py`、`scripts/train_motif_cnn_predictor.py`。
+- Git 提交：`6db4702`。
 
 ### 2026-09-17 — 正式 EDA 完成
 
