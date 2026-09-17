@@ -12,9 +12,11 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 from promoter_ml.data import KmerFeaturizer, PositionKmerFeaturizer
+from promoter_ml.generation import PositionFrequencyGenerator
 from promoter_ml.logging_utils import configure_logging
 from promoter_ml.metrics import regression_metrics
 from promoter_ml.models import RidgeStrengthPredictor
+from promoter_ml.sequence_metrics import generation_metrics
 
 
 def main() -> None:
@@ -42,6 +44,10 @@ def main() -> None:
     position_features = PositionKmerFeaturizer(sequence_length=50).transform(sequences[:2])
     if position_features.shape != (2, 1069) or not np.allclose(position_features[:, :200].sum(axis=1), 50):
         raise AssertionError("Position-aware feature encoding failed")
+    generated = PositionFrequencyGenerator().fit(sequences[:150]).sample(20, seed=7)
+    generation_result = generation_metrics(generated, sequences[:150])
+    if generation_result["valid_fraction"] != 1.0 or len(generated) != 20:
+        raise AssertionError("Generation baseline failed")
     print("Smoke test passed")
 
 

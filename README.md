@@ -140,6 +140,18 @@ python scripts/train_motif_cnn_predictor.py \
 
 共享配置位于 `configs/base.toml`。随机种子、数据文件名、划分比例、特征范围、模型正则强度和日志位置均从配置读取。修改实验设置时，应新增配置文件或提交明确的配置修改，避免只在个人命令中保留参数。
 
+## M3 无条件生成基线
+
+位置频率生成器按训练集中每个位置的 A/C/G/T 频率独立采样。它用于验证生成和统一评价流程，不具备表达强度控制能力。
+
+```bash
+python scripts/generate_position_frequency_baseline.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/position_frequency_baseline
+```
+
+结果会包含生成序列，以及合法性、唯一性、新颖性、GC、位置碱基频率和 3-mer 分布指标。首轮结果见 [M3 位置频率生成基线报告](reports/m3_position_frequency_baseline_2026-09-17.md)。
+
 ## 目录
 
 ```text
