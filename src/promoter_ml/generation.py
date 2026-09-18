@@ -86,3 +86,72 @@ class ConditionalPositionFrequencyGenerator:
         if first_distribution is None or second_distribution is None:
             raise RuntimeError("Generator has not been fitted")
         return float(np.mean(np.abs(first_distribution - second_distribution).sum(axis=1)))
+
+
+class ConditionalAutoregressiveGenerator:
+    """Position-aware Markov generator conditioned on a discrete strength label.
+
+    It implements the autoregressive factorization by sampling each base from
+    the preceding ``order`` generated bases, the sequence position and the
+    requested condition.  Sparse contexts fall back to the condition-specific
+    position distribution.
+    """
+
+    def __init__(self, order: int = 3, smoothing: float = 0.1):
+        if order < 1:
+            raise ValueError("order must be positive")
+        if smoothing <= 0:
+            raise ValueError("smoothing must be positive")
+        self.order = order
+        self.smoothing = smoothing
+        self.context_probabilities: dict[tuple[str, int, str], np.ndarray] = {}
+        self.fallback_generators: dict[str, PositionFrequencyGenerator] = {}
+        self.sequence_length: int | None = None
+
+    def fit(self, sequences: np.ndarray, conditions: np.ndarray) -> "ConditionalAutoregressiveGenerator":
+        values = np.asarray(sequences).astype(str)
+        labels = np.asarray(conditions).astype(str)
+        if values.ndim != 1 or labels.ndim != 1 or len(values) != len(labels) or len(values) == 0:
+            raise ValueError("Expected non-empty matching one-dimensional sequences and conditions")
+        self.sequence_length = len(values[0])
+        if any(len(sequence) != self.sequence_length or set(sequence) - set(DNA_ALPHABET) for sequence in values):
+            raise ValueError("Sequences must have a shared length and use only A/C/G/T")
+        self.fallback_generators = ConditionalPositionFrequencyGenerator().fit(values, labels).generators
+        base_index = {base: index for index, base in enumerate(DNA_ALPHABET)}
+        counts: dict[tuple[str, int, str], np.ndarray] = {}
+        for sequence, label in zip(values, labels):
+            padded = "^" * self.order + sequence
+            for position, base in enumerate(sequence):
+                context = padded[position : position + self.order]
+                key = (str(label), position, context)
+                if key not in counts:
+                    counts[key] = np.full(len(DNA_ALPHABET), self.smoothing, dtype=np.float64)
+                counts[key][base_index[base]] += 1.0
+        self.context_probabilities = {key: value / value.sum() for key, value in counts.items()}
+        return self
+
+    @property
+    def conditions(self) -> tuple[str, ...]:
+        return tuple(sorted(self.fallback_generators))
+
+    def sample(self, condition: str, count: int, seed: int) -> np.ndarray:
+        if self.sequence_length is None or condition not in self.fallback_generators:
+            raise RuntimeError("Generator has not been fitted for this condition")
+        if count < 1:
+            raise ValueError("count must be positive")
+        fallback = self.fallback_generators[condition].probabilities
+        if fallback is None:
+            raise RuntimeError("Fallback generator has not been fitted")
+        rng = np.random.default_rng(seed)
+        generated = np.empty(count, dtype=f"U{self.sequence_length}")
+        for row in range(count):
+            prefix = "^" * self.order
+            sequence = []
+            for position in range(self.sequence_length):
+                context = prefix[-self.order :]
+                probabilities = self.context_probabilities.get((condition, position, context), fallback[position])
+                base = str(rng.choice(DNA_ALPHABET, p=probabilities))
+                sequence.append(base)
+                prefix += base
+            generated[row] = "".join(sequence)
+        return generated

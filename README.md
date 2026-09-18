@@ -164,6 +164,18 @@ python scripts/generate_conditional_position_baseline.py \
 
 首轮结果见 [M3 条件位置频率生成基线报告](reports/m3_conditional_position_baseline_2026-09-18.md)。
 
+## M3 条件自回归生成基线
+
+条件自回归生成器根据目标等级、当前位置和前 3 个已生成碱基生成下一个碱基，因此可以保留局部 k-mer 关系。
+
+```bash
+python scripts/generate_conditional_autoregressive_baseline.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/conditional_autoregressive_baseline
+```
+
+首轮结果见 [M3 条件自回归基线报告](reports/m3_conditional_autoregressive_baseline_2026-09-18.md)。
+
 ## 目录
 
 ```text
