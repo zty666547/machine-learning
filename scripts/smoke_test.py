@@ -12,7 +12,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 from promoter_ml.data import KmerFeaturizer, PositionKmerFeaturizer
-from promoter_ml.generation import PositionFrequencyGenerator
+from promoter_ml.generation import ConditionalPositionFrequencyGenerator, PositionFrequencyGenerator
 from promoter_ml.logging_utils import configure_logging
 from promoter_ml.metrics import regression_metrics
 from promoter_ml.models import RidgeStrengthPredictor
@@ -48,6 +48,10 @@ def main() -> None:
     generation_result = generation_metrics(generated, sequences[:150])
     if generation_result["valid_fraction"] != 1.0 or len(generated) != 20:
         raise AssertionError("Generation baseline failed")
+    conditions = np.array(["weak"] * 75 + ["strong"] * 75)
+    conditional_generated = ConditionalPositionFrequencyGenerator().fit(sequences[:150], conditions).sample("strong", 10, seed=8)
+    if len(conditional_generated) != 10 or any(len(sequence) != 50 for sequence in conditional_generated):
+        raise AssertionError("Conditional generation baseline failed")
     print("Smoke test passed")
 
 

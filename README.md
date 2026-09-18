@@ -152,6 +152,18 @@ python scripts/generate_position_frequency_baseline.py \
 
 结果会包含生成序列，以及合法性、唯一性、新颖性、GC、位置碱基频率和 3-mer 分布指标。首轮结果见 [M3 位置频率生成基线报告](reports/m3_position_frequency_baseline_2026-09-17.md)。
 
+## M3 条件生成基线
+
+条件位置频率生成器将训练集按弱、中、强表达等级分别建模。它能验证条件输入是否改变序列分布，但不代表生成序列已被可靠地预测为相应强度。
+
+```bash
+python scripts/generate_conditional_position_baseline.py \
+  --data-dir /path/to/course/data \
+  --output-dir outputs/conditional_position_frequency_baseline
+```
+
+首轮结果见 [M3 条件位置频率生成基线报告](reports/m3_conditional_position_baseline_2026-09-18.md)。
+
 ## 目录
 
 ```text

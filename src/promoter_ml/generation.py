@@ -46,3 +46,43 @@ class PositionFrequencyGenerator:
         for row in range(count):
             generated[row] = "".join(rng.choice(DNA_ALPHABET, p=distribution) for distribution in self.probabilities)
         return generated
+
+
+class ConditionalPositionFrequencyGenerator:
+    """One position-frequency generator per discrete expression-strength label."""
+
+    def __init__(self, smoothing: float = 1.0):
+        self.smoothing = smoothing
+        self.generators: dict[str, PositionFrequencyGenerator] = {}
+
+    def fit(self, sequences: np.ndarray, conditions: np.ndarray) -> "ConditionalPositionFrequencyGenerator":
+        values = np.asarray(sequences).astype(str)
+        labels = np.asarray(conditions).astype(str)
+        if values.ndim != 1 or labels.ndim != 1 or len(values) != len(labels):
+            raise ValueError("Expected matching one-dimensional sequences and conditions")
+        self.generators = {}
+        for label in sorted(set(labels.tolist())):
+            selected = values[labels == label]
+            if len(selected) == 0:
+                raise ValueError(f"Condition {label!r} has no training sequences")
+            self.generators[label] = PositionFrequencyGenerator(smoothing=self.smoothing).fit(selected)
+        return self
+
+    @property
+    def conditions(self) -> tuple[str, ...]:
+        return tuple(sorted(self.generators))
+
+    def sample(self, condition: str, count: int, seed: int) -> np.ndarray:
+        if condition not in self.generators:
+            raise ValueError(f"Unknown condition {condition!r}; expected one of {self.conditions}")
+        return self.generators[condition].sample(count, seed)
+
+    def condition_distance(self, first: str, second: str) -> float:
+        """Mean L1 distance between two learned position/base distributions."""
+        if first not in self.generators or second not in self.generators:
+            raise ValueError("Both conditions must be present in the fitted generator")
+        first_distribution = self.generators[first].probabilities
+        second_distribution = self.generators[second].probabilities
+        if first_distribution is None or second_distribution is None:
+            raise RuntimeError("Generator has not been fitted")
+        return float(np.mean(np.abs(first_distribution - second_distribution).sum(axis=1)))
