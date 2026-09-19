@@ -1,0 +1,116 @@
+{
+  "condition_definition": "training log10(strength) tertiles",
+  "boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ],
+  "samples_per_condition": 500,
+  "models": {
+    "conditional_autoregressive": {
+      "weak": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.45768000000000003,
+        "reference_gc_mean": 0.45460512080778936,
+        "generated_gc_std": 0.07513865583040463,
+        "reference_gc_std": 0.0828923863372762,
+        "mean_position_base_l1": 0.06262825820411107,
+        "kmer_3_js_divergence": 0.00032113954069357554,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.00029710955016541484,
+        "top_motif_overlap_fraction": 0.7,
+        "mean_pairwise_hamming_distance": 0.7294059437751005,
+        "mean_nearest_training_similarity": 0.51016,
+        "max_nearest_training_similarity": 0.6
+      },
+      "medium": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.44164,
+        "reference_gc_mean": 0.44330447330447337,
+        "generated_gc_std": 0.07613481726516456,
+        "reference_gc_std": 0.08593625574889575,
+        "mean_position_base_l1": 0.061111111111111116,
+        "kmer_3_js_divergence": 0.00029090766524110344,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.00030003450655624554,
+        "top_motif_overlap_fraction": 0.55,
+        "mean_pairwise_hamming_distance": 0.7297336546184738,
+        "mean_nearest_training_similarity": 0.5098400000000001,
+        "max_nearest_training_similarity": 0.62
+      },
+      "strong": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.43292,
+        "reference_gc_mean": 0.42881355932203385,
+        "generated_gc_std": 0.07548426061107044,
+        "reference_gc_std": 0.08808373186366339,
+        "mean_position_base_l1": 0.07179300396682294,
+        "kmer_3_js_divergence": 0.0003714893916469854,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.0003600714968876904,
+        "top_motif_overlap_fraction": 0.6,
+        "mean_pairwise_hamming_distance": 0.7282236144578313,
+        "mean_nearest_training_similarity": 0.51052,
+        "max_nearest_training_similarity": 0.62
+      }
+    },
+    "continuous_condition_vae": {
+      "weak": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.47480000000000006,
+        "reference_gc_mean": 0.45460512080778936,
+        "generated_gc_std": 0.07668220132468812,
+        "reference_gc_std": 0.0828923863372762,
+        "mean_position_base_l1": 0.18256340425531917,
+        "kmer_3_js_divergence": 0.006148921143816723,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.0007923242760156165,
+        "top_motif_overlap_fraction": 0.5,
+        "mean_pairwise_hamming_distance": 0.7279569477911645,
+        "mean_nearest_training_similarity": 0.5008,
+        "max_nearest_training_similarity": 0.6
+      },
+      "medium": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.46620000000000006,
+        "reference_gc_mean": 0.44330447330447337,
+        "generated_gc_std": 0.07561454886461996,
+        "reference_gc_std": 0.08593625574889575,
+        "mean_position_base_l1": 0.19222418470418468,
+        "kmer_3_js_divergence": 0.006063384767837471,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.000995191040843215,
+        "top_motif_overlap_fraction": 0.35,
+        "mean_pairwise_hamming_distance": 0.7284889959839358,
+        "mean_nearest_training_similarity": 0.49860000000000004,
+        "max_nearest_training_similarity": 0.58
+      },
+      "strong": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.4542,
+        "reference_gc_mean": 0.42881355932203385,
+        "generated_gc_std": 0.07747489916095406,
+        "reference_gc_std": 0.08808373186366339,
+        "mean_position_base_l1": 0.19071541291020558,
+        "kmer_3_js_divergence": 0.006675364707908027,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.0011601851706674608,
+        "top_motif_overlap_fraction": 0.45,
+        "mean_pairwise_hamming_distance": 0.7323167871485944,
+        "mean_nearest_training_similarity": 0.4999200000000001,
+        "max_nearest_training_similarity": 0.6
+      }
+    }
+  }
+}

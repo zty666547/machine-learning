@@ -65,3 +65,60 @@ def generation_metrics(generated: np.ndarray, reference: np.ndarray) -> dict[str
         "mean_position_base_l1": float(np.mean(np.abs(generated_position - reference_position).sum(axis=1))),
         "kmer_3_js_divergence": float(js_divergence),
     }
+
+
+def motif_metrics(generated: np.ndarray, reference: np.ndarray, k: int = 5, top_count: int = 20) -> dict[str, float]:
+    """Measure preservation of frequent reference k-mers as candidate motifs."""
+    generated_values = _validate(generated)
+    reference_values = _validate(reference)
+    if len(generated_values[0]) != len(reference_values[0]):
+        raise ValueError("Generated and reference sequences must share a length")
+
+    def counts(values: np.ndarray) -> dict[str, int]:
+        result: dict[str, int] = {}
+        for sequence in values:
+            for position in range(len(sequence) - k + 1):
+                token = sequence[position : position + k]
+                result[token] = result.get(token, 0) + 1
+        return result
+
+    reference_counts = counts(reference_values)
+    generated_counts = counts(generated_values)
+    denominator_reference = len(reference_values) * (len(reference_values[0]) - k + 1)
+    denominator_generated = len(generated_values) * (len(generated_values[0]) - k + 1)
+    top_reference = [token for token, _ in sorted(reference_counts.items(), key=lambda item: (-item[1], item[0]))[:top_count]]
+    absolute_differences = [abs(generated_counts.get(token, 0) / denominator_generated - reference_counts[token] / denominator_reference) for token in top_reference]
+    top_generated = {token for token, _ in sorted(generated_counts.items(), key=lambda item: (-item[1], item[0]))[:top_count]}
+    return {
+        "motif_k": float(k),
+        "top_reference_motif_mean_abs_frequency_error": float(np.mean(absolute_differences)),
+        "top_motif_overlap_fraction": float(len(set(top_reference).intersection(top_generated)) / top_count),
+    }
+
+
+def diversity_metrics(generated: np.ndarray, reference: np.ndarray, pairwise_limit: int = 250) -> dict[str, float]:
+    """Measure within-sample diversity and similarity to the nearest training example."""
+    generated_values = _validate(generated)
+    reference_values = _validate(reference)
+    if len(generated_values[0]) != len(reference_values[0]):
+        raise ValueError("Generated and reference sequences must share a length")
+    alphabet = {base: index for index, base in enumerate(DNA_ALPHABET)}
+    encode = lambda values: np.array([[alphabet[base] for base in sequence] for sequence in values], dtype=np.int8)
+    generated_encoded = encode(generated_values)
+    reference_encoded = encode(reference_values)
+    subset = generated_encoded[: min(pairwise_limit, len(generated_encoded))]
+    if len(subset) < 2:
+        mean_pairwise_distance = 0.0
+    else:
+        differences = np.mean(subset[:, None, :] != subset[None, :, :], axis=2)
+        mean_pairwise_distance = float(differences[np.triu_indices(len(subset), k=1)].mean())
+    nearest_similarities = []
+    for start in range(0, len(generated_encoded), 50):
+        batch = generated_encoded[start : start + 50]
+        similarities = np.mean(batch[:, None, :] == reference_encoded[None, :, :], axis=2)
+        nearest_similarities.extend(similarities.max(axis=1).tolist())
+    return {
+        "mean_pairwise_hamming_distance": mean_pairwise_distance,
+        "mean_nearest_training_similarity": float(np.mean(nearest_similarities)),
+        "max_nearest_training_similarity": float(np.max(nearest_similarities)),
+    }
