@@ -176,6 +176,19 @@ python scripts/generate_conditional_autoregressive_baseline.py \
 
 首轮结果见 [M3 条件自回归基线报告](reports/m3_conditional_autoregressive_baseline_2026-09-18.md)。
 
+## M3 连续条件 VAE
+
+条件 VAE 使用连续 `log10(表达强度)` 和随机潜变量生成新序列。它目前是可复现的候选模型，须与条件自回归基线共同评价。
+
+```bash
+python scripts/train_conditional_vae.py \
+  --data-dir /path/to/course/data \
+  --beta 0.1 \
+  --output-dir outputs/conditional_vae_beta_0_1
+```
+
+首轮结果和限制见 [M3 连续条件 VAE 报告](reports/m3_conditional_vae_first_run_2026-09-19.md)。
+
 ## 目录
 
 ```text
