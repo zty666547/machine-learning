@@ -1,0 +1,28 @@
+{
+  "seeds": [
+    {
+      "seed": 20260912,
+      "gc_response_slope_per_log_strength": -0.01952142857142868,
+      "target_vs_generated_gc_pearson": -0.9532441431482879,
+      "gc_at_1_7": 0.47472000000000003,
+      "gc_at_2_9": 0.4526
+    },
+    {
+      "seed": 20260913,
+      "gc_response_slope_per_log_strength": -0.011807142857143037,
+      "target_vs_generated_gc_pearson": -0.8868280994095774,
+      "gc_at_1_7": 0.49420000000000003,
+      "gc_at_2_9": 0.47872000000000003
+    },
+    {
+      "seed": 20260914,
+      "gc_response_slope_per_log_strength": -0.009571428571428545,
+      "target_vs_generated_gc_pearson": -0.8332224877356043,
+      "gc_at_1_7": 0.42836,
+      "gc_at_2_9": 0.41244000000000003
+    }
+  ],
+  "mean_gc_response_slope_per_log_strength": -0.01363333333333342,
+  "mean_target_vs_generated_gc_pearson": -0.8910982434311565,
+  "all_response_correlations_negative": true
+}

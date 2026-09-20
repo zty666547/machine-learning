@@ -1,0 +1,141 @@
+{
+  "model": {
+    "beta": 0.1,
+    "latent_size": 16,
+    "epochs_completed": 120
+  },
+  "samples_per_target": 500,
+  "gc_response_slope_per_log_strength": -0.01952142857142868,
+  "target_vs_generated_gc_pearson": -0.9532441431482879,
+  "targets": [
+    {
+      "target_log_strength": 1.7,
+      "generated_gc_mean": 0.47472000000000003,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.47472000000000003,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.07649916077971051,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.18979450829526326,
+        "kmer_3_js_divergence": 0.00631739982438489
+      }
+    },
+    {
+      "target_log_strength": 1.9,
+      "generated_gc_mean": 0.46896000000000004,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.46896000000000004,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.07462786610911504,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.19585688867516232,
+        "kmer_3_js_divergence": 0.006203587040159009
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.08704,
+        "kmer_3_js_divergence": 0.0006691629699451279
+      }
+    },
+    {
+      "target_log_strength": 2.1,
+      "generated_gc_mean": 0.46448,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.46448,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.07692548082397666,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.18805241644626114,
+        "kmer_3_js_divergence": 0.006452201700225051
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.08696,
+        "kmer_3_js_divergence": 0.0005624958820634217
+      }
+    },
+    {
+      "target_log_strength": 2.3,
+      "generated_gc_mean": 0.46692000000000006,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.46692000000000006,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.08111789938108604,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.1837208752103871,
+        "kmer_3_js_divergence": 0.006732750391398633
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.08384,
+        "kmer_3_js_divergence": 0.0007230334010315709
+      }
+    },
+    {
+      "target_log_strength": 2.5,
+      "generated_gc_mean": 0.45648,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.45648,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.07663164881431171,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.1767031305602308,
+        "kmer_3_js_divergence": 0.006308617458356293
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.08896000000000001,
+        "kmer_3_js_divergence": 0.0008763245357178477
+      }
+    },
+    {
+      "target_log_strength": 2.7,
+      "generated_gc_mean": 0.45148,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.45148,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.07412563389273646,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.18325297427266168,
+        "kmer_3_js_divergence": 0.0059264909324269815
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.09415999999999998,
+        "kmer_3_js_divergence": 0.0004986871137197409
+      }
+    },
+    {
+      "target_log_strength": 2.9,
+      "generated_gc_mean": 0.4526,
+      "within_target": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.4526,
+        "reference_gc_mean": 0.44224092329887,
+        "generated_gc_std": 0.0793198587996726,
+        "reference_gc_std": 0.08631194033670725,
+        "mean_position_base_l1": 0.17556341428227942,
+        "kmer_3_js_divergence": 0.005311757719018878
+      },
+      "change_from_previous_target": {
+        "mean_position_base_l1": 0.08527999999999998,
+        "kmer_3_js_divergence": 0.0006488502642215317
+      }
+    }
+  ]
+}

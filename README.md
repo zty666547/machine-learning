@@ -189,6 +189,8 @@ python scripts/train_conditional_vae.py \
 
 首轮结果和限制见 [M3 连续条件 VAE 报告](reports/m3_conditional_vae_first_run_2026-09-19.md)。
 
+连续目标响应分析表明，生成 GC 会随目标对数强度整体下降，但局部仍有波动；详见 [M3 连续条件 VAE 响应报告](reports/m3_vae_continuous_response_2026-09-20.md)。
+
 ## M3 生成器统一比较
 
 两种条件生成器使用相同的合法性、新颖性、GC、位置碱基频率、3-mer、候选 motif 和多样性指标比较。当前条件自回归在局部模式保真度上更强；完整结论见 [M3 条件生成器统一比较报告](reports/m3_conditional_generator_comparison_2026-09-19.md)。

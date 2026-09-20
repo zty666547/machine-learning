@@ -122,3 +122,21 @@ def diversity_metrics(generated: np.ndarray, reference: np.ndarray, pairwise_lim
         "mean_nearest_training_similarity": float(np.mean(nearest_similarities)),
         "max_nearest_training_similarity": float(np.max(nearest_similarities)),
     }
+
+
+def sequence_distribution_distance(first: np.ndarray, second: np.ndarray, k: int = 3) -> dict[str, float]:
+    """Compare composition between two generated sequence groups."""
+    first_values = _validate(first)
+    second_values = _validate(second)
+    if len(first_values[0]) != len(second_values[0]):
+        raise ValueError("Sequence groups must share a length")
+    first_position = _base_frequency_by_position(first_values)
+    second_position = _base_frequency_by_position(second_values)
+    first_kmers = _kmer_distribution(first_values, k=k)
+    second_kmers = _kmer_distribution(second_values, k=k)
+    midpoint = (first_kmers + second_kmers) / 2
+    js_divergence = 0.5 * np.sum(first_kmers * np.log(first_kmers / midpoint)) + 0.5 * np.sum(second_kmers * np.log(second_kmers / midpoint))
+    return {
+        "mean_position_base_l1": float(np.mean(np.abs(first_position - second_position).sum(axis=1))),
+        f"kmer_{k}_js_divergence": float(js_divergence),
+    }
