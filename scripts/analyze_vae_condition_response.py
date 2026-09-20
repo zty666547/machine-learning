@@ -30,6 +30,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--samples-per-target", type=int, default=500)
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--seed", type=int, help="Override the shared project seed for response replication.")
+    parser.add_argument("--beta", type=float, default=0.20)
     return parser.parse_args()
 
 
@@ -47,7 +48,7 @@ def main() -> None:
     train_idx, validation_idx, _ = load_fixed_split_indices(REPOSITORY_ROOT / data_config["split_file"], len(sequences))
     features = one_hot_sequences(sequences)
     targets = np.log10(strengths)
-    model = ConditionalSequenceVAE(beta=0.1, epochs=args.epochs, seed=seed)
+    model = ConditionalSequenceVAE(beta=args.beta, epochs=args.epochs, seed=seed)
     model.fit(features[train_idx], targets[train_idx], validation=(features[validation_idx], targets[validation_idx]))
     requested = np.array([float(value) for value in args.targets.split(",")])
     generated_by_target = []
@@ -60,7 +61,7 @@ def main() -> None:
         records[index]["change_from_previous_target"] = sequence_distribution_distance(generated_by_target[index - 1], generated_by_target[index])
     response = np.array([record["generated_gc_mean"] for record in records])
     result = {
-        "model": {"beta": 0.1, "latent_size": model.latent_size, "epochs_completed": len(model.history)},
+        "model": {"beta": args.beta, "latent_size": model.latent_size, "epochs_completed": len(model.history)},
         "samples_per_target": args.samples_per_target,
         "gc_response_slope_per_log_strength": float(np.polyfit(requested, response, deg=1)[0]),
         "target_vs_generated_gc_pearson": float(np.corrcoef(requested, response)[0, 1]),

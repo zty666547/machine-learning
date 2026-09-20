@@ -183,13 +183,15 @@ python scripts/generate_conditional_autoregressive_baseline.py \
 ```bash
 python scripts/train_conditional_vae.py \
   --data-dir /path/to/course/data \
-  --beta 0.1 \
-  --output-dir outputs/conditional_vae_beta_0_1
+  --beta 0.2 \
+  --output-dir outputs/conditional_vae_beta_0_2
 ```
 
 首轮结果和限制见 [M3 连续条件 VAE 报告](reports/m3_conditional_vae_first_run_2026-09-19.md)。
 
 连续目标响应分析表明，生成 GC 会随目标对数强度整体下降，但局部仍有波动；详见 [M3 连续条件 VAE 响应报告](reports/m3_vae_continuous_response_2026-09-20.md)。
+
+KL 权重消融后，后续 VAE 实验优先使用 `beta=0.20`；详见 [M3 VAE KL 权重稳定性报告](reports/m3_vae_beta_stability_2026-09-20.md)。
 
 ## M3 生成器统一比较
 
