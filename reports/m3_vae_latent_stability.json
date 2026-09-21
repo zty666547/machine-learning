@@ -1,0 +1,112 @@
+{
+  "beta": 0.2,
+  "hidden_size": 96,
+  "epochs": 100,
+  "trials": [
+    {
+      "latent_size": 8,
+      "seed": 20260912,
+      "validation_loss": 60.4381193459368,
+      "target_gc_pearson": -0.8694004075405166,
+      "gc_response_slope": -0.014457142857142918,
+      "mean_kmer_3_js": 0.004385719081435744,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 8,
+      "seed": 20260913,
+      "validation_loss": 60.653831556788916,
+      "target_gc_pearson": -0.6287982438539059,
+      "gc_response_slope": -0.01295714285714292,
+      "mean_kmer_3_js": 0.004765003832393781,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 8,
+      "seed": 20260914,
+      "validation_loss": 61.050802109452675,
+      "target_gc_pearson": -0.7777205646546143,
+      "gc_response_slope": -0.016171428571428663,
+      "mean_kmer_3_js": 0.004598195957436361,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 16,
+      "seed": 20260912,
+      "validation_loss": 53.094507964975186,
+      "target_gc_pearson": -0.9154423858915156,
+      "gc_response_slope": -0.024057142857143065,
+      "mean_kmer_3_js": 0.005436357896812104,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 16,
+      "seed": 20260913,
+      "validation_loss": 54.2218178194606,
+      "target_gc_pearson": -0.8941219149110392,
+      "gc_response_slope": -0.018814285714285714,
+      "mean_kmer_3_js": 0.003994701637504869,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 16,
+      "seed": 20260914,
+      "validation_loss": 53.906776400215584,
+      "target_gc_pearson": -0.6419943781942101,
+      "gc_response_slope": -0.013971428571428635,
+      "mean_kmer_3_js": 0.004204961254969467,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 32,
+      "seed": 20260912,
+      "validation_loss": 41.581405965739506,
+      "target_gc_pearson": -0.8934861110815328,
+      "gc_response_slope": -0.014714285714285779,
+      "mean_kmer_3_js": 0.007582063303680547,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 32,
+      "seed": 20260913,
+      "validation_loss": 41.507273783153224,
+      "target_gc_pearson": -0.6950524952775801,
+      "gc_response_slope": -0.013728571428571467,
+      "mean_kmer_3_js": 0.008042960633582922,
+      "epochs_completed": 100
+    },
+    {
+      "latent_size": 32,
+      "seed": 20260914,
+      "validation_loss": 41.9973367704494,
+      "target_gc_pearson": -0.36822837643954864,
+      "gc_response_slope": -0.002942857142857224,
+      "mean_kmer_3_js": 0.012274907079260844,
+      "epochs_completed": 100
+    }
+  ],
+  "summary": [
+    {
+      "latent_size": 16,
+      "mean_validation_loss": 53.74103406155046,
+      "mean_target_gc_pearson": -0.817186226332255,
+      "std_target_gc_pearson": 0.12418475043585978,
+      "mean_kmer_3_js": 0.0045453402630954804
+    },
+    {
+      "latent_size": 8,
+      "mean_validation_loss": 60.71425100405946,
+      "mean_target_gc_pearson": -0.7586397386830123,
+      "std_target_gc_pearson": 0.099147730626201,
+      "mean_kmer_3_js": 0.004582972957088629
+    },
+    {
+      "latent_size": 32,
+      "mean_validation_loss": 41.69533883978071,
+      "mean_target_gc_pearson": -0.6522556609328872,
+      "std_target_gc_pearson": 0.21656038222283805,
+      "mean_kmer_3_js": 0.009299977005508104
+    }
+  ],
+  "selection_rule": "lowest mean 3-mer JS, then strongest mean absolute GC response"
+}

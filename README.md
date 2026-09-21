@@ -193,6 +193,8 @@ python scripts/train_conditional_vae.py \
 
 KL 权重消融后，后续 VAE 实验优先使用 `beta=0.20`；详见 [M3 VAE KL 权重稳定性报告](reports/m3_vae_beta_stability_2026-09-20.md)。
 
+潜变量维度消融后，后续 VAE 实验固定 `latent_size=16`；详见 [M3 VAE 潜变量维度稳定性报告](reports/m3_vae_latent_stability_2026-09-21.md)。
+
 ## M3 生成器统一比较
 
 两种条件生成器使用相同的合法性、新颖性、GC、位置碱基频率、3-mer、候选 motif 和多样性指标比较。当前条件自回归在局部模式保真度上更强；完整结论见 [M3 条件生成器统一比较报告](reports/m3_conditional_generator_comparison_2026-09-19.md)。
