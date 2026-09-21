@@ -16,7 +16,7 @@ class ConditionalSequenceVAE:
         hidden_size: int = 96,
         latent_size: int = 16,
         learning_rate: float = 1e-3,
-        beta: float = 0.01,
+        beta: float = 0.20,
         batch_size: int = 256,
         epochs: int = 120,
         patience: int = 15,

@@ -183,8 +183,7 @@ python scripts/generate_conditional_autoregressive_baseline.py \
 ```bash
 python scripts/train_conditional_vae.py \
   --data-dir /path/to/course/data \
-  --beta 0.2 \
-  --output-dir outputs/conditional_vae_beta_0_2
+  --output-dir outputs/conditional_vae_selected
 ```
 
 首轮结果和限制见 [M3 连续条件 VAE 报告](reports/m3_conditional_vae_first_run_2026-09-19.md)。
@@ -193,11 +192,11 @@ python scripts/train_conditional_vae.py \
 
 KL 权重消融后，后续 VAE 实验优先使用 `beta=0.20`；详见 [M3 VAE KL 权重稳定性报告](reports/m3_vae_beta_stability_2026-09-20.md)。
 
-潜变量维度消融后，后续 VAE 实验固定 `latent_size=16`；详见 [M3 VAE 潜变量维度稳定性报告](reports/m3_vae_latent_stability_2026-09-21.md)。
+潜变量维度消融后，后续 VAE 实验固定 `latent_size=16`；网络宽度消融后固定 `hidden_size=128`；详见 [M3 VAE 潜变量维度稳定性报告](reports/m3_vae_latent_stability_2026-09-21.md) 与 [M3 VAE 网络宽度稳定性报告](reports/m3_vae_width_stability_2026-09-21.md)。
 
 ## M3 生成器统一比较
 
-两种条件生成器使用相同的合法性、新颖性、GC、位置碱基频率、3-mer、候选 motif 和多样性指标比较。当前条件自回归在局部模式保真度上更强；完整结论见 [M3 条件生成器统一比较报告](reports/m3_conditional_generator_comparison_2026-09-19.md)。
+两种条件生成器使用相同的合法性、新颖性、GC、位置碱基频率、3-mer、候选 motif 和多样性指标比较。当前条件自回归在局部模式保真度上更强；当前配置的复查结论见 [M3 阶段复查记录](reports/m3_review_2026-09-21.md)。
 
 ```bash
 python scripts/compare_conditional_generators.py \

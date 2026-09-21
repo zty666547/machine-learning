@@ -1,0 +1,122 @@
+{
+  "condition_definition": "training log10(strength) tertiles",
+  "boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ],
+  "samples_per_condition": 500,
+  "vae_configuration": {
+    "hidden_size": 128,
+    "latent_size": 16,
+    "beta": 0.2,
+    "epochs": 120
+  },
+  "models": {
+    "conditional_autoregressive": {
+      "weak": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.45768000000000003,
+        "reference_gc_mean": 0.45460512080778936,
+        "generated_gc_std": 0.07513865583040463,
+        "reference_gc_std": 0.0828923863372762,
+        "mean_position_base_l1": 0.06262825820411107,
+        "kmer_3_js_divergence": 0.00032113954069357554,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.00029710955016541484,
+        "top_motif_overlap_fraction": 0.7,
+        "mean_pairwise_hamming_distance": 0.7294059437751005,
+        "mean_nearest_training_similarity": 0.51016,
+        "max_nearest_training_similarity": 0.6
+      },
+      "medium": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.44164,
+        "reference_gc_mean": 0.44330447330447337,
+        "generated_gc_std": 0.07613481726516456,
+        "reference_gc_std": 0.08593625574889575,
+        "mean_position_base_l1": 0.061111111111111116,
+        "kmer_3_js_divergence": 0.00029090766524110344,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.00030003450655624554,
+        "top_motif_overlap_fraction": 0.55,
+        "mean_pairwise_hamming_distance": 0.7297336546184738,
+        "mean_nearest_training_similarity": 0.5098400000000001,
+        "max_nearest_training_similarity": 0.62
+      },
+      "strong": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.43292,
+        "reference_gc_mean": 0.42881355932203385,
+        "generated_gc_std": 0.07548426061107044,
+        "reference_gc_std": 0.08808373186366339,
+        "mean_position_base_l1": 0.07179300396682294,
+        "kmer_3_js_divergence": 0.0003714893916469854,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.0003600714968876904,
+        "top_motif_overlap_fraction": 0.6,
+        "mean_pairwise_hamming_distance": 0.7282236144578313,
+        "mean_nearest_training_similarity": 0.51052,
+        "max_nearest_training_similarity": 0.62
+      }
+    },
+    "continuous_condition_vae": {
+      "weak": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.45139999999999997,
+        "reference_gc_mean": 0.45460512080778936,
+        "generated_gc_std": 0.0854847354794995,
+        "reference_gc_std": 0.0828923863372762,
+        "mean_position_base_l1": 0.11690163721601154,
+        "kmer_3_js_divergence": 0.004285630540527193,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.000564956333589426,
+        "top_motif_overlap_fraction": 0.6,
+        "mean_pairwise_hamming_distance": 0.7293815261044176,
+        "mean_nearest_training_similarity": 0.50236,
+        "max_nearest_training_similarity": 0.62
+      },
+      "medium": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.44992000000000004,
+        "reference_gc_mean": 0.44330447330447337,
+        "generated_gc_std": 0.09467836922972428,
+        "reference_gc_std": 0.08593625574889575,
+        "mean_position_base_l1": 0.1097671572871573,
+        "kmer_3_js_divergence": 0.00368657443499712,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.0007038866930171278,
+        "top_motif_overlap_fraction": 0.5,
+        "mean_pairwise_hamming_distance": 0.7291418473895582,
+        "mean_nearest_training_similarity": 0.50548,
+        "max_nearest_training_similarity": 0.6
+      },
+      "strong": {
+        "valid_fraction": 1.0,
+        "unique_fraction": 1.0,
+        "novel_fraction": 1.0,
+        "generated_gc_mean": 0.43484,
+        "reference_gc_mean": 0.42881355932203385,
+        "generated_gc_std": 0.08968263154033784,
+        "reference_gc_std": 0.08808373186366339,
+        "mean_position_base_l1": 0.12378977280923188,
+        "kmer_3_js_divergence": 0.0033020011409059407,
+        "motif_k": 5.0,
+        "top_reference_motif_mean_abs_frequency_error": 0.000519779237680114,
+        "top_motif_overlap_fraction": 0.65,
+        "mean_pairwise_hamming_distance": 0.7300748594377511,
+        "mean_nearest_training_similarity": 0.5074,
+        "max_nearest_training_similarity": 0.62
+      }
+    }
+  }
+}

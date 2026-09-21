@@ -1,0 +1,79 @@
+{
+  "beta": 0.2,
+  "latent_size": 16,
+  "epochs": 100,
+  "samples_per_target": 250,
+  "trials": [
+    {
+      "hidden_size": 96,
+      "seed": 20260912,
+      "validation_loss": 53.094507964975186,
+      "target_gc_pearson": -0.9154423858915156,
+      "gc_response_slope": -0.024057142857143065,
+      "mean_kmer_3_js": 0.005436357896812104,
+      "epochs_completed": 100
+    },
+    {
+      "hidden_size": 96,
+      "seed": 20260913,
+      "validation_loss": 54.2218178194606,
+      "target_gc_pearson": -0.8941219149110392,
+      "gc_response_slope": -0.018814285714285714,
+      "mean_kmer_3_js": 0.003994701637504869,
+      "epochs_completed": 100
+    },
+    {
+      "hidden_size": 96,
+      "seed": 20260914,
+      "validation_loss": 53.906776400215584,
+      "target_gc_pearson": -0.6419943781942101,
+      "gc_response_slope": -0.013971428571428635,
+      "mean_kmer_3_js": 0.004204961254969467,
+      "epochs_completed": 100
+    },
+    {
+      "hidden_size": 128,
+      "seed": 20260912,
+      "validation_loss": 54.04834776640216,
+      "target_gc_pearson": -0.8900037872451968,
+      "gc_response_slope": -0.020385714285714264,
+      "mean_kmer_3_js": 0.004230031102425883,
+      "epochs_completed": 100
+    },
+    {
+      "hidden_size": 128,
+      "seed": 20260913,
+      "validation_loss": 53.121062049056746,
+      "target_gc_pearson": -0.8222647647636424,
+      "gc_response_slope": -0.021028571428571542,
+      "mean_kmer_3_js": 0.004312497053238585,
+      "epochs_completed": 100
+    },
+    {
+      "hidden_size": 128,
+      "seed": 20260914,
+      "validation_loss": 53.360712457331076,
+      "target_gc_pearson": -0.8986069520838484,
+      "gc_response_slope": -0.020957142857142882,
+      "mean_kmer_3_js": 0.00473147724964402,
+      "epochs_completed": 100
+    }
+  ],
+  "summary": [
+    {
+      "hidden_size": 128,
+      "mean_validation_loss": 53.51004075759666,
+      "mean_target_gc_pearson": -0.8702918346975625,
+      "std_target_gc_pearson": 0.03414140395608139,
+      "mean_kmer_3_js": 0.004424668468436163
+    },
+    {
+      "hidden_size": 96,
+      "mean_validation_loss": 53.74103406155046,
+      "mean_target_gc_pearson": -0.817186226332255,
+      "std_target_gc_pearson": 0.12418475043585978,
+      "mean_kmer_3_js": 0.0045453402630954804
+    }
+  ],
+  "selection_rule": "lowest mean 3-mer JS, then strongest mean absolute GC response correlation"
+}

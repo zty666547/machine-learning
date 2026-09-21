@@ -37,6 +37,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", default="reports/m3_conditional_generator_comparison.json")
     parser.add_argument("--samples-per-condition", type=int, default=500)
     parser.add_argument("--vae-epochs", type=int, default=120)
+    parser.add_argument("--vae-hidden-size", type=int, default=128)
+    parser.add_argument("--vae-latent-size", type=int, default=16)
+    parser.add_argument("--vae-beta", type=float, default=0.20)
     return parser.parse_args()
 
 
@@ -53,10 +56,27 @@ def main() -> None:
     labels, boundaries = assign_strength_groups(training_targets)
     group_targets = {condition: float(training_targets[labels == condition].mean()) for condition in CONDITIONS}
     autoregressive = ConditionalAutoregressiveGenerator(order=3).fit(training_sequences, labels)
-    vae = ConditionalSequenceVAE(beta=0.1, epochs=args.vae_epochs, seed=seed)
+    vae = ConditionalSequenceVAE(
+        hidden_size=args.vae_hidden_size,
+        latent_size=args.vae_latent_size,
+        beta=args.vae_beta,
+        epochs=args.vae_epochs,
+        seed=seed,
+    )
     features = one_hot_sequences(sequences)
     vae.fit(features[train_idx], np.log10(strengths[train_idx]), validation=(features[validation_idx], np.log10(strengths[validation_idx])))
-    result = {"condition_definition": "training log10(strength) tertiles", "boundaries": boundaries, "samples_per_condition": args.samples_per_condition, "models": {"conditional_autoregressive": {}, "continuous_condition_vae": {}}}
+    result = {
+        "condition_definition": "training log10(strength) tertiles",
+        "boundaries": boundaries,
+        "samples_per_condition": args.samples_per_condition,
+        "vae_configuration": {
+            "hidden_size": args.vae_hidden_size,
+            "latent_size": args.vae_latent_size,
+            "beta": args.vae_beta,
+            "epochs": args.vae_epochs,
+        },
+        "models": {"conditional_autoregressive": {}, "continuous_condition_vae": {}},
+    }
     for offset, condition in enumerate(CONDITIONS):
         reference = training_sequences[labels == condition]
         autoregressive_generated = autoregressive.sample(condition, args.samples_per_condition, seed + offset)

@@ -29,9 +29,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", default="outputs/conditional_vae")
     parser.add_argument("--epochs", type=int, default=120)
     parser.add_argument("--samples-per-condition", type=int, default=500)
-    parser.add_argument("--hidden-size", type=int, default=96)
+    parser.add_argument("--hidden-size", type=int, default=128)
     parser.add_argument("--latent-size", type=int, default=16)
-    parser.add_argument("--beta", type=float, default=0.01)
+    parser.add_argument("--beta", type=float, default=0.20)
     return parser.parse_args()
 
 
@@ -60,7 +60,7 @@ def main() -> None:
         reference = sequences[train_idx][labels == condition]
         (output_dir / f"generated_{condition}.txt").write_text("\n".join(generated.tolist()) + "\n", encoding="utf-8")
         per_condition[condition] = {"target_log_strength": group_targets[condition], "metrics_against_same_condition_training_data": generation_metrics(generated, reference)}
-    metrics = {"generator": "continuous_condition_vae", "latent_size": model.latent_size, "beta": model.beta, "training_log_strength_boundaries": boundaries, "per_condition": per_condition, "epochs_completed": len(model.history), "best_validation_loss": min(row.get("validation_loss", float("inf")) for row in model.history)}
+    metrics = {"generator": "continuous_condition_vae", "hidden_size": model.hidden_size, "latent_size": model.latent_size, "beta": model.beta, "training_log_strength_boundaries": boundaries, "per_condition": per_condition, "epochs_completed": len(model.history), "best_validation_loss": min(row.get("validation_loss", float("inf")) for row in model.history)}
     (output_dir / "metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     logger.info("Conditional VAE metrics: %s", metrics)
     print(json.dumps(metrics, ensure_ascii=False, indent=2))
