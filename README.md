@@ -204,6 +204,17 @@ python scripts/compare_conditional_generators.py \
   --output reports/m3_conditional_generator_comparison.json
 ```
 
+## M3 汇报前一致性检查
+
+在汇报前可运行以下命令，确认固定划分、选定 VAE 配置、生成结果和报告结论仍然一致：
+
+```bash
+python scripts/verify_m3_release.py \
+  --data-dir /path/to/promoter/strenth/data
+```
+
+小组内部汇报表述见 [M3 期中汇报工作简报](reports/m3_midterm_brief_2026-09-22.md)。
+
 ## 目录
 
 ```text
