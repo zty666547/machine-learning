@@ -215,6 +215,14 @@ python scripts/verify_m3_release.py \
 
 小组内部汇报表述见 [M3 期中汇报工作简报](reports/m3_midterm_brief_2026-09-22.md)。
 
+## M3 汇报图表
+
+```bash
+python scripts/render_m3_midterm_figures.py
+```
+
+图表和讲解说明见 [M3 期中汇报图表说明](reports/m3_midterm_figures_guide_2026-09-23.md)。
+
 ## 目录
 
 ```text
