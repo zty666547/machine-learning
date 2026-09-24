@@ -227,6 +227,15 @@ python scripts/analyze_frozen_motif_cnn.py \
 
 结果说明见 [冻结 CNN 分组误差诊断](reports/m2_frozen_motif_cnn_diagnostic_2026-09-24.md)。
 
+冻结 CNN 的候选 7-mer 模式提取入口：
+
+```bash
+python scripts/extract_frozen_cnn_candidate_motifs.py \
+  --data-dir /path/to/promoter/strenth/data
+```
+
+结果说明见 [冻结 CNN 候选局部模式提取](reports/m2_frozen_cnn_candidate_motifs_2026-09-24.md)。
+
 ## M3 汇报图表
 
 ```bash

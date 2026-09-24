@@ -1,0 +1,351 @@
+{
+  "status": "data_driven_candidate_motif_extraction",
+  "architecture": {
+    "kernel_size": 7,
+    "filters": 32,
+    "location_bins": 5,
+    "hidden_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 150
+  },
+  "data_usage": "Training sequences are used only to inspect activations of the already frozen model; no test-set sequences or new model selection are used.",
+  "interpretation_boundary": "These are activation-derived candidate patterns, not experimentally validated transcription-factor binding motifs.",
+  "patterns": [
+    {
+      "filter_index": 26,
+      "position_bin": 5,
+      "position_start_range_zero_based": [
+        36,
+        43
+      ],
+      "output_head_proxy": 1.18550609708077,
+      "mean_top_activation": 1.327756156712537,
+      "consensus_7mer": "CTAGTAT",
+      "position_base_frequencies": [
+        {
+          "A": 0.32,
+          "C": 0.68,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.02,
+          "C": 0.23,
+          "G": 0.12,
+          "T": 0.63
+        },
+        {
+          "A": 0.86,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 0.14
+        },
+        {
+          "A": 0.26,
+          "C": 0.09,
+          "G": 0.65,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 1.0
+        },
+        {
+          "A": 0.99,
+          "C": 0.0,
+          "G": 0.01,
+          "T": 0.0
+        },
+        {
+          "A": 0.11,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 0.89
+        }
+      ],
+      "top_observed_7mers": [
+        "CTAGTAT",
+        "CTAGTAT",
+        "CTAGTAT",
+        "CTAGTAT",
+        "CTAGTAT",
+        "CTAGTAT",
+        "CCAGTAT",
+        "CCAGTAT",
+        "CCAGTAT",
+        "CCAGTAT"
+      ]
+    },
+    {
+      "filter_index": 9,
+      "position_bin": 4,
+      "position_start_range_zero_based": [
+        27,
+        35
+      ],
+      "output_head_proxy": 1.100767226602831,
+      "mean_top_activation": 1.4097979559334155,
+      "consensus_7mer": "GGTACAA",
+      "position_base_frequencies": [
+        {
+          "A": 0.0,
+          "C": 0.0,
+          "G": 1.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.3,
+          "G": 0.7,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.21,
+          "G": 0.09,
+          "T": 0.7
+        },
+        {
+          "A": 0.89,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 0.11
+        },
+        {
+          "A": 0.25,
+          "C": 0.75,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.84,
+          "C": 0.09,
+          "G": 0.0,
+          "T": 0.07
+        },
+        {
+          "A": 1.0,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 0.0
+        }
+      ],
+      "top_observed_7mers": [
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA",
+        "GGTACAA"
+      ]
+    },
+    {
+      "filter_index": 3,
+      "position_bin": 5,
+      "position_start_range_zero_based": [
+        36,
+        43
+      ],
+      "output_head_proxy": 0.9872707607190109,
+      "mean_top_activation": 1.3520947738035844,
+      "consensus_7mer": "TGCAGCA",
+      "position_base_frequencies": [
+        {
+          "A": 0.25,
+          "C": 0.25,
+          "G": 0.22,
+          "T": 0.28
+        },
+        {
+          "A": 0.0,
+          "C": 0.3,
+          "G": 0.6,
+          "T": 0.1
+        },
+        {
+          "A": 0.0,
+          "C": 1.0,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.54,
+          "C": 0.15,
+          "G": 0.31,
+          "T": 0.0
+        },
+        {
+          "A": 0.02,
+          "C": 0.26,
+          "G": 0.59,
+          "T": 0.13
+        },
+        {
+          "A": 0.0,
+          "C": 0.97,
+          "G": 0.02,
+          "T": 0.01
+        },
+        {
+          "A": 0.57,
+          "C": 0.34,
+          "G": 0.08,
+          "T": 0.01
+        }
+      ],
+      "top_observed_7mers": [
+        "AGCGGCA",
+        "GGCGGCA",
+        "CGCAGCG",
+        "CGCAGCG",
+        "GGCAGCA",
+        "GGCAGCA",
+        "GGCAGCA",
+        "AGCAGCC",
+        "GGCAGCC",
+        "GGCAGCC"
+      ]
+    },
+    {
+      "filter_index": 21,
+      "position_bin": 4,
+      "position_start_range_zero_based": [
+        27,
+        35
+      ],
+      "output_head_proxy": -0.9119333456701263,
+      "mean_top_activation": 1.617527647792506,
+      "consensus_7mer": "ACAATTT",
+      "position_base_frequencies": [
+        {
+          "A": 0.59,
+          "C": 0.0,
+          "G": 0.1,
+          "T": 0.31
+        },
+        {
+          "A": 0.0,
+          "C": 0.92,
+          "G": 0.0,
+          "T": 0.08
+        },
+        {
+          "A": 0.81,
+          "C": 0.04,
+          "G": 0.12,
+          "T": 0.03
+        },
+        {
+          "A": 1.0,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.17,
+          "G": 0.0,
+          "T": 0.83
+        },
+        {
+          "A": 0.3,
+          "C": 0.08,
+          "G": 0.05,
+          "T": 0.57
+        },
+        {
+          "A": 0.0,
+          "C": 0.0,
+          "G": 0.0,
+          "T": 1.0
+        }
+      ],
+      "top_observed_7mers": [
+        "ACAATTT",
+        "ACAATTT",
+        "ACAATTT",
+        "ACAATTT",
+        "ACAATTT",
+        "ACAATTT",
+        "ACAATTT",
+        "TCAATTT",
+        "TCAATTT",
+        "TCAATTT"
+      ]
+    },
+    {
+      "filter_index": 3,
+      "position_bin": 2,
+      "position_start_range_zero_based": [
+        9,
+        17
+      ],
+      "output_head_proxy": -0.771700711632382,
+      "mean_top_activation": 1.7064742357395566,
+      "consensus_7mer": "CGCAGCA",
+      "position_base_frequencies": [
+        {
+          "A": 0.14,
+          "C": 0.67,
+          "G": 0.19,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.09,
+          "G": 0.91,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 1.0,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.42,
+          "C": 0.19,
+          "G": 0.39,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 0.0,
+          "G": 1.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.0,
+          "C": 1.0,
+          "G": 0.0,
+          "T": 0.0
+        },
+        {
+          "A": 0.64,
+          "C": 0.23,
+          "G": 0.13,
+          "T": 0.0
+        }
+      ],
+      "top_observed_7mers": [
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCGGCA",
+        "CGCAGCA",
+        "CGCAGCA"
+      ]
+    }
+  ]
+}
