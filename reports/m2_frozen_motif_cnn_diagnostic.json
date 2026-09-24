@@ -1,0 +1,101 @@
+{
+  "status": "frozen_architecture_post_hoc_diagnostic",
+  "architecture": {
+    "kernel_size": 7,
+    "filters": 32,
+    "location_bins": 5,
+    "hidden_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 150
+  },
+  "training_strength_boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ],
+  "validation": {
+    "mae": 0.43173920868148846,
+    "rmse": 0.5825788313465582,
+    "pearson": 0.2606914358136103,
+    "spearman": 0.2337631248996671,
+    "target_std": 0.5976878101073861,
+    "prediction_std": 0.18838371690363562,
+    "prediction_to_target_std_ratio": 0.3151874836961939,
+    "residual_vs_target_pearson": -0.9491956532788238,
+    "by_true_strength_group": {
+      "weak": {
+        "sample_count": 575,
+        "mae": 0.4371412164477733,
+        "rmse": 0.4946191311901575,
+        "pearson": 0.06534977177620697,
+        "spearman": 0.07322907398487184,
+        "mean_true_log_strength": 1.7201403656309229,
+        "mean_predicted_log_strength": 2.1566809780204594,
+        "mean_signed_error": 0.43654061238953673
+      },
+      "medium": {
+        "sample_count": 611,
+        "mae": 0.1685473926216683,
+        "rmse": 0.21595320875374766,
+        "pearson": 0.07128889761966922,
+        "spearman": 0.06947158332290039,
+        "mean_true_log_strength": 2.1367279317377816,
+        "mean_predicted_log_strength": 2.182949186945663,
+        "mean_signed_error": 0.04622125520788148
+      },
+      "strong": {
+        "sample_count": 597,
+        "mae": 0.6959000883245979,
+        "rmse": 0.8545666933937173,
+        "pearson": 0.22472911437284324,
+        "spearman": 0.2023767316324339,
+        "mean_true_log_strength": 2.940783133919647,
+        "mean_predicted_log_strength": 2.253882859025087,
+        "mean_signed_error": -0.68690027489456
+      }
+    }
+  },
+  "test": {
+    "mae": 0.45486173807830915,
+    "rmse": 0.622692461880924,
+    "pearson": 0.21392292816594877,
+    "spearman": 0.19327414189167677,
+    "target_std": 0.6291921343582899,
+    "prediction_std": 0.18903080078614667,
+    "prediction_to_target_std_ratio": 0.30043414477667985,
+    "residual_vs_target_pearson": -0.9541707082080979,
+    "by_true_strength_group": {
+      "weak": {
+        "sample_count": 578,
+        "mae": 0.4536764364071255,
+        "rmse": 0.5156004154429156,
+        "pearson": -0.000944296870113338,
+        "spearman": 0.014340688689869305,
+        "mean_true_log_strength": 1.7210687263284197,
+        "mean_predicted_log_strength": 2.173990946570965,
+        "mean_signed_error": 0.45292222024254575
+      },
+      "medium": {
+        "sample_count": 609,
+        "mae": 0.17144645920561527,
+        "rmse": 0.21567748545378296,
+        "pearson": 0.09677792890936948,
+        "spearman": 0.09433916503104099,
+        "mean_true_log_strength": 2.147777785079733,
+        "mean_predicted_log_strength": 2.19599468768966,
+        "mean_signed_error": 0.04821690260992771
+      },
+      "strong": {
+        "sample_count": 596,
+        "mae": 0.7456083978088708,
+        "rmse": 0.9244665758128934,
+        "pearson": 0.19708229516013942,
+        "spearman": 0.18375571416777758,
+        "mean_true_log_strength": 2.9922423356960572,
+        "mean_predicted_log_strength": 2.253128935000838,
+        "mean_signed_error": -0.7391134006952191
+      }
+    }
+  },
+  "interpretation_boundary": "This diagnostic describes a fixed M2 architecture. It must not be used to select a new architecture after viewing test metrics."
+}

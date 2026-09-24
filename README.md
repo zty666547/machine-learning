@@ -215,6 +215,18 @@ python scripts/verify_m3_release.py \
 
 小组内部汇报表述见 [M3 期中汇报工作简报](reports/m3_midterm_brief_2026-09-22.md)。
 
+## 冻结强度预测器诊断
+
+已冻结 CNN 的分组误差诊断只用于解释其局限，不用于继续选择模型：
+
+```bash
+python scripts/analyze_frozen_motif_cnn.py \
+  --data-dir /path/to/promoter/strenth/data \
+  --evaluate-test
+```
+
+结果说明见 [冻结 CNN 分组误差诊断](reports/m2_frozen_motif_cnn_diagnostic_2026-09-24.md)。
+
 ## M3 汇报图表
 
 ```bash
