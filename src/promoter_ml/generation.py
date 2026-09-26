@@ -155,3 +155,88 @@ class ConditionalAutoregressiveGenerator:
                 prefix += base
             generated[row] = "".join(sequence)
         return generated
+
+
+class ContinuousConditionalAutoregressiveGenerator:
+    """Position-aware Markov generator with a continuous numeric condition.
+
+    Training conditions are divided into equal-frequency bins. At sampling
+    time, transition distributions from the two nearest bin centres are mixed
+    linearly, allowing intermediate numeric conditions while retaining the
+    preceding-base context used by the discrete autoregressive baseline.
+    """
+
+    def __init__(self, order: int = 3, condition_bins: int = 5, smoothing: float = 0.1):
+        if order < 1 or condition_bins < 2 or smoothing <= 0:
+            raise ValueError("order must be positive, condition_bins at least 2, and smoothing positive")
+        self.order = order
+        self.condition_bins = condition_bins
+        self.smoothing = smoothing
+        self.sequence_length: int | None = None
+        self.bin_centres: np.ndarray | None = None
+        self.context_probabilities: dict[tuple[int, int, str], np.ndarray] = {}
+        self.fallback_probabilities: np.ndarray | None = None
+
+    def fit(self, sequences: np.ndarray, conditions: np.ndarray) -> "ContinuousConditionalAutoregressiveGenerator":
+        values = np.asarray(sequences).astype(str)
+        numeric_conditions = np.asarray(conditions, dtype=np.float64)
+        if values.ndim != 1 or numeric_conditions.ndim != 1 or len(values) != len(numeric_conditions) or len(values) == 0:
+            raise ValueError("Expected non-empty matching sequences and numeric conditions")
+        if not np.all(np.isfinite(numeric_conditions)):
+            raise ValueError("Conditions must be finite")
+        self.sequence_length = len(values[0])
+        if any(len(sequence) != self.sequence_length or set(sequence) - set(DNA_ALPHABET) for sequence in values):
+            raise ValueError("Sequences must have a shared length and use only A/C/G/T")
+        edges = np.quantile(numeric_conditions, np.linspace(0.0, 1.0, self.condition_bins + 1))
+        bin_ids = np.digitize(numeric_conditions, edges[1:-1], right=True)
+        self.bin_centres = np.array([numeric_conditions[bin_ids == bin_id].mean() for bin_id in range(self.condition_bins)])
+        base_index = {base: index for index, base in enumerate(DNA_ALPHABET)}
+        fallback_counts = np.full((self.condition_bins, self.sequence_length, len(DNA_ALPHABET)), self.smoothing, dtype=np.float64)
+        context_counts: dict[tuple[int, int, str], np.ndarray] = {}
+        for sequence, bin_id in zip(values, bin_ids):
+            padded = "^" * self.order + sequence
+            for position, base in enumerate(sequence):
+                fallback_counts[bin_id, position, base_index[base]] += 1.0
+                context = padded[position : position + self.order]
+                key = (int(bin_id), position, context)
+                if key not in context_counts:
+                    context_counts[key] = np.full(len(DNA_ALPHABET), self.smoothing, dtype=np.float64)
+                context_counts[key][base_index[base]] += 1.0
+        self.fallback_probabilities = fallback_counts / fallback_counts.sum(axis=2, keepdims=True)
+        self.context_probabilities = {key: counts / counts.sum() for key, counts in context_counts.items()}
+        return self
+
+    def _nearest_bins(self, condition: float) -> tuple[int, int, float]:
+        if self.bin_centres is None:
+            raise RuntimeError("Generator has not been fitted")
+        if condition <= self.bin_centres[0]:
+            return 0, 0, 0.0
+        if condition >= self.bin_centres[-1]:
+            last = len(self.bin_centres) - 1
+            return last, last, 0.0
+        upper = int(np.searchsorted(self.bin_centres, condition, side="right"))
+        lower = upper - 1
+        weight = float((condition - self.bin_centres[lower]) / (self.bin_centres[upper] - self.bin_centres[lower]))
+        return lower, upper, weight
+
+    def sample(self, condition: float, count: int, seed: int) -> np.ndarray:
+        if self.sequence_length is None or self.fallback_probabilities is None:
+            raise RuntimeError("Generator has not been fitted")
+        if count < 1 or not np.isfinite(condition):
+            raise ValueError("count must be positive and condition finite")
+        lower, upper, weight = self._nearest_bins(float(condition))
+        rng = np.random.default_rng(seed)
+        generated = np.empty(count, dtype=f"U{self.sequence_length}")
+        for row in range(count):
+            prefix = "^" * self.order
+            sequence = []
+            for position in range(self.sequence_length):
+                context = prefix[-self.order :]
+                lower_probability = self.context_probabilities.get((lower, position, context), self.fallback_probabilities[lower, position])
+                upper_probability = self.context_probabilities.get((upper, position, context), self.fallback_probabilities[upper, position])
+                probabilities = (1.0 - weight) * lower_probability + weight * upper_probability
+                base = str(rng.choice(DNA_ALPHABET, p=probabilities))
+                sequence.append(base)
+                prefix += base
+            generated[row] = "".join(sequence)
+        return generated

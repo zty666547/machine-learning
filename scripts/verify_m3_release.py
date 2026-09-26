@@ -20,13 +20,14 @@ REQUIRED_REPORTS = (
     "reports/m3_review_2026-09-21.md",
     "reports/m3_vae_width_stability_2026-09-21.md",
     "reports/m3_conditional_generator_comparison_selected.json",
+    "reports/m3_continuous_autoregressive.json",
 )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", required=True)
-    parser.add_argument("--output", default="reports/m3_release_check_2026-09-22.json")
+    parser.add_argument("--output", default="reports/m3_release_check_2026-09-26.json")
     return parser.parse_args()
 
 
@@ -64,6 +65,16 @@ def main() -> None:
     if not ar_kmer_js < vae_kmer_js:
         raise AssertionError("M3 primary baseline conclusion no longer holds")
 
+    continuous_ar = load_json(REPOSITORY_ROOT / "reports/m3_continuous_autoregressive.json")
+    continuous_ar_kmer_js = mean_metric(continuous_ar["per_tertile_group"], "kmer_3_js_divergence")
+    continuous_ar_response = continuous_ar["continuous_response"]["target_vs_generated_gc_pearson"]
+    if continuous_ar["configuration"]["order"] != 3 or continuous_ar["configuration"]["condition_bins"] != 5:
+        raise AssertionError("Continuous autoregressive configuration changed unexpectedly")
+    if not ar_kmer_js < continuous_ar_kmer_js < vae_kmer_js:
+        raise AssertionError("Continuous autoregressive quality ordering no longer holds")
+    if not continuous_ar_response < 0:
+        raise AssertionError("Continuous autoregressive response direction no longer holds")
+
     missing_reports = [report for report in REQUIRED_REPORTS if not (REPOSITORY_ROOT / report).is_file()]
     if missing_reports:
         raise AssertionError(f"Missing frozen M3 evidence: {missing_reports}")
@@ -74,9 +85,11 @@ def main() -> None:
         "model_comparison": {
             "conditional_autoregressive_mean_kmer_3_js": ar_kmer_js,
             "continuous_vae_mean_kmer_3_js": vae_kmer_js,
+            "continuous_autoregressive_mean_kmer_3_js": continuous_ar_kmer_js,
+            "continuous_autoregressive_target_gc_pearson": continuous_ar_response,
             "primary_m3_generator": "conditional_autoregressive",
         },
-        "checks": ["fixed_split", "selected_vae_configuration", "generation_validity_uniqueness_novelty", "primary_baseline_conclusion", "required_reports"],
+        "checks": ["fixed_split", "selected_vae_configuration", "generation_validity_uniqueness_novelty", "primary_baseline_conclusion", "continuous_autoregressive_result", "required_reports"],
     }
     output = Path(args.output)
     if not output.is_absolute():

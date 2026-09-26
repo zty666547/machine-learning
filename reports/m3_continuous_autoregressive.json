@@ -1,0 +1,113 @@
+{
+  "generator": "continuous_condition_autoregressive_markov_interpolation",
+  "configuration": {
+    "order": 3,
+    "condition_bins": 5,
+    "bin_centres": [
+      1.6166918528463214,
+      1.9000575343963388,
+      2.135272516922284,
+      2.4608332172515226,
+      3.2982105658101832
+    ]
+  },
+  "condition_definition": "continuous log10(strength), equal-frequency training bins with interpolation",
+  "training_tertile_boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ],
+  "group_target_values": {
+    "weak": 1.7150321024729949,
+    "medium": 2.1410332430864,
+    "strong": 2.989631217674034
+  },
+  "samples_per_condition": 500,
+  "per_tertile_group": {
+    "weak": {
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_fraction": 1.0,
+      "generated_gc_mean": 0.45524000000000003,
+      "reference_gc_mean": 0.45460512080778936,
+      "generated_gc_std": 0.07261227444447668,
+      "reference_gc_std": 0.0828923863372762,
+      "mean_position_base_l1": 0.061005986296429865,
+      "kmer_3_js_divergence": 0.00034805410272391714,
+      "motif_k": 5.0,
+      "top_reference_motif_mean_abs_frequency_error": 0.00031785305508082596,
+      "top_motif_overlap_fraction": 0.65,
+      "mean_pairwise_hamming_distance": 0.7298358232931726,
+      "mean_nearest_training_similarity": 0.5080800000000001,
+      "max_nearest_training_similarity": 0.6
+    },
+    "medium": {
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_fraction": 1.0,
+      "generated_gc_mean": 0.44420000000000004,
+      "reference_gc_mean": 0.44330447330447337,
+      "generated_gc_std": 0.07574140215232354,
+      "reference_gc_std": 0.08593625574889575,
+      "mean_position_base_l1": 0.05999272727272728,
+      "kmer_3_js_divergence": 0.0004738077775407487,
+      "motif_k": 5.0,
+      "top_reference_motif_mean_abs_frequency_error": 0.00039219838132881614,
+      "top_motif_overlap_fraction": 0.55,
+      "mean_pairwise_hamming_distance": 0.7293840963855421,
+      "mean_nearest_training_similarity": 0.50664,
+      "max_nearest_training_similarity": 0.58
+    },
+    "strong": {
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_fraction": 1.0,
+      "generated_gc_mean": 0.43139999999999995,
+      "reference_gc_mean": 0.42881355932203385,
+      "generated_gc_std": 0.07544295858461544,
+      "reference_gc_std": 0.08808373186366339,
+      "mean_position_base_l1": 0.06736504868373602,
+      "kmer_3_js_divergence": 0.00035759696114960506,
+      "motif_k": 5.0,
+      "top_reference_motif_mean_abs_frequency_error": 0.00042046520014424804,
+      "top_motif_overlap_fraction": 0.65,
+      "mean_pairwise_hamming_distance": 0.7281285140562249,
+      "mean_nearest_training_similarity": 0.5106400000000001,
+      "max_nearest_training_similarity": 0.62
+    }
+  },
+  "continuous_response": {
+    "targets": [
+      {
+        "target_log_strength": 1.7,
+        "generated_gc_mean": 0.45367999999999997
+      },
+      {
+        "target_log_strength": 1.9,
+        "generated_gc_mean": 0.44444000000000006
+      },
+      {
+        "target_log_strength": 2.1,
+        "generated_gc_mean": 0.44424
+      },
+      {
+        "target_log_strength": 2.3,
+        "generated_gc_mean": 0.44451999999999997
+      },
+      {
+        "target_log_strength": 2.5,
+        "generated_gc_mean": 0.43712
+      },
+      {
+        "target_log_strength": 2.7,
+        "generated_gc_mean": 0.4368000000000001
+      },
+      {
+        "target_log_strength": 2.9,
+        "generated_gc_mean": 0.43316
+      }
+    ],
+    "target_vs_generated_gc_pearson": -0.9436194649794671,
+    "gc_response_slope_per_log_strength": -0.014992857142857197
+  },
+  "interpretation_boundary": "Interpolation creates continuous sampling conditions, but GC response is distributional evidence and not experimental expression validation."
+}

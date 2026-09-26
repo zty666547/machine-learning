@@ -194,6 +194,17 @@ KL 权重消融后，后续 VAE 实验优先使用 `beta=0.20`；详见 [M3 VAE 
 
 潜变量维度消融后，后续 VAE 实验固定 `latent_size=16`；网络宽度消融后固定 `hidden_size=128`；详见 [M3 VAE 潜变量维度稳定性报告](reports/m3_vae_latent_stability_2026-09-21.md) 与 [M3 VAE 网络宽度稳定性报告](reports/m3_vae_width_stability_2026-09-21.md)。
 
+## M3 连续条件自回归生成器
+
+连续条件自回归模型将训练强度分箱，并在相邻条件区间的转移概率间插值。它能输入连续强度，同时保留前 3 个碱基的局部上下文：
+
+```bash
+python scripts/evaluate_continuous_autoregressive.py \
+  --data-dir /path/to/course/data
+```
+
+结果见 [M3 连续条件自回归生成器报告](reports/m3_continuous_autoregressive_2026-09-26.md)。
+
 ## M3 生成器统一比较
 
 两种条件生成器使用相同的合法性、新颖性、GC、位置碱基频率、3-mer、候选 motif 和多样性指标比较。当前条件自回归在局部模式保真度上更强；当前配置的复查结论见 [M3 阶段复查记录](reports/m3_review_2026-09-21.md)。

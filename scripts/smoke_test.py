@@ -12,7 +12,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 
 from promoter_ml.data import KmerFeaturizer, PositionKmerFeaturizer
-from promoter_ml.generation import ConditionalAutoregressiveGenerator, ConditionalPositionFrequencyGenerator, PositionFrequencyGenerator
+from promoter_ml.generation import ContinuousConditionalAutoregressiveGenerator, ConditionalAutoregressiveGenerator, ConditionalPositionFrequencyGenerator, PositionFrequencyGenerator
 from promoter_ml.logging_utils import configure_logging
 from promoter_ml.metrics import regression_metrics
 from promoter_ml.models import RidgeStrengthPredictor
@@ -55,6 +55,9 @@ def main() -> None:
     autoregressive_generated = ConditionalAutoregressiveGenerator(order=2).fit(sequences[:150], conditions).sample("weak", 10, seed=9)
     if len(autoregressive_generated) != 10 or any(len(sequence) != 50 for sequence in autoregressive_generated):
         raise AssertionError("Autoregressive generation baseline failed")
+    continuous_generated = ContinuousConditionalAutoregressiveGenerator(order=2, condition_bins=3).fit(sequences[:150], targets[:150]).sample(0.4, 10, seed=10)
+    if len(continuous_generated) != 10 or any(len(sequence) != 50 for sequence in continuous_generated):
+        raise AssertionError("Continuous autoregressive generation failed")
     print("Smoke test passed")
 
 

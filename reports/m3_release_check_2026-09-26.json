@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "data": {
+    "sample_count": 11884,
+    "split_sizes": {
+      "train": 8318,
+      "validation": 1783,
+      "test": 1783
+    }
+  },
+  "selected_vae_configuration": {
+    "hidden_size": 128,
+    "latent_size": 16,
+    "beta": 0.2,
+    "epochs": 120
+  },
+  "model_comparison": {
+    "conditional_autoregressive_mean_kmer_3_js": 0.0003278455325272215,
+    "continuous_vae_mean_kmer_3_js": 0.003758068705476751,
+    "continuous_autoregressive_mean_kmer_3_js": 0.0003931529471380903,
+    "continuous_autoregressive_target_gc_pearson": -0.9436194649794671,
+    "primary_m3_generator": "conditional_autoregressive"
+  },
+  "checks": [
+    "fixed_split",
+    "selected_vae_configuration",
+    "generation_validity_uniqueness_novelty",
+    "primary_baseline_conclusion",
+    "continuous_autoregressive_result",
+    "required_reports"
+  ]
+}
