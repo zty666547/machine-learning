@@ -1,0 +1,124 @@
+{
+  "selection_data": "validation set only; generator fitting uses training set only",
+  "order": 3,
+  "training_tertile_boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ],
+  "group_target_values": {
+    "weak": 1.7150321024729949,
+    "medium": 2.1410332430864,
+    "strong": 2.989631217674034
+  },
+  "samples_per_condition": 250,
+  "trials": [
+    {
+      "condition_bins": 3,
+      "seed": 20260912,
+      "mean_validation_kmer_3_js": 0.0011225017573976972,
+      "mean_validation_top_5mer_error": 0.0005129715812804062,
+      "mean_validation_top_5mer_overlap": 0.5166666666666667,
+      "target_gc_pearson": -0.7601544865720631,
+      "gc_response_slope": -0.012971428571428613
+    },
+    {
+      "condition_bins": 3,
+      "seed": 20260913,
+      "mean_validation_kmer_3_js": 0.0012599931182904086,
+      "mean_validation_top_5mer_error": 0.0005350244127579908,
+      "mean_validation_top_5mer_overlap": 0.5333333333333333,
+      "target_gc_pearson": -0.9444409619116734,
+      "gc_response_slope": -0.018157142857142997
+    },
+    {
+      "condition_bins": 3,
+      "seed": 20260914,
+      "mean_validation_kmer_3_js": 0.0010085219741317781,
+      "mean_validation_top_5mer_error": 0.0005567132717425063,
+      "mean_validation_top_5mer_overlap": 0.5499999999999999,
+      "target_gc_pearson": -0.9530360525286656,
+      "gc_response_slope": -0.023942857142857217
+    },
+    {
+      "condition_bins": 5,
+      "seed": 20260912,
+      "mean_validation_kmer_3_js": 0.00121948483748969,
+      "mean_validation_top_5mer_error": 0.0005554934214775069,
+      "mean_validation_top_5mer_overlap": 0.45,
+      "target_gc_pearson": -0.8628577550407535,
+      "gc_response_slope": -0.014271428571428681
+    },
+    {
+      "condition_bins": 5,
+      "seed": 20260913,
+      "mean_validation_kmer_3_js": 0.0014819646813061412,
+      "mean_validation_top_5mer_error": 0.0005476941177920434,
+      "mean_validation_top_5mer_overlap": 0.5166666666666667,
+      "target_gc_pearson": -0.745380287274302,
+      "gc_response_slope": -0.012385714285714411
+    },
+    {
+      "condition_bins": 5,
+      "seed": 20260914,
+      "mean_validation_kmer_3_js": 0.0010628079452098813,
+      "mean_validation_top_5mer_error": 0.00046811725593364563,
+      "mean_validation_top_5mer_overlap": 0.6166666666666667,
+      "target_gc_pearson": -0.8436334268380424,
+      "gc_response_slope": -0.020642857142857303
+    },
+    {
+      "condition_bins": 7,
+      "seed": 20260912,
+      "mean_validation_kmer_3_js": 0.0012405978826743492,
+      "mean_validation_top_5mer_error": 0.00047757410666285984,
+      "mean_validation_top_5mer_overlap": 0.5666666666666667,
+      "target_gc_pearson": -0.8341957691038975,
+      "gc_response_slope": -0.016142857142857132
+    },
+    {
+      "condition_bins": 7,
+      "seed": 20260913,
+      "mean_validation_kmer_3_js": 0.0013443729491914415,
+      "mean_validation_top_5mer_error": 0.000518124478349749,
+      "mean_validation_top_5mer_overlap": 0.5166666666666667,
+      "target_gc_pearson": -0.8561139933411094,
+      "gc_response_slope": -0.014828571428571517
+    },
+    {
+      "condition_bins": 7,
+      "seed": 20260914,
+      "mean_validation_kmer_3_js": 0.001190250499507982,
+      "mean_validation_top_5mer_error": 0.0005972586146260093,
+      "mean_validation_top_5mer_overlap": 0.45,
+      "target_gc_pearson": -0.9750552000855156,
+      "gc_response_slope": -0.02061428571428581
+    }
+  ],
+  "summary": [
+    {
+      "condition_bins": 3,
+      "mean_validation_kmer_3_js": 0.0011303389499399614,
+      "mean_validation_top_5mer_error": 0.0005349030885936345,
+      "mean_validation_top_5mer_overlap": 0.5333333333333333,
+      "mean_target_gc_pearson": -0.885877167004134,
+      "std_target_gc_pearson": 0.08896858313265063
+    },
+    {
+      "condition_bins": 5,
+      "mean_validation_kmer_3_js": 0.0012547524880019041,
+      "mean_validation_top_5mer_error": 0.000523768265067732,
+      "mean_validation_top_5mer_overlap": 0.5277777777777778,
+      "mean_target_gc_pearson": -0.8172904897176992,
+      "std_target_gc_pearson": 0.05145031007550994
+    },
+    {
+      "condition_bins": 7,
+      "mean_validation_kmer_3_js": 0.0012584071104579243,
+      "mean_validation_top_5mer_error": 0.0005309857332128727,
+      "mean_validation_top_5mer_overlap": 0.5111111111111112,
+      "mean_target_gc_pearson": -0.888454987510174,
+      "std_target_gc_pearson": 0.061885915209622736
+    }
+  ],
+  "selection_rule": "lowest mean validation 3-mer JS, then lowest validation 5-mer error, then strongest continuous GC response"
+}

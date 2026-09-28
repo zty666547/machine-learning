@@ -37,7 +37,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data-dir", required=True)
     parser.add_argument("--output", default="reports/m3_continuous_autoregressive.json")
     parser.add_argument("--order", type=int, default=3)
-    parser.add_argument("--condition-bins", type=int, default=5)
+    parser.add_argument("--condition-bins", type=int, default=3)
     parser.add_argument("--samples-per-condition", type=int, default=500)
     return parser.parse_args()
 

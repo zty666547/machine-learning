@@ -166,7 +166,7 @@ class ContinuousConditionalAutoregressiveGenerator:
     preceding-base context used by the discrete autoregressive baseline.
     """
 
-    def __init__(self, order: int = 3, condition_bins: int = 5, smoothing: float = 0.1):
+    def __init__(self, order: int = 3, condition_bins: int = 3, smoothing: float = 0.1):
         if order < 1 or condition_bins < 2 or smoothing <= 0:
             raise ValueError("order must be positive, condition_bins at least 2, and smoothing positive")
         self.order = order

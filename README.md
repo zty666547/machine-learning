@@ -196,7 +196,7 @@ KL 权重消融后，后续 VAE 实验优先使用 `beta=0.20`；详见 [M3 VAE 
 
 ## M3 连续条件自回归生成器
 
-连续条件自回归模型将训练强度分箱，并在相邻条件区间的转移概率间插值。它能输入连续强度，同时保留前 3 个碱基的局部上下文：
+连续条件自回归模型将训练强度分为验证集选定的 3 个区间，并在相邻条件区间的转移概率间插值。它能输入连续强度，同时保留前 3 个碱基的局部上下文：
 
 ```bash
 python scripts/evaluate_continuous_autoregressive.py \
@@ -204,6 +204,8 @@ python scripts/evaluate_continuous_autoregressive.py \
 ```
 
 结果见 [M3 连续条件自回归生成器报告](reports/m3_continuous_autoregressive_2026-09-26.md)。
+
+区间数的验证集选择记录见 [M3 连续条件自回归区间数消融](reports/m3_continuous_autoregressive_bin_tuning_2026-09-28.md)。
 
 ## M3 生成器统一比较
 

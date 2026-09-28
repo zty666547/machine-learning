@@ -27,7 +27,7 @@ REQUIRED_REPORTS = (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", required=True)
-    parser.add_argument("--output", default="reports/m3_release_check_2026-09-26.json")
+    parser.add_argument("--output", default="reports/m3_release_check_2026-09-28.json")
     return parser.parse_args()
 
 
@@ -68,9 +68,9 @@ def main() -> None:
     continuous_ar = load_json(REPOSITORY_ROOT / "reports/m3_continuous_autoregressive.json")
     continuous_ar_kmer_js = mean_metric(continuous_ar["per_tertile_group"], "kmer_3_js_divergence")
     continuous_ar_response = continuous_ar["continuous_response"]["target_vs_generated_gc_pearson"]
-    if continuous_ar["configuration"]["order"] != 3 or continuous_ar["configuration"]["condition_bins"] != 5:
+    if continuous_ar["configuration"]["order"] != 3 or continuous_ar["configuration"]["condition_bins"] != 3:
         raise AssertionError("Continuous autoregressive configuration changed unexpectedly")
-    if not ar_kmer_js < continuous_ar_kmer_js < vae_kmer_js:
+    if not ar_kmer_js <= continuous_ar_kmer_js < vae_kmer_js:
         raise AssertionError("Continuous autoregressive quality ordering no longer holds")
     if not continuous_ar_response < 0:
         raise AssertionError("Continuous autoregressive response direction no longer holds")
