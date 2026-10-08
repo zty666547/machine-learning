@@ -249,6 +249,19 @@ python scripts/extract_frozen_cnn_candidate_motifs.py \
 
 结果说明见 [冻结 CNN 候选局部模式提取](reports/m2_frozen_cnn_candidate_motifs_2026-09-24.md)。
 
+## M3 候选筛选验证器
+
+融合验证器用于对生成候选做相对排序，不作为真实表达强度的最终证明。候选文件每行放一条 50 bp 序列：
+
+```bash
+python scripts/score_m3_screening_evaluator.py \
+  --data-dir /path/to/course/data \
+  --candidate-file candidates.txt \
+  --output outputs/m3_screening_scores.csv
+```
+
+权重选择过程与使用边界见 [M3 候选筛选验证器报告](reports/m3_screening_evaluator_2026-10-08.md)。
+
 ## M3 汇报图表
 
 ```bash

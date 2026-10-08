@@ -1,0 +1,7 @@
+[screening_evaluator]
+motif_cnn_weight = 0.5
+global_kmer_ridge_weight = 0.4
+position_ridge_weight = 0.1
+selection_metric = "validation_pearson"
+selection_value = 0.28657419371048837
+interpretation = "relative candidate screening only; not an independent measurement of real expression strength"

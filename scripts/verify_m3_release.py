@@ -7,6 +7,7 @@ import argparse
 import json
 from pathlib import Path
 import sys
+import tomllib
 
 import numpy as np
 
@@ -21,13 +22,14 @@ REQUIRED_REPORTS = (
     "reports/m3_vae_width_stability_2026-09-21.md",
     "reports/m3_conditional_generator_comparison_selected.json",
     "reports/m3_continuous_autoregressive.json",
+    "reports/m3_screening_evaluator_tuning.json",
 )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", required=True)
-    parser.add_argument("--output", default="reports/m3_release_check_2026-09-28.json")
+    parser.add_argument("--output", default="reports/m3_release_check_2026-10-08.json")
     return parser.parse_args()
 
 
@@ -75,6 +77,17 @@ def main() -> None:
     if not continuous_ar_response < 0:
         raise AssertionError("Continuous autoregressive response direction no longer holds")
 
+    screening_tuning = load_json(REPOSITORY_ROOT / "reports/m3_screening_evaluator_tuning.json")
+    with (REPOSITORY_ROOT / "configs/m3_screening_evaluator.toml").open("rb") as handle:
+        screening_config = tomllib.load(handle)["screening_evaluator"]
+    expected_weights = {"motif_cnn": 0.5, "global_kmer_ridge": 0.4, "position_ridge": 0.1}
+    if screening_tuning["best_blend"]["weights"] != expected_weights:
+        raise AssertionError("Selected screening blend weights differ from the frozen validation result")
+    if screening_tuning["best_blend"]["pearson"] <= screening_tuning["base_validation_metrics"]["motif_cnn"]["pearson"]:
+        raise AssertionError("Screening blend does not improve validation ranking over motif CNN")
+    if {key: float(screening_config[f"{key}_weight"]) for key in expected_weights} != expected_weights:
+        raise AssertionError("Screening evaluator configuration differs from frozen blend weights")
+
     missing_reports = [report for report in REQUIRED_REPORTS if not (REPOSITORY_ROOT / report).is_file()]
     if missing_reports:
         raise AssertionError(f"Missing frozen M3 evidence: {missing_reports}")
@@ -87,9 +100,10 @@ def main() -> None:
             "continuous_vae_mean_kmer_3_js": vae_kmer_js,
             "continuous_autoregressive_mean_kmer_3_js": continuous_ar_kmer_js,
             "continuous_autoregressive_target_gc_pearson": continuous_ar_response,
+            "screening_evaluator_validation_pearson": screening_tuning["best_blend"]["pearson"],
             "primary_m3_generator": "conditional_autoregressive",
         },
-        "checks": ["fixed_split", "selected_vae_configuration", "generation_validity_uniqueness_novelty", "primary_baseline_conclusion", "continuous_autoregressive_result", "required_reports"],
+        "checks": ["fixed_split", "selected_vae_configuration", "generation_validity_uniqueness_novelty", "primary_baseline_conclusion", "continuous_autoregressive_result", "screening_evaluator_validation_result", "required_reports"],
     }
     output = Path(args.output)
     if not output.is_absolute():

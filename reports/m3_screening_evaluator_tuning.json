@@ -1,0 +1,148 @@
+{
+  "selection_data": "validation set only; the test set is not loaded or evaluated",
+  "base_validation_metrics": {
+    "motif_cnn": {
+      "mae": 0.43173920868148846,
+      "rmse": 0.5825788313465582,
+      "pearson": 0.2606914358136103,
+      "spearman": 0.2337631248996671
+    },
+    "global_kmer_ridge": {
+      "mae": 0.44582514722008576,
+      "rmse": 0.5820367564669006,
+      "pearson": 0.23260689297312678,
+      "spearman": 0.21919576801037294
+    },
+    "position_ridge": {
+      "mae": 0.46380759855240816,
+      "rmse": 0.6019708693775572,
+      "pearson": 0.21681919913248582,
+      "spearman": 0.2075152095420778
+    }
+  },
+  "blend_weight_grid_step": 0.1,
+  "best_blend": {
+    "weights": {
+      "motif_cnn": 0.5,
+      "global_kmer_ridge": 0.4,
+      "position_ridge": 0.1
+    },
+    "mae": 0.4315520392907853,
+    "rmse": 0.5736877693703487,
+    "pearson": 0.28657419371048837,
+    "spearman": 0.26276663115338883
+  },
+  "top_blends": [
+    {
+      "weights": {
+        "motif_cnn": 0.5,
+        "global_kmer_ridge": 0.4,
+        "position_ridge": 0.1
+      },
+      "mae": 0.4315520392907853,
+      "rmse": 0.5736877693703487,
+      "pearson": 0.28657419371048837,
+      "spearman": 0.26276663115338883
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.6,
+        "global_kmer_ridge": 0.3,
+        "position_ridge": 0.1
+      },
+      "mae": 0.4305565106970064,
+      "rmse": 0.5742468130975422,
+      "pearson": 0.28599431578154616,
+      "spearman": 0.2610253142035774
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.5,
+        "global_kmer_ridge": 0.3,
+        "position_ridge": 0.2
+      },
+      "mae": 0.4317503363457091,
+      "rmse": 0.5736835867054604,
+      "pearson": 0.2859667800472351,
+      "spearman": 0.2634981813259975
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.6,
+        "global_kmer_ridge": 0.2,
+        "position_ridge": 0.2
+      },
+      "mae": 0.4307781855445461,
+      "rmse": 0.5744339889097305,
+      "pearson": 0.28462635917343837,
+      "spearman": 0.26172888880722744
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.4,
+        "global_kmer_ridge": 0.4,
+        "position_ridge": 0.2
+      },
+      "mae": 0.4331349069791307,
+      "rmse": 0.5735581300234865,
+      "pearson": 0.2844726566251636,
+      "spearman": 0.26320454423297823
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.4,
+        "global_kmer_ridge": 0.5,
+        "position_ridge": 0.1
+      },
+      "mae": 0.4330394897114712,
+      "rmse": 0.5737538949043132,
+      "pearson": 0.28396660470925555,
+      "spearman": 0.2609396197718476
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.7,
+        "global_kmer_ridge": 0.2,
+        "position_ridge": 0.1
+      },
+      "mae": 0.43001596168805795,
+      "rmse": 0.5754292039865034,
+      "pearson": 0.28265972793454464,
+      "spearman": 0.25755235304031027
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.6,
+        "global_kmer_ridge": 0.4,
+        "position_ridge": 0.0
+      },
+      "mae": 0.4311981122127512,
+      "rmse": 0.5749209696538075,
+      "pearson": 0.2826353027999364,
+      "spearman": 0.2572222425968196
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.5,
+        "global_kmer_ridge": 0.5,
+        "position_ridge": 0.0
+      },
+      "mae": 0.43219387423660843,
+      "rmse": 0.5745538965598118,
+      "pearson": 0.28207848531509505,
+      "spearman": 0.25729766834662915
+    },
+    {
+      "weights": {
+        "motif_cnn": 0.5,
+        "global_kmer_ridge": 0.2,
+        "position_ridge": 0.3
+      },
+      "mae": 0.4325763470262297,
+      "rmse": 0.5745413673900324,
+      "pearson": 0.28151176438895065,
+      "spearman": 0.2601154831576152
+    }
+  ],
+  "interpretation_boundary": "The selected blend is an M3 screening score for relative candidate prioritization. It is not an independently validated measurement of real expression strength."
+}
