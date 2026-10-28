@@ -1,0 +1,155 @@
+{
+  "protocol": "Similarity-cluster OOF folds within training; CNN early stopping within each fold. Affine calibration fitted on OOF predictions only. Fixed validation is development data, also used for M3 selection and final CNN early stopping. No test metrics computed.",
+  "fold_seed": 20261028,
+  "folds": [
+    {
+      "train_rows": 4436,
+      "early_stop_rows": 1109,
+      "holdout_rows": 2773
+    },
+    {
+      "train_rows": 4436,
+      "early_stop_rows": 1109,
+      "holdout_rows": 2773
+    },
+    {
+      "train_rows": 4436,
+      "early_stop_rows": 1110,
+      "holdout_rows": 2772
+    }
+  ],
+  "calibration": {
+    "intercept": -0.4115705632994313,
+    "slope": 1.2054380301366077
+  },
+  "training_oof_uncalibrated": {
+    "mae": 0.4560649796881727,
+    "rmse": 0.618895233353514,
+    "pearson": 0.24926139368470301,
+    "spearman": 0.23036759130952722,
+    "target_std": 0.6365718556554173,
+    "prediction_std": 0.13163081299429807,
+    "prediction_to_target_std_ratio": 0.20678076139381057,
+    "residual_vs_target_pearson": -0.9784292678805732,
+    "by_true_strength_group": {
+      "weak": {
+        "sample_count": 2773,
+        "mae": 0.4891151428733099,
+        "rmse": 0.5293787900666658,
+        "pearson": 0.04386892667775114,
+        "spearman": 0.05480303171354116,
+        "mean_true_log_strength": 1.7150321024729949,
+        "mean_predicted_log_strength": 2.204108491501268,
+        "mean_signed_error": 0.4890763890282728
+      },
+      "medium": {
+        "sample_count": 2772,
+        "mae": 0.158328882615586,
+        "rmse": 0.19577490678221424,
+        "pearson": 0.07001666668093193,
+        "spearman": 0.07238039476333277,
+        "mean_true_log_strength": 2.1410332430864,
+        "mean_predicted_log_strength": 2.2285407515967064,
+        "mean_signed_error": 0.0875075085103068
+      },
+      "strong": {
+        "sample_count": 2773,
+        "mae": 0.7206435439048424,
+        "rmse": 0.9112628078871914,
+        "pearson": 0.22121007341278906,
+        "spearman": 0.22295580513997798,
+        "mean_true_log_strength": 2.989631217674034,
+        "mean_predicted_log_strength": 2.270687045548551,
+        "mean_signed_error": -0.7189441721254826
+      }
+    }
+  },
+  "validation_baseline": {
+    "mae": 0.4315520392907853,
+    "rmse": 0.5736877693703487,
+    "pearson": 0.28657419371048837,
+    "spearman": 0.26276663115338883,
+    "target_std": 0.5976878101073861,
+    "prediction_std": 0.161187151550106,
+    "prediction_to_target_std_ratio": 0.26968452229458323,
+    "residual_vs_target_pearson": -0.962960463704153,
+    "by_true_strength_group": {
+      "weak": {
+        "sample_count": 575,
+        "mae": 0.47294698445250005,
+        "rmse": 0.5197434124581065,
+        "pearson": 0.0434365461241571,
+        "spearman": 0.06823076823623242,
+        "mean_true_log_strength": 1.7201403656309229,
+        "mean_predicted_log_strength": 2.1930240210385077,
+        "mean_signed_error": 0.47288365540758487
+      },
+      "medium": {
+        "sample_count": 611,
+        "mae": 0.1723849773051623,
+        "rmse": 0.2136805808980824,
+        "pearson": 0.06725571466627524,
+        "spearman": 0.06496117979092653,
+        "mean_true_log_strength": 2.1367279317377816,
+        "mean_predicted_log_strength": 2.2308236653972098,
+        "mean_signed_error": 0.09409573365942776
+      },
+      "strong": {
+        "sample_count": 597,
+        "mae": 0.6569272175240007,
+        "rmse": 0.8222128655183177,
+        "pearson": 0.24460404602955327,
+        "spearman": 0.246220824692273,
+        "mean_true_log_strength": 2.940783133919647,
+        "mean_predicted_log_strength": 2.2889600221276614,
+        "mean_signed_error": -0.6518231117919852
+      }
+    }
+  },
+  "validation_calibrated": {
+    "mae": 0.43972407886800247,
+    "rmse": 0.5732710314685762,
+    "pearson": 0.28657419371048837,
+    "spearman": 0.26276663115338883,
+    "target_std": 0.5976878101073861,
+    "prediction_std": 0.19430112244789063,
+    "prediction_to_target_std_ratio": 0.32508797931311445,
+    "residual_vs_target_pearson": -0.9457739240946562,
+    "by_true_strength_group": {
+      "weak": {
+        "sample_count": 575,
+        "mae": 0.5119708152799217,
+        "rmse": 0.5643065230833747,
+        "pearson": 0.04343654612415707,
+        "spearman": 0.06823076823623242,
+        "mean_true_log_strength": 1.7201403656309229,
+        "mean_predicted_log_strength": 2.2319839926634897,
+        "mean_signed_error": 0.511843627032567
+      },
+      "medium": {
+        "sample_count": 611,
+        "mae": 0.20716220989684087,
+        "rmse": 0.2573194680606433,
+        "pearson": 0.06725571466627522,
+        "spearman": 0.06496117979092653,
+        "mean_true_log_strength": 2.1367279317377816,
+        "mean_predicted_log_strength": 2.2775491214991077,
+        "mean_signed_error": 0.14082118976132593
+      },
+      "strong": {
+        "sample_count": 597,
+        "mae": 0.6081552823931717,
+        "rmse": 0.7791290771677917,
+        "pearson": 0.24460404602955327,
+        "spearman": 0.246220824692273,
+        "mean_true_log_strength": 2.940783133919647,
+        "mean_predicted_log_strength": 2.347628896835583,
+        "mean_signed_error": -0.5931542370840638
+      }
+    }
+  },
+  "training_tertile_boundaries": [
+    1.9322538532478437,
+    2.3830310134780084
+  ]
+}
