@@ -1,0 +1,237 @@
+{
+  "model_seeds": [
+    20260912,
+    20260913,
+    20260914
+  ],
+  "fold_seed": 20261029,
+  "selection_rule": "Lowest mean training OOF MAE across seeds; validation not used for selection.",
+  "selected_bins": 5,
+  "variants": {
+    "5": {
+      "parameter_count": 11297,
+      "training_oof": {
+        "mae": {
+          "mean": 0.46049735456047564,
+          "std_population": 0.0007711883087133162
+        },
+        "rmse": {
+          "mean": 0.6290690303151664,
+          "std_population": 0.0016583223770105454
+        },
+        "pearson": {
+          "mean": 0.19842418009120355,
+          "std_population": 0.006843087665796958
+        },
+        "spearman": {
+          "mean": 0.17742781173141817,
+          "std_population": 0.0047103758108482975
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.24708040722241753,
+          "std_population": 0.01921425653602897
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.46673508495509686,
+            "std_population": 0.009854139447569464
+          },
+          "medium": {
+            "mean": 0.16668448404389147,
+            "std_population": 0.004881193681221641
+          },
+          "strong": {
+            "mean": 0.7479665398066664,
+            "std_population": 0.005681924683901871
+          }
+        }
+      },
+      "validation": {
+        "mae": {
+          "mean": 0.43717568696483405,
+          "std_population": 0.0012271025282014323
+        },
+        "rmse": {
+          "mean": 0.5928159713731772,
+          "std_population": 0.0036187009422141646
+        },
+        "pearson": {
+          "mean": 0.2224552356959472,
+          "std_population": 0.005568507788275553
+        },
+        "spearman": {
+          "mean": 0.19248838885490674,
+          "std_population": 0.00282749995581247
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.286562986991237,
+          "std_population": 0.013345981979215084
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.4191006169476362,
+            "std_population": 0.02261859729296394
+          },
+          "medium": {
+            "mean": 0.16754867477013002,
+            "std_population": 0.006332645963354591
+          },
+          "strong": {
+            "mean": 0.730534597703281,
+            "std_population": 0.02448174997862733
+          }
+        }
+      }
+    },
+    "10": {
+      "parameter_count": 21537,
+      "training_oof": {
+        "mae": {
+          "mean": 0.46091369591222003,
+          "std_population": 0.0009604688496545901
+        },
+        "rmse": {
+          "mean": 0.6320086604280547,
+          "std_population": 0.0020125086326310227
+        },
+        "pearson": {
+          "mean": 0.17454353270570433,
+          "std_population": 0.005255859452703776
+        },
+        "spearman": {
+          "mean": 0.16032201140528757,
+          "std_population": 0.006624255622106922
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.21362613846409764,
+          "std_population": 0.005894861904141354
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.4699533974147773,
+            "std_population": 0.01158086371888034
+          },
+          "medium": {
+            "mean": 0.15433448493540106,
+            "std_population": 0.0041884645126428815
+          },
+          "strong": {
+            "mean": 0.758342646709606,
+            "std_population": 0.013074382607653881
+          }
+        }
+      },
+      "validation": {
+        "mae": {
+          "mean": 0.4374997430591152,
+          "std_population": 0.0020186817562228595
+        },
+        "rmse": {
+          "mean": 0.5918405501863009,
+          "std_population": 0.0027218458720523267
+        },
+        "pearson": {
+          "mean": 0.2099183594661663,
+          "std_population": 0.006613011499557686
+        },
+        "spearman": {
+          "mean": 0.18669807484008474,
+          "std_population": 0.010534782692511535
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.26802618035557707,
+          "std_population": 0.018645384161840032
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.43748070658707167,
+            "std_population": 0.013181333723875326
+          },
+          "medium": {
+            "mean": 0.1625060729976389,
+            "std_population": 0.007686838403761389
+          },
+          "strong": {
+            "mean": 0.7189605108631136,
+            "std_population": 0.015266129570531563
+          }
+        }
+      }
+    },
+    "20": {
+      "parameter_count": 42017,
+      "training_oof": {
+        "mae": {
+          "mean": 0.465540551497845,
+          "std_population": 0.0005988667693329519
+        },
+        "rmse": {
+          "mean": 0.6318720061191407,
+          "std_population": 0.002449741302270668
+        },
+        "pearson": {
+          "mean": 0.16395068564616136,
+          "std_population": 0.011648077178925171
+        },
+        "spearman": {
+          "mean": 0.15070500173810733,
+          "std_population": 0.011855539646875489
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.23272959606589227,
+          "std_population": 0.009045870317519212
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.49132181963798277,
+            "std_population": 0.010739409225566595
+          },
+          "medium": {
+            "mean": 0.16854182983047625,
+            "std_population": 0.002188186697655937
+          },
+          "strong": {
+            "mean": 0.7366509012668118,
+            "std_population": 0.010913298878452507
+          }
+        }
+      },
+      "validation": {
+        "mae": {
+          "mean": 0.44230034296688947,
+          "std_population": 0.0035202006071372014
+        },
+        "rmse": {
+          "mean": 0.5948925667010386,
+          "std_population": 0.0024558086469103017
+        },
+        "pearson": {
+          "mean": 0.1872384451636695,
+          "std_population": 0.01349926292869259
+        },
+        "spearman": {
+          "mean": 0.17153853929859086,
+          "std_population": 0.011824570726582927
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.27493810008950575,
+          "std_population": 0.035201211581396795
+        },
+        "group_mae": {
+          "weak": {
+            "mean": 0.45323436390857647,
+            "std_population": 0.03027732685413721
+          },
+          "medium": {
+            "mean": 0.17153686063422766,
+            "std_population": 0.015539032414063248
+          },
+          "strong": {
+            "mean": 0.7088822955025451,
+            "std_population": 0.03330113950919889
+          }
+        }
+      }
+    }
+  }
+}
