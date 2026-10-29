@@ -1,0 +1,44 @@
+{
+  "upstream_repository": "https://github.com/wangxinglong1990/Promoter_design",
+  "upstream_commit": "56c1b331bfbca0665b2c3f6b02345de794fe25df",
+  "upstream_directory": "PromoS_and_PromoA_strength_prediction/PromoA_train",
+  "cape_sequence_source": {
+    "repository": "https://github.com/BobYHY/CAPE",
+    "commit": "7a9a0e903b46813a62b234e0a062e22def6dff44",
+    "path": "CAPE_Final/data/Ecoli_seq.npy",
+    "git_blob_sha1": "14cf8fb3979f8824cf612870bae7cd46d875a347",
+    "matches_local_sequence": true,
+    "scope": "Sequence identity only; CAPE label file was not compared."
+  },
+  "scope": "Source identity and integrity audit, not a model performance experiment.",
+  "sample_count": 11884,
+  "invalid_sequences": 0,
+  "strength_min": 8.67,
+  "strength_max": 2755441.06,
+  "arrays": {
+    "promoter.npy": {
+      "bytes": 2376928,
+      "sha256": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+      "git_blob_sha1": "14cf8fb3979f8824cf612870bae7cd46d875a347",
+      "upstream_git_blob_sha1": "14cf8fb3979f8824cf612870bae7cd46d875a347",
+      "matches_pinned_upstream": true
+    },
+    "gene_expression.npy": {
+      "bytes": 475488,
+      "sha256": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+      "git_blob_sha1": "264a60dd2cf439b711a24413fc10383b9f8cb598",
+      "upstream_git_blob_sha1": "264a60dd2cf439b711a24413fc10383b9f8cb598",
+      "matches_pinned_upstream": true
+    }
+  },
+  "supplementary_text_comparison": {
+    "rows": 11884,
+    "sequence_mismatches": 0,
+    "strength_mismatches": 0,
+    "header": [
+      "strength",
+      "promoter"
+    ]
+  },
+  "interpretation": "Byte identity establishes a data link; biological meaning and sequence position come from cited literature, not from a hash."
+}

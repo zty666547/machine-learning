@@ -4,6 +4,8 @@
 
 项目阶段性进展与关键实验结论见 [更新日志](CHANGELOG.md)。
 
+大肠杆菌序列与强度数组已逐字节匹配公开 PromoA 数据；关于来源、TSS 文献依据和标签解释边界，见 [数据来源与标签核验](reports/m4_ecoli_provenance_2026-10-29.md)。
+
 M4 首轮自有强度预测器诊断及训练集内校准结果见 [校准实验记录](reports/m4_strength_predictor_calibration_2026-10-28.md)。该校准未改善总体 MAE，不替换当前筛选器。
 
 位置 3-mer 岭回归的训练集内选型与验证集比较见 [位置 3-mer 实验](reports/m4_position_trimer_2026-10-28.md)；其总体表现未超过 M3 融合筛选器。
