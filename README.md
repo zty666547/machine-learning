@@ -8,6 +8,8 @@
 
 M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布，并探索假定 TSS 对齐下的 σ70 候选序列，见 [生成序列结构分析](reports/m4_structure_analysis_2026-10-30.md)。该分析不构成启动子功能验证。
 
+在固定融合筛选器下，两个生成器在五个目标上的响应、真实验证组误差与局限见 [M4 条件响应诊断](reports/m4_condition_response_2026-10-30.md)；筛选分数不是生成序列的实测强度。
+
 M4 首轮自有强度预测器诊断及训练集内校准结果见 [校准实验记录](reports/m4_strength_predictor_calibration_2026-10-28.md)。该校准未改善总体 MAE，不替换当前筛选器。
 
 位置 3-mer 岭回归的训练集内选型与验证集比较见 [位置 3-mer 实验](reports/m4_position_trimer_2026-10-28.md)；其总体表现未超过 M3 融合筛选器。
