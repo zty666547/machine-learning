@@ -1,0 +1,91 @@
+{
+  "source": {
+    "repository": "https://github.com/KosuriLab/ecoli_promoter_mpra",
+    "commit": "484abdb6ba2d398501009ee6eb25ca7f190d3b4c",
+    "mpra_git_blob_sha1": "f8ea0e51fd7da4b68ca0c29bcf1250a199a36dc3",
+    "genome_git_blob_sha1": "9cf442042b81aaa4854e2b7e24d051d44d06ae2e",
+    "mpra_sha256": "e2db6780091fae005f566137f42cc44ef39f3b6545eefb9f7c91f0c1b01ffd2c",
+    "genome_sha256": "73c7f2fe4d16bfb9856172d53a77f2651ea0c597d3c71c1196e58bc7ec35c8fe"
+  },
+  "course": {
+    "sequence_sha256": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength_sha256": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split_sha256": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439",
+    "rows": 11884,
+    "unique_sequences": 11884
+  },
+  "external": {
+    "all_rows": 17767,
+    "category_counts": {
+      "tss": 17189,
+      "pos_control": 96,
+      "neg_control": 482
+    },
+    "tss_150bp_validated_rows": 17142,
+    "unique_tss_windows_50bp": 17013,
+    "tss_strands": {
+      "+": 8476,
+      "-": 8713
+    },
+    "scaled_expression_min": -0.637699192694635,
+    "scaled_expression_max": 123.240441500812,
+    "scaled_expression_median": 0.0275535697457046,
+    "counts": {
+      "tss_rows": 17142,
+      "exact_forward": 4918,
+      "exact_either_strand": 4944,
+      "within_5_mismatches_either_strand": 4954,
+      "no_match_within_5_either_strand": 12188,
+      "exact_within_tss_shift5_either_strand": 10869,
+      "no_aligned_90pct_or_shift5_exact": 6264,
+      "positive_scaled_expression": 10684,
+      "negative_scaled_expression": 6458,
+      "active": 2652,
+      "genome_interval_sequence_mismatch": 45,
+      "genome_interval_out_of_bounds": 2
+    }
+  },
+  "overlap": {
+    "definition": "Aligned Hamming distance of 50 bp TSS-upstream windows, query in both forward and reverse-complement orientations. Separately, check exact matches with the 50 bp window shifted from -5 to +5 bases. No gaps or near matches at shifted positions.",
+    "counts_by_course_split": {
+      "train": {
+        "exact": 3487,
+        "within_5": 3493,
+        "exact_shift5": 7605
+      },
+      "validation": {
+        "exact": 725,
+        "within_5": 727,
+        "exact_shift5": 1688
+      },
+      "test": {
+        "exact": 734,
+        "within_5": 736,
+        "exact_shift5": 1674
+      }
+    },
+    "nearest_exact_shift_counts": {
+      "-5": 29,
+      "-4": 24,
+      "-3": 50,
+      "-2": 94,
+      "-1": 5421,
+      "0": 4944,
+      "1": 152,
+      "2": 54,
+      "3": 44,
+      "4": 37,
+      "5": 20
+    },
+    "candidate_after_combined_screen": {
+      "rows": 6264,
+      "active": 881,
+      "inactive": 5383,
+      "positive_scaled_expression": 3738,
+      "negative_scaled_expression": 2526,
+      "unique_windows_50bp": 6227
+    },
+    "split_counts_can_overlap": true
+  },
+  "limitations": "Rows whose interval crosses linear FASTA bounds or whose sequence differs from the declared genomic interval are excluded from overlap analysis and retained in the row audit. Different experiment and reporter context; scaled MPRA values may be negative and are not comparable to course log10 labels. Sequence non-match at 90% aligned identity is not proof of genomic independence. Rows and sequences may repeat. Test split used only for overlap audit, not predictive evaluation."
+}
