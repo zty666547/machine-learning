@@ -1,0 +1,114 @@
+{
+  "protocol_path": "configs/m4_external_eval_protocol_2026-11-03.toml",
+  "protocol_sha256": "5d2ced6697e38269c60e44f4699f0605875db16d5dfc2f7c42a7f4c188d3d05b",
+  "candidate_csv_sha256": "88f3db0beb3974686263adfb2a036158521c425d25de6c843338cd7e19ffc4a0",
+  "input_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "model": {
+    "seed": 20260912,
+    "weights": {
+      "motif_cnn": 0.5,
+      "global_kmer_ridge": 0.4,
+      "position_ridge": 0.1
+    },
+    "development_validation": {
+      "mae": 0.4315520392907853,
+      "rmse": 0.5736877693703487,
+      "pearson": 0.28657419371048837,
+      "spearman": 0.26276663115338883
+    }
+  },
+  "record_level_primary": {
+    "blend": {
+      "count": 1552,
+      "active": 97,
+      "inactive": 1455,
+      "active_fraction": 0.0625,
+      "spearman": 0.136006926063942,
+      "auroc": 0.7887129344244872,
+      "average_precision": 0.24950051025043046
+    },
+    "components": {
+      "motif_cnn": {
+        "count": 1552,
+        "active": 97,
+        "inactive": 1455,
+        "active_fraction": 0.0625,
+        "spearman": 0.10205230030134585,
+        "auroc": 0.7482127041485103,
+        "average_precision": 0.19523887327961956
+      },
+      "global_kmer_ridge": {
+        "count": 1552,
+        "active": 97,
+        "inactive": 1455,
+        "active_fraction": 0.0625,
+        "spearman": 0.1636397652585168,
+        "auroc": 0.7774400396783222,
+        "average_precision": 0.2301380863566735
+      },
+      "position_ridge": {
+        "count": 1552,
+        "active": 97,
+        "inactive": 1455,
+        "active_fraction": 0.0625,
+        "spearman": 0.06802155219986254,
+        "auroc": 0.6788110674177206,
+        "average_precision": 0.1291866421913157
+      }
+    }
+  },
+  "unique_50bp_median_sensitivity": {
+    "blend": {
+      "count": 1541,
+      "active": 97,
+      "inactive": 1444,
+      "active_fraction": 0.06294613887086307,
+      "spearman": 0.13492517535725604,
+      "auroc": 0.7872747522631864,
+      "average_precision": 0.24951299298762947
+    },
+    "components": {
+      "motif_cnn": {
+        "count": 1541,
+        "active": 97,
+        "inactive": 1444,
+        "active_fraction": 0.06294613887086307,
+        "spearman": 0.10008751311888837,
+        "auroc": 0.7471014078875975,
+        "average_precision": 0.195353645030298
+      },
+      "global_kmer_ridge": {
+        "count": 1541,
+        "active": 97,
+        "inactive": 1444,
+        "active_fraction": 0.06294613887086307,
+        "spearman": 0.1634675978672506,
+        "auroc": 0.7759945169489105,
+        "average_precision": 0.23015472579128687
+      },
+      "position_ridge": {
+        "count": 1541,
+        "active": 97,
+        "inactive": 1444,
+        "active_fraction": 0.06294613887086307,
+        "spearman": 0.06631463976088357,
+        "auroc": 0.67663563412057,
+        "average_precision": 0.12921018911847862
+      }
+    }
+  },
+  "external_value_summary": {
+    "negative": 757,
+    "zero": 0,
+    "positive": 795,
+    "activity_counts": {
+      "inactive": 1455,
+      "active": 97
+    }
+  },
+  "interpretation": "Exploratory cross-assay ranking on previously filtered existing external sequences, not model selection or experimental validation of generated sequences. External 150 bp reporter context vs 50 bp model input, potential relatedness, and label/assay differences remain."
+}
