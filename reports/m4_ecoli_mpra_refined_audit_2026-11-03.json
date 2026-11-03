@@ -1,0 +1,59 @@
+{
+  "protocol": {
+    "population": "Only prior audit candidates; preceding audit fully regenerated and checked separately.",
+    "shift_range": [
+      -5,
+      5
+    ],
+    "max_substitutions": 5,
+    "sequence_length": 50,
+    "orientations": [
+      "forward",
+      "reverse_complement"
+    ],
+    "reference": "All course sequences in train, validation, and test; test used only for sequence overlap.",
+    "limitations": "Aligned substitutions only; no gaps, homology or genomic-neighbour exclusion. No model evaluated."
+  },
+  "inputs": {
+    "prior_csv_sha256": "cec4ca294d79683540b368f1e57b91877456e33a50460470978ef11a593ea184",
+    "mpra_sha256": "e2db6780091fae005f566137f42cc44ef39f3b6545eefb9f7c91f0c1b01ffd2c",
+    "genome_sha256": "73c7f2fe4d16bfb9856172d53a77f2651ea0c597d3c71c1196e58bc7ec35c8fe",
+    "sequence_sha256": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength_sha256": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split_sha256": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439",
+    "rows": 11884,
+    "unique_sequences": 11884
+  },
+  "counts": {
+    "prior_candidates": 6264,
+    "new_shifted_approximate_match": 6,
+    "remaining_after_refined_screen": 6258,
+    "mismatch_4": 1,
+    "mismatch_2": 1,
+    "mismatch_5": 3,
+    "mismatch_1": 1
+  },
+  "matches_by_course_split": {
+    "train": 5,
+    "validation": 1,
+    "test": 0
+  },
+  "split_counts_can_overlap": true,
+  "remaining": {
+    "activity_counts": {
+      "inactive": 5379,
+      "active": 879
+    },
+    "nonpositive_scaled_expression": 2525,
+    "duplicate_summary": {
+      "rows": 6258,
+      "unique_50bp": 6221,
+      "duplicate_50bp_groups": 21,
+      "rows_in_duplicate_groups": 58,
+      "extra_rows_beyond_unique_50bp": 37,
+      "groups_with_both_activity_labels": 0,
+      "groups_with_different_scaled_values": 5,
+      "groups_with_different_150bp_context": 6
+    }
+  }
+}
