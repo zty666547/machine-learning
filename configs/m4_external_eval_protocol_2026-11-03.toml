@@ -1,0 +1,13 @@
+# Fixed before evaluating the external outcomes.
+[evaluation]
+candidate_csv_sha256 = "88f3db0beb3974686263adfb2a036158521c425d25de6c843338cd7e19ffc4a0"
+minimum_course_gap_bp_exclusive = 200
+expected_candidate_rows = 1552
+expected_unique_sequences = 1541
+model_config = "configs/m2_motif_cnn_selected.toml"
+evaluator_config = "configs/m3_screening_evaluator.toml"
+primary_regression_metric = "spearman_on_original_scaled_mpra_values"
+secondary_classification_metrics = ["auroc", "average_precision"]
+unique_sequence_sensitivity = "median_scaled_mpra_per_identical_50bp; require_consistent_activity_label"
+include_component_metrics_as_diagnostics_only = true
+use_external_data_for_fitting_or_selection = false
