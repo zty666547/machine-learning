@@ -14,6 +14,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 上一轮候选的偏移近似重叠和重复输入复核见 [M4 外部数据补充检查](reports/m4_ecoli_mpra_refined_audit_2026-11-03.md)；本轮没有评价或选择模型。
 
+对外部候选与课程序列基因组距离的进一步筛查见 [M4 基因组邻近性记录](reports/m4_ecoli_genome_proximity_2026-11-03.md)；距离筛查不证明独立性。
+
 M4 首轮自有强度预测器诊断及训练集内校准结果见 [校准实验记录](reports/m4_strength_predictor_calibration_2026-10-28.md)。该校准未改善总体 MAE，不替换当前筛选器。
 
 位置 3-mer 岭回归的训练集内选型与验证集比较见 [位置 3-mer 实验](reports/m4_position_trimer_2026-10-28.md)；其总体表现未超过 M3 融合筛选器。

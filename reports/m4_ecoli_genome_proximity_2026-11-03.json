@@ -1,0 +1,75 @@
+{
+  "protocol": {
+    "rule": "Exact-match full 50 bp course sequence to U00096.2 in either orientation, allowing genome-origin wrapping. For previously screened external windows, compute minimal circular interval gap to mapped course sequences. 200 bp is the prespecified conservative screening threshold; other thresholds are sensitivity counts.",
+    "thresholds_bp": [
+      0,
+      50,
+      100,
+      200
+    ],
+    "genome": "U00096.2",
+    "genome_length": 4639675,
+    "split_boundary": "Test sequences used only for overlap/proximity screening; no model evaluation.",
+    "limitations": "Exact genomic mapping only; unmapped course sequences, TSS annotation, indels, long-range regulation and homology remain unresolved. 200 bp is a heuristic, not proof of independence."
+  },
+  "input_sha256": {
+    "refined_rows": "e45b51929b348f0e42e6d786def8ca627d674fd3ee052dd0d18adcfb8f68ff83",
+    "genome": "73c7f2fe4d16bfb9856172d53a77f2651ea0c597d3c71c1196e58bc7ec35c8fe",
+    "course": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "course_mapping": {
+    "course_records": 11884,
+    "test_records": 1783,
+    "mapped_records": 11884,
+    "test_mapped_records": 1783,
+    "records_with_multiple_genomic_starts": 75,
+    "records_with_multiple_orientation_hits": 75,
+    "validation_records": 1783,
+    "validation_mapped_records": 1783,
+    "train_records": 8318,
+    "train_mapped_records": 8318,
+    "unique_genome_positions_by_split": {
+      "train": 8438,
+      "validation": 1808,
+      "test": 1810
+    }
+  },
+  "candidate_proximity": {
+    "input_records": 6258,
+    "within_gap_0_bp": 1882,
+    "within_gap_50_bp": 3088,
+    "within_gap_100_bp": 3832,
+    "within_gap_200_bp": 4706,
+    "by_course_split": {
+      "train": {
+        "within_gap_0_bp": 1371,
+        "within_gap_50_bp": 2237,
+        "within_gap_100_bp": 2780,
+        "within_gap_200_bp": 3427
+      },
+      "validation": {
+        "within_gap_0_bp": 315,
+        "within_gap_50_bp": 624,
+        "within_gap_100_bp": 865,
+        "within_gap_200_bp": 1233
+      },
+      "test": {
+        "within_gap_0_bp": 328,
+        "within_gap_50_bp": 629,
+        "within_gap_100_bp": 870,
+        "within_gap_200_bp": 1247
+      }
+    },
+    "split_counts_can_overlap": true
+  },
+  "outside_200bp_of_mapped_course_windows": {
+    "records": 1552,
+    "unique_50bp": 1541,
+    "activity_counts": {
+      "inactive": 1455,
+      "active": 97
+    },
+    "nonpositive_scaled_expression": 757
+  }
+}
