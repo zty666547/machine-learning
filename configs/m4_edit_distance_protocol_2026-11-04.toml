@@ -1,0 +1,10 @@
+# Frozen before examining edit-distance results.
+[audit]
+scores_csv_sha256 = "1078299944317ba3ffd2668be5ef5b8bebd7eab241d0de43f15cd0f8798b087b"
+external_records = 1552
+window_length = 50
+max_edit_distance = 5
+max_window_shift = 5
+orientations = ["forward", "reverse_complement"]
+distance = "global_levenshtein_substitution_insertion_deletion_each_cost_1"
+use_previous_scores_without_retraining = true
