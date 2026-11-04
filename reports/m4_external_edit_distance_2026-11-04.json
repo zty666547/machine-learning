@@ -1,0 +1,63 @@
+{
+  "protocol_sha256": "9b3b014dc852a9c636f9921a79e28d82e4f81070cbbdec25f3efd5da847f1e57",
+  "score_csv_sha256": "1078299944317ba3ffd2668be5ef5b8bebd7eab241d0de43f15cd0f8798b087b",
+  "course_data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "method": {
+    "distance": "global_levenshtein_substitution_insertion_deletion_each_cost_1",
+    "max_edits": 5,
+    "shift_range": [
+      -5,
+      5
+    ],
+    "reference_splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "edlib_version": "1.3.9.post1",
+    "fallback": "exact banded Python dynamic programming when edlib is unavailable",
+    "limitations": "Only global 50 bp windows, shifts +/-5, edit distance <=5. No longer-range or broader homology guarantee."
+  },
+  "counts": {
+    "records": 1552,
+    "records_with_match": 0,
+    "records_without_match": 1552,
+    "matching_course_split_counts": {},
+    "minimum_edit_distance_counts": {},
+    "split_counts_can_overlap": true,
+    "unique_50bp_with_match": 0,
+    "unique_50bp_without_match": 1541
+  },
+  "previous_fixed_record_metrics": {
+    "count": 1552,
+    "active": 97,
+    "inactive": 1455,
+    "active_fraction": 0.0625,
+    "spearman": 0.136006926063942,
+    "auroc": 0.7887129344244872,
+    "average_precision": 0.24950051025043046
+  },
+  "posthoc_without_edit_matches_record_metrics": {
+    "count": 1552,
+    "active": 97,
+    "inactive": 1455,
+    "active_fraction": 0.0625,
+    "spearman": 0.136006926063942,
+    "auroc": 0.7887129344244872,
+    "average_precision": 0.24950051025043046
+  },
+  "posthoc_without_edit_matches_unique_median_metrics": {
+    "count": 1541,
+    "active": 97,
+    "inactive": 1444,
+    "active_fraction": 0.06294613887086307,
+    "spearman": 0.13492517535725604,
+    "auroc": 0.7872747522631864,
+    "average_precision": 0.24951299298762947
+  },
+  "interpretation": "No retraining. Subset metrics are post-hoc sensitivity analysis on previously evaluated data; no model selection or new independent test."
+}
