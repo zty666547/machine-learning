@@ -1,0 +1,12 @@
+# Feasibility and sequence provenance only; no predictor evaluation.
+[source_audit]
+supplement_sha256 = "1ecea7264ba51ad7f6b51c716cccc18141cdb2f8c1b50fbeb5dfe3c6700b67e1"
+previous_scores_sha256 = "1078299944317ba3ffd2668be5ef5b8bebd7eab241d0de43f15cd0f8798b087b"
+workbook_sheet = "La Fleur et al (Fig 1d, S1)"
+author_quality_flag = "Yes"
+nominal_start = "start_of_ITR_in_concatenated_UP_h35_spacs_h10_disc_ITR"
+window_length = 50
+shift_max_bp = 5
+max_global_edit_distance = 5
+search_orientations = ["forward", "reverse_complement"]
+use_strength_labels_for_model_evaluation = false
