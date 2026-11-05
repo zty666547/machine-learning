@@ -1,0 +1,63 @@
+{
+  "source": {
+    "publication": "https://doi.org/10.1038/s41467-022-32829-5",
+    "supplement": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-022-32829-5/MediaObjects/41467_2022_32829_MOESM5_ESM.xlsx",
+    "workbook_sha256": "1ecea7264ba51ad7f6b51c716cccc18141cdb2f8c1b50fbeb5dfe3c6700b67e1",
+    "sheet": "La Fleur et al (Fig 1d, S1)",
+    "openpyxl_version": "3.1.5",
+    "edlib_version": "1.3.9.post1"
+  },
+  "inputs": {
+    "prior_external_scores_sha256": "1078299944317ba3ffd2668be5ef5b8bebd7eab241d0de43f15cd0f8798b087b",
+    "course_data_sha256": {
+      "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+      "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+      "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+    },
+    "protocol_sha256": "aa328da46b99db2b10dfb93df49a49d36f3ddef995a871602a50666cf92c5d1d"
+  },
+  "method": {
+    "selection": "Author-provided high quality flag Yes; no model prediction or target-score evaluation performed.",
+    "nominal_alignment": "Concatenate UP,h35,spacs,h10,disc,ITR; define design-time ITR start as nominal TSS; extract preceding 50 bp. Actual TSS and indexing convention not established for each record.",
+    "comparison": "Available nominal-window shifts +/-5, both orientations, global edit distance <=5 against all course sequences and previously evaluated external windows. Boundary shifts that lack 50 bp are skipped.",
+    "limitations": "In-vitro RNAP/sigma70 transcription measurements differ from prior cellular assays; synthetic library has shared scaffold and repeated sequences. This screen does not prove independence or alignment validity."
+  },
+  "counts": {
+    "source_rows": 13481,
+    "author_high_quality_rows": 5193,
+    "positive_finite_strength_values": 5193,
+    "records_screened": 5193,
+    "records_match_course": 0,
+    "records_match_previously_evaluated_external": 0,
+    "records_match_either": 0,
+    "records_no_match_in_rule": 5193,
+    "unique_nominal_50bp_all": 4489,
+    "unique_nominal_50bp_no_match": 4489,
+    "duplicate_50bp_groups": 227,
+    "rows_in_duplicate_50bp_groups": 931,
+    "duplicate_groups_with_different_full_sequence": 227,
+    "matches_by_reference_group": {},
+    "reference_group_counts_can_overlap": true,
+    "available_shift_count_distribution": {
+      "7": 20,
+      "8": 3990,
+      "9": 45,
+      "11": 1138
+    },
+    "full_length_distribution": {
+      "72": 499,
+      "73": 3511,
+      "74": 45,
+      "77": 343,
+      "79": 795
+    },
+    "nominal_start_distribution": {
+      "51": 20,
+      "52": 3990,
+      "53": 45,
+      "56": 343,
+      "58": 795
+    }
+  },
+  "interpretation": "Source feasibility audit only. Data quality flags and presence of positive numeric labels were inspected; no model scoring or predictive metric was computed. Do not call a fully blind independent test."
+}

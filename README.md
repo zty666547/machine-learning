@@ -20,6 +20,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 对外部候选补充插入、删除和替换的有限编辑距离筛查，见 [M4 编辑距离排查](reports/m4_external_edit_distance_2026-11-04.md)；未命中不证明完全独立。
 
+对另一项合成启动子体外转录数据的来源、名义窗口、重复记录及有限重叠核查见 [M4 合成数据可行性记录](reports/m4_lafleur_source_audit_2026-11-05.md)；尚未做预测评价。
+
 M4 首轮自有强度预测器诊断及训练集内校准结果见 [校准实验记录](reports/m4_strength_predictor_calibration_2026-10-28.md)。该校准未改善总体 MAE，不替换当前筛选器。
 
 位置 3-mer 岭回归的训练集内选型与验证集比较见 [位置 3-mer 实验](reports/m4_position_trimer_2026-10-28.md)；其总体表现未超过 M3 融合筛选器。
