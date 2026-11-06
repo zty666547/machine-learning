@@ -1,0 +1,305 @@
+{
+  "protocol": "Three model seeds, one shared set of cluster folds; standard deviation is over seeds, not independent data splits. Training out-of-fold and development are exploratory; previously viewed test data is not used. Different architectures and training details mean this is not an isolated architecture-only causal comparison.",
+  "seeds": [
+    20260912,
+    20260913,
+    20260914
+  ],
+  "fold_seed": 20261029,
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "f6cd6fa95b107f5dd009a3660964b788c5a3fe9f8cf9bec1d4a2fa5e49b200cb",
+  "models": {
+    "cnn": {
+      "parameter_count": 11297,
+      "training_oof": {
+        "mae": {
+          "mean": 0.46049735456047564,
+          "std": 0.0007711883087133162
+        },
+        "rmse": {
+          "mean": 0.6290690303151664,
+          "std": 0.0016583223770105454
+        },
+        "pearson": {
+          "mean": 0.19842418009120355,
+          "std": 0.006843087665796958
+        },
+        "spearman": {
+          "mean": 0.17742781173141817,
+          "std": 0.0047103758108482975
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.24708040722241753,
+          "std": 0.01921425653602897
+        },
+        "groups": {
+          "weak": {
+            "mae": {
+              "mean": 0.46673508495509686,
+              "std": 0.009854139447569464
+            },
+            "mean_signed_error": {
+              "mean": 0.4663076823074133,
+              "std": 0.010129496637867965
+            }
+          },
+          "medium": {
+            "mae": {
+              "mean": 0.16668448404389147,
+              "std": 0.004881193681221641
+            },
+            "mean_signed_error": {
+              "mean": 0.059845129863282,
+              "std": 0.009449807316475876
+            }
+          },
+          "strong": {
+            "mae": {
+              "mean": 0.7479665398066664,
+              "std": 0.005681924683901871
+            },
+            "mean_signed_error": {
+              "mean": -0.7446500299984892,
+              "std": 0.005041545646678112
+            }
+          }
+        }
+      },
+      "development_validation": {
+        "mae": {
+          "mean": 0.43717568696483405,
+          "std": 0.0012271025282014323
+        },
+        "rmse": {
+          "mean": 0.5928159713731772,
+          "std": 0.0036187009422141646
+        },
+        "pearson": {
+          "mean": 0.2224552356959472,
+          "std": 0.005568507788275553
+        },
+        "spearman": {
+          "mean": 0.19248838885490674,
+          "std": 0.00282749995581247
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.286562986991237,
+          "std": 0.013345981979215084
+        },
+        "groups": {
+          "weak": {
+            "mae": {
+              "mean": 0.4191006169476362,
+              "std": 0.02261859729296394
+            },
+            "mean_signed_error": {
+              "mean": 0.417753165208724,
+              "std": 0.022395258137056877
+            }
+          },
+          "medium": {
+            "mae": {
+              "mean": 0.16754867477013002,
+              "std": 0.006332645963354591
+            },
+            "mean_signed_error": {
+              "mean": 0.029569399363198533,
+              "std": 0.03106739852063167
+            }
+          },
+          "strong": {
+            "mae": {
+              "mean": 0.730534597703281,
+              "std": 0.02448174997862733
+            },
+            "mean_signed_error": {
+              "mean": -0.7257667508985947,
+              "std": 0.025698412343946056
+            }
+          }
+        }
+      },
+      "final_fit_epochs": [
+        55,
+        44,
+        49
+      ],
+      "final_fit_clipped_batches": [
+        0,
+        0,
+        0
+      ]
+    },
+    "rnn": {
+      "parameter_count": 11553,
+      "training_oof": {
+        "mae": {
+          "mean": 0.463431749924157,
+          "std": 0.002573354532778507
+        },
+        "rmse": {
+          "mean": 0.6333258402829546,
+          "std": 0.0006050255648098835
+        },
+        "pearson": {
+          "mean": 0.16777341940148693,
+          "std": 0.00660477144099944
+        },
+        "spearman": {
+          "mean": 0.151973351070017,
+          "std": 0.008376761829700504
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.23923284952121593,
+          "std": 0.019085596705010522
+        },
+        "groups": {
+          "weak": {
+            "mae": {
+              "mean": 0.4740686300309582,
+              "std": 0.010562603617182151
+            },
+            "mean_signed_error": {
+              "mean": 0.4735940669423569,
+              "std": 0.010416820368282799
+            }
+          },
+          "medium": {
+            "mae": {
+              "mean": 0.16319287886227643,
+              "std": 0.006981165450105709
+            },
+            "mean_signed_error": {
+              "mean": 0.06491960868487302,
+              "std": 0.010654447223597157
+            }
+          },
+          "strong": {
+            "mae": {
+              "mean": 0.7529254686574326,
+              "std": 0.008270606561208352
+            },
+            "mean_signed_error": {
+              "mean": -0.7496776737161056,
+              "std": 0.009247741923996121
+            }
+          }
+        }
+      },
+      "development_validation": {
+        "mae": {
+          "mean": 0.44293791055343235,
+          "std": 0.0036193614694243047
+        },
+        "rmse": {
+          "mean": 0.5941656223014133,
+          "std": 0.0035897465858464755
+        },
+        "pearson": {
+          "mean": 0.1911632782783124,
+          "std": 0.01111074347099521
+        },
+        "spearman": {
+          "mean": 0.17423443578475525,
+          "std": 0.015432107341179674
+        },
+        "prediction_to_target_std_ratio": {
+          "mean": 0.29371640721969405,
+          "std": 0.05488344967254339
+        },
+        "groups": {
+          "weak": {
+            "mae": {
+              "mean": 0.4542342564990696,
+              "std": 0.00947589894921812
+            },
+            "mean_signed_error": {
+              "mean": 0.4533483272290902,
+              "std": 0.010007111101523924
+            }
+          },
+          "medium": {
+            "mae": {
+              "mean": 0.17558656688284013,
+              "std": 0.01728861968255227
+            },
+            "mean_signed_error": {
+              "mean": 0.06443136153753337,
+              "std": 0.004577263227289715
+            }
+          },
+          "strong": {
+            "mae": {
+              "mean": 0.7056787347812219,
+              "std": 0.011422457986250426
+            },
+            "mean_signed_error": {
+              "mean": -0.6970643525949377,
+              "std": 0.012463271709606902
+            }
+          }
+        }
+      },
+      "final_fit_epochs": [
+        40,
+        37,
+        48
+      ],
+      "final_fit_clipped_batches": [
+        32,
+        28,
+        26
+      ]
+    }
+  },
+  "paired_rnn_minus_cnn": {
+    "training_oof": {
+      "mae": {
+        "mean": 0.0029343953636813227,
+        "std": 0.001994450140742878
+      },
+      "rmse": {
+        "mean": 0.004256809967788137,
+        "std": 0.0011778799410551005
+      },
+      "pearson": {
+        "mean": -0.030650760689716634,
+        "std": 0.011174206163519513
+      },
+      "spearman": {
+        "mean": -0.025454460661401168,
+        "std": 0.0058010911504417055
+      },
+      "prediction_to_target_std_ratio": {
+        "mean": -0.007847557701201621,
+        "std": 0.022880176478662643
+      }
+    },
+    "development_validation": {
+      "mae": {
+        "mean": 0.005762223588598292,
+        "std": 0.002392595768409397
+      },
+      "rmse": {
+        "mean": 0.0013496509282360607,
+        "std": 0.006999908775363161
+      },
+      "pearson": {
+        "mean": -0.031291957417634776,
+        "std": 0.011618687544331568
+      },
+      "spearman": {
+        "mean": -0.018253953070151475,
+        "std": 0.01756902056452244
+      },
+      "prediction_to_target_std_ratio": {
+        "mean": 0.007153420228457062,
+        "std": 0.042397521569377344
+      }
+    }
+  }
+}
