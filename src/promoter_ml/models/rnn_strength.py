@@ -9,13 +9,16 @@ class RNNStrengthPredictor:
 
     def __init__(self, hidden_size=32, location_bins=5, head_size=64, learning_rate=0.001,
                  weight_decay=0.0001, batch_size=256, epochs=150, patience=20,
-                 gradient_clip=1.0, seed=0):
+                 gradient_clip=1.0, seed=0, loss_type="mse", huber_delta=1.0):
         if min(hidden_size, location_bins, head_size, batch_size, epochs, patience) < 1 or gradient_clip <= 0:
             raise ValueError("Positive dimensions, training settings and gradient clip required")
+        if loss_type not in ("mse", "huber") or huber_delta <= 0:
+            raise ValueError("Expected mse or huber loss and positive huber delta")
         self.hidden_size, self.location_bins, self.head_size = hidden_size, location_bins, head_size
         self.learning_rate, self.weight_decay = learning_rate, weight_decay
         self.batch_size, self.epochs, self.patience = batch_size, epochs, patience
         self.gradient_clip, self.seed = gradient_clip, seed
+        self.loss_type, self.huber_delta = loss_type, huber_delta
         self.parameters = None
         self.target_mean = self.target_scale = None
         self.history = []
@@ -50,7 +53,7 @@ class RNNStrengthPredictor:
     def _loss_and_gradients(self, x, y):
         prediction, (states, groups, pooled, hidden_linear, hidden) = self._forward(x)
         p = self.parameters
-        error = (prediction - y) / len(x)
+        data_loss, error = self._data_loss_and_gradient(prediction, y)
         g = {"output_weight": hidden.T @ error[:, None] + self.weight_decay * p["output_weight"],
              "output_bias": np.array([error.sum()])}
         d_hidden = (error[:, None] @ p["output_weight"].T) * (hidden_linear > 0)
@@ -73,8 +76,17 @@ class RNNStrengthPredictor:
         for name in ("input_weight", "recurrent_weight"):
             g[name] += self.weight_decay * p[name]
         penalty = sum(np.sum(p[n] ** 2) for n in ("input_weight", "recurrent_weight", "head_weight", "output_weight"))
-        loss = .5 * np.mean((prediction - y) ** 2) + .5 * self.weight_decay * penalty
+        loss = data_loss + .5 * self.weight_decay * penalty
         return float(loss), g
+
+    def _data_loss_and_gradient(self, prediction, target):
+        residual = prediction - target
+        if self.loss_type == "mse":
+            return float(.5 * np.mean(residual ** 2)), residual / len(residual)
+        delta = self.huber_delta
+        magnitude = np.abs(residual)
+        loss = np.where(magnitude <= delta, .5 * residual ** 2, delta * (magnitude - .5 * delta))
+        return float(np.mean(loss)), np.clip(residual, -delta, delta) / len(residual)
 
     def fit(self, features, targets, validation):
         x, y = np.asarray(features, dtype=np.float64), np.asarray(targets, dtype=np.float64)

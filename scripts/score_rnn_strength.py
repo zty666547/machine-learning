@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score 50 bp DNA sequences using a saved experimental RNN checkpoint."""
+"""Score 50 bp DNA sequences using a saved experimental RNN or GRU checkpoint."""
 from __future__ import annotations
 import argparse
 import csv
@@ -10,20 +10,22 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from promoter_ml.models import RNNStrengthPredictor
+from promoter_ml.models import GRUStrengthPredictor, RNNStrengthPredictor
 from score_m3_screening_evaluator import load_candidates
 from train_motif_cnn_predictor import one_hot_sequences
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", required=True, help="Saved experimental RNN .npz checkpoint.")
+    parser.add_argument("--model", required=True, help="Saved experimental RNN/GRU .npz checkpoint.")
+    parser.add_argument("--model-type", choices=("rnn", "gru"), default="rnn", help="Checkpoint architecture.")
     parser.add_argument("--candidate-file", required=True, help="One 50 bp A/C/G/T sequence per line.")
     parser.add_argument("--output", default="outputs/m4_rnn/candidate_scores.csv")
     args = parser.parse_args()
     checkpoint, candidate_path = Path(args.model), Path(args.candidate_file)
     candidates = load_candidates(str(candidate_path))
-    model = RNNStrengthPredictor.load(checkpoint)
+    cls = RNNStrengthPredictor if args.model_type == "rnn" else GRUStrengthPredictor
+    model = cls.load(checkpoint)
     prediction = model.predict(one_hot_sequences(candidates))
     if not np.isfinite(prediction).all(): raise ValueError("Model produced nonfinite predictions")
     output = Path(args.output)

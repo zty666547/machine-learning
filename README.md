@@ -26,6 +26,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 新增普通 RNN 强度预测器，并在相同相似性簇分折下与 CNN 比较，见 [M4 RNN 对照](reports/m4_rnn_vs_cnn_2026-11-06.md)。本轮 RNN 为实验候选，未替换现有融合筛选器。
 
+进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
+
 M4 首轮自有强度预测器诊断及训练集内校准结果见 [校准实验记录](reports/m4_strength_predictor_calibration_2026-10-28.md)。该校准未改善总体 MAE，不替换当前筛选器。
 
 位置 3-mer 岭回归的训练集内选型与验证集比较见 [位置 3-mer 实验](reports/m4_position_trimer_2026-10-28.md)；其总体表现未超过 M3 融合筛选器。
