@@ -1,0 +1,34 @@
+# Fixed before observing this round's results.
+[experiment]
+fold_seed = 20261029
+model_seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+development_data_used_for_selection = false
+test_data_used = false
+comparison = "gru_mse_and_rnn_huber_against_prior_rnn_mse_and_cnn_same_group_folds"
+
+[gru]
+hidden_size = 27
+location_bins = 5
+head_size = 64
+learning_rate = 0.001
+weight_decay = 0.0001
+batch_size = 256
+epochs = 150
+patience = 20
+gradient_clip = 1.0
+loss_type = "mse"
+huber_delta = 1.0
+
+[rnn_huber]
+hidden_size = 32
+location_bins = 5
+head_size = 64
+learning_rate = 0.001
+weight_decay = 0.0001
+batch_size = 256
+epochs = 150
+patience = 20
+gradient_clip = 1.0
+loss_type = "huber"
+huber_delta = 1.0
