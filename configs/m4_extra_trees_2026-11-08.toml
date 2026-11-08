@@ -1,0 +1,13 @@
+# Frozen before outcomes were inspected.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+feature_type = "position_1mer_2mer_plus_global_1to3mer_gc"
+[linear]
+alpha = 1000.0
+[extra_trees]
+n_estimators = 128
+min_samples_leaf = 8
+max_features = 0.5
+n_jobs = 1
