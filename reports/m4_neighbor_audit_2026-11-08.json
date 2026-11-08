@@ -1,0 +1,235 @@
+{
+  "protocol": "Nearest fit sequence(s) by aligned 50 bp Hamming distance, average all tied nearest labels. Cross-cluster outer folds; no test features or metrics. Similarity is not proof of biological mechanism or independent measurement.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "93993a8b87aa95d55aced8da62f63d47730329a2b76644e944077bb8bd13428b",
+  "numpy_version": "2.3.5",
+  "fold_seed": 20261029,
+  "train_count": 8318,
+  "validation_count": 1783,
+  "folds": [
+    {
+      "fit_count": 5545,
+      "holdout_count": 2773
+    },
+    {
+      "fit_count": 5545,
+      "holdout_count": 2773
+    },
+    {
+      "fit_count": 5546,
+      "holdout_count": 2772
+    }
+  ],
+  "training_oof": {
+    "metrics": {
+      "mae": 0.616614641447902,
+      "rmse": 0.8315945506574408,
+      "pearson": 0.06887171775777312,
+      "spearman": 0.04546804301275908,
+      "target_std": 0.6365718556554173,
+      "prediction_std": 0.580174490175884,
+      "prediction_to_target_std_ratio": 0.9114045571156043,
+      "residual_vs_target_pearson": -0.7177429388906019,
+      "by_true_strength_group": {
+        "weak": {
+          "sample_count": 2773,
+          "mae": 0.6129288282578594,
+          "rmse": 0.8235925083818297,
+          "pearson": 0.005038671219025785,
+          "spearman": 0.01465492841783485,
+          "mean_true_log_strength": 1.7150321024729949,
+          "mean_predicted_log_strength": 2.2848598573721803,
+          "mean_signed_error": 0.5698277548991859
+        },
+        "medium": {
+          "sample_count": 2772,
+          "mae": 0.4222764925691954,
+          "rmse": 0.59566750880361,
+          "pearson": 0.01971376039411457,
+          "spearman": 0.021140375768973027,
+          "mean_true_log_strength": 2.1410332430864,
+          "mean_predicted_log_strength": 2.3014644297290796,
+          "mean_signed_error": 0.1604311866426799
+        },
+        "strong": {
+          "sample_count": 2773,
+          "mae": 0.8145685212415418,
+          "rmse": 1.0204913804548115,
+          "pearson": 0.12364988264014888,
+          "spearman": 0.08111033663494636,
+          "mean_true_log_strength": 2.989631217674034,
+          "mean_predicted_log_strength": 2.3326062624543864,
+          "mean_signed_error": -0.6570249552196469
+        }
+      }
+    },
+    "distance_median": 24.0,
+    "distance_q10_q90": [
+      22.0,
+      25.0
+    ],
+    "distance_bins": [
+      {
+        "distance_range": [
+          0,
+          4
+        ],
+        "count": 0,
+        "mae": null
+      },
+      {
+        "distance_range": [
+          5,
+          9
+        ],
+        "count": 9,
+        "mae": 0.5401192981125376
+      },
+      {
+        "distance_range": [
+          10,
+          14
+        ],
+        "count": 17,
+        "mae": 0.30703280785112963
+      },
+      {
+        "distance_range": [
+          15,
+          19
+        ],
+        "count": 62,
+        "mae": 0.518147433724903
+      },
+      {
+        "distance_range": [
+          20,
+          24
+        ],
+        "count": 5851,
+        "mae": 0.6380642387808159
+      },
+      {
+        "distance_range": [
+          25,
+          50
+        ],
+        "count": 2379,
+        "mae": 0.5689285221310089
+      }
+    ],
+    "nearest_ties_mean": 1.7148352969463814,
+    "fraction_with_ties": 0.3762923779754749
+  },
+  "training_oof_fit_mean": {
+    "mae": 0.47820575434073465
+  },
+  "development_validation": {
+    "metrics": {
+      "mae": 0.5710287750610662,
+      "rmse": 0.767750796467171,
+      "pearson": 0.10089030565644394,
+      "spearman": 0.08245875990183636,
+      "target_std": 0.5976878101073861,
+      "prediction_std": 0.5459097130505435,
+      "prediction_to_target_std_ratio": 0.9133693272955663,
+      "residual_vs_target_pearson": -0.7067723226241954,
+      "by_true_strength_group": {
+        "weak": {
+          "sample_count": 575,
+          "mae": 0.5591193204543341,
+          "rmse": 0.747242506529739,
+          "pearson": 0.015764027705111386,
+          "spearman": 0.04061476564789612,
+          "mean_true_log_strength": 1.7201403656309229,
+          "mean_predicted_log_strength": 2.2314288156954927,
+          "mean_signed_error": 0.51128845006457
+        },
+        "medium": {
+          "sample_count": 611,
+          "mae": 0.38371021672528494,
+          "rmse": 0.5428738251631806,
+          "pearson": 0.017824008194314858,
+          "spearman": 0.0293266024959138,
+          "mean_true_log_strength": 2.1367279317377816,
+          "mean_predicted_log_strength": 2.2578177454858754,
+          "mean_signed_error": 0.12108981374809351
+        },
+        "strong": {
+          "sample_count": 597,
+          "mae": 0.7742106436406865,
+          "rmse": 0.959691159872092,
+          "pearson": 0.08598372913590434,
+          "spearman": 0.05307967984401038,
+          "mean_true_log_strength": 2.940783133919647,
+          "mean_predicted_log_strength": 2.340995833595417,
+          "mean_signed_error": -0.5997873003242293
+        }
+      }
+    },
+    "distance_median": 24.0,
+    "distance_q10_q90": [
+      22.0,
+      25.0
+    ],
+    "distance_bins": [
+      {
+        "distance_range": [
+          0,
+          4
+        ],
+        "count": 0,
+        "mae": null
+      },
+      {
+        "distance_range": [
+          5,
+          9
+        ],
+        "count": 7,
+        "mae": 0.7445876278244834
+      },
+      {
+        "distance_range": [
+          10,
+          14
+        ],
+        "count": 6,
+        "mae": 0.22569592422637605
+      },
+      {
+        "distance_range": [
+          15,
+          19
+        ],
+        "count": 26,
+        "mae": 0.4707283128430335
+      },
+      {
+        "distance_range": [
+          20,
+          24
+        ],
+        "count": 1412,
+        "mae": 0.5833740483002317
+      },
+      {
+        "distance_range": [
+          25,
+          50
+        ],
+        "count": 332,
+        "mae": 0.5289606164454979
+      }
+    ],
+    "nearest_ties_mean": 1.7745372966909703,
+    "fraction_with_ties": 0.3892316320807628
+  },
+  "development_fit_mean": {
+    "mae": 0.4574231556140895
+  }
+}
