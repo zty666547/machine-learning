@@ -1,0 +1,17 @@
+# Fixed before running the comparison.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+feature_type = "position_1mer_2mer_plus_global_1to3mer_gc"
+[linear]
+alpha = 1000.0
+[boosting]
+max_iter = 100
+learning_rate = 0.05
+max_leaf_nodes = 15
+min_samples_leaf = 30
+l2_regularization = 1.0
+max_bins = 64
+max_features = 0.5
+early_stopping = false
