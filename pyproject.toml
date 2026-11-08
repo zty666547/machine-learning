@@ -17,5 +17,9 @@ analysis = [
   "pandas>=2.0",
 ]
 
+trees = [
+  "scikit-learn==1.9.1",
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]

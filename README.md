@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+随机树与线性模型对照见 [Extra Trees 实验](reports/m4_extra_trees_2026-11-08.md)。
+
 弱、中、强分组加权的探索见 [分组加权实验](reports/m4_balanced_group_2026-11-08.md)。
 
 强弱两端加权训练的对照及取舍见 [端点加权实验](reports/m4_tail_weight_2026-11-08.md)。
