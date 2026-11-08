@@ -10,10 +10,10 @@ class RNNStrengthPredictor:
     def __init__(self, hidden_size=32, location_bins=5, head_size=64, learning_rate=0.001,
                  weight_decay=0.0001, batch_size=256, epochs=150, patience=20,
                  gradient_clip=1.0, seed=0, loss_type="mse", huber_delta=1.0,
-                 rank_weight=0.2, rank_min_gap=0.25):
+                 rank_weight=0.2, rank_min_gap=0.25, tail_weight=0.75):
         if min(hidden_size, location_bins, head_size, batch_size, epochs, patience) < 1 or gradient_clip <= 0:
             raise ValueError("Positive dimensions, training settings and gradient clip required")
-        if loss_type not in ("mse", "huber", "mse_pairwise") or huber_delta <= 0 or rank_weight < 0 or rank_min_gap < 0:
+        if loss_type not in ("mse", "huber", "mse_pairwise", "tail_weighted_mse") or huber_delta <= 0 or rank_weight < 0 or rank_min_gap < 0 or tail_weight < 0:
             raise ValueError("Invalid loss settings")
         self.hidden_size, self.location_bins, self.head_size = hidden_size, location_bins, head_size
         self.learning_rate, self.weight_decay = learning_rate, weight_decay
@@ -21,6 +21,7 @@ class RNNStrengthPredictor:
         self.gradient_clip, self.seed = gradient_clip, seed
         self.loss_type, self.huber_delta = loss_type, huber_delta
         self.rank_weight, self.rank_min_gap = rank_weight, rank_min_gap
+        self.tail_weight = tail_weight
         self.parameters = None
         self.target_mean = self.target_scale = None
         self.history = []
@@ -83,6 +84,10 @@ class RNNStrengthPredictor:
 
     def _data_loss_and_gradient(self, prediction, target):
         residual = prediction - target
+        if self.loss_type == "tail_weighted_mse":
+            weights = 1.0 + self.tail_weight * np.abs(target)
+            normalizer = float(np.mean(weights))
+            return float(.5 * np.mean(weights * residual ** 2) / normalizer), weights * residual / (len(residual) * normalizer)
         if self.loss_type in ("mse", "mse_pairwise"):
             loss, gradient = float(.5 * np.mean(residual ** 2)), residual / len(residual)
             if self.loss_type == "mse_pairwise":
