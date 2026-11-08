@@ -1,0 +1,216 @@
+{
+  "seed": 20260912,
+  "fold_seed": 20261029,
+  "train_count": 8318,
+  "validation_count": 1783,
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "0da458a54c17a71cd6145904f824d415a50c5132c6c0153f7f9224ed9a725a69",
+  "models": {
+    "linear": {
+      "training_oof": {
+        "mae": 0.47641544650961826,
+        "rmse": 0.6308071325879044,
+        "pearson": 0.22886047880503804,
+        "spearman": 0.20398806130084263,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.26365872769777393,
+        "prediction_to_target_std_ratio": 0.41418533564653076,
+        "residual_vs_target_pearson": -0.9134826872311064,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.5177575208319,
+            "rmse": 0.5911990823507249,
+            "pearson": 0.03815022542465667,
+            "spearman": 0.0448560082702625,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.224275370816419,
+            "mean_signed_error": 0.5092432683434243
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.24468439796795535,
+            "rmse": 0.30676085240592255,
+            "pearson": 0.04621661341358859,
+            "spearman": 0.04596995462506046,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.270215556511647,
+            "mean_signed_error": 0.12918231342524691
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.6667208538164348,
+            "rmse": 0.866039709270352,
+            "pearson": 0.20075665646496987,
+            "spearman": 0.191739698159979,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.3485179685566813,
+            "mean_signed_error": -0.6411132491173519
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4589108352927873,
+        "rmse": 0.596132760460199,
+        "pearson": 0.2202985150740288,
+        "spearman": 0.21007388541615832,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.25567618854394936,
+        "prediction_to_target_std_ratio": 0.4277754778000445,
+        "residual_vs_target_pearson": -0.9082558984811115,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.5084626743344507,
+            "rmse": 0.5786389078550602,
+            "pearson": 0.030079353337086674,
+            "spearman": 0.05752735431583322,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.2209905375352306,
+            "mean_signed_error": 0.5008501719043083
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.250310262647269,
+            "rmse": 0.308729552475984,
+            "pearson": 0.04943638184785571,
+            "spearman": 0.055493086067401824,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.2804547093057232,
+            "mean_signed_error": 0.1437267775679415
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6246774055397809,
+            "rmse": 0.8008290176899083,
+            "pearson": 0.18883991907406752,
+            "spearman": 0.19964892556425923,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.341583948649314,
+            "mean_signed_error": -0.5991991852703326
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773
+        },
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773
+        },
+        {
+          "fit_count": 5546,
+          "holdout_count": 2772
+        }
+      ]
+    },
+    "boosting": {
+      "training_oof": {
+        "mae": 0.4647472686119306,
+        "rmse": 0.617836585557716,
+        "pearson": 0.24162968594682893,
+        "spearman": 0.21683101682111053,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.1413345548571002,
+        "prediction_to_target_std_ratio": 0.22202451082538277,
+        "residual_vs_target_pearson": -0.9750513988113616,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.5363885113442604,
+            "rmse": 0.5748166714640134,
+            "pearson": 0.054159394509261875,
+            "spearman": 0.05198155859702044,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.2514206138172552,
+            "mean_signed_error": 0.5363885113442604
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.1819342184401375,
+            "rmse": 0.22319882917089265,
+            "pearson": 0.06523361274264923,
+            "spearman": 0.06413340864989533,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.272202736261584,
+            "mean_signed_error": 0.1311694931751841
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.6758170879337698,
+            "rmse": 0.8745367486829189,
+            "pearson": 0.21859323672107067,
+            "spearman": 0.20035454208198614,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.3184284490759466,
+            "mean_signed_error": -0.6712027685980867
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4431656585655792,
+        "rmse": 0.578198704441438,
+        "pearson": 0.25430922236702064,
+        "spearman": 0.2399850601638205,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.1409411803369414,
+        "prediction_to_target_std_ratio": 0.23581069908656593,
+        "residual_vs_target_pearson": -0.9718094724901097,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.5219138087430636,
+            "rmse": 0.5579205007368638,
+            "pearson": 0.07734768023584994,
+            "spearman": 0.09268526727373189,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.2420541743739864,
+            "mean_signed_error": 0.5219138087430636
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.18619710493909572,
+            "rmse": 0.23066235971681567,
+            "pearson": 0.05812173916539953,
+            "spearman": 0.0614577236436037,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.278525669656375,
+            "mean_signed_error": 0.1417977379185934
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6303140671312873,
+            "rmse": 0.8026231928214457,
+            "pearson": 0.21245039083374148,
+            "spearman": 0.20808128233258985,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.3168772871029466,
+            "mean_signed_error": -0.6239058468167002
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773
+        },
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773
+        },
+        {
+          "fit_count": 5546,
+          "holdout_count": 2772
+        }
+      ]
+    }
+  }
+}
