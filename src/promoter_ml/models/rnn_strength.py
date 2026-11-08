@@ -13,7 +13,7 @@ class RNNStrengthPredictor:
                  rank_weight=0.2, rank_min_gap=0.25, tail_weight=0.75):
         if min(hidden_size, location_bins, head_size, batch_size, epochs, patience) < 1 or gradient_clip <= 0:
             raise ValueError("Positive dimensions, training settings and gradient clip required")
-        if loss_type not in ("mse", "huber", "mse_pairwise", "tail_weighted_mse") or huber_delta <= 0 or rank_weight < 0 or rank_min_gap < 0 or tail_weight < 0:
+        if loss_type not in ("mse", "huber", "mse_pairwise", "tail_weighted_mse", "balanced_group_mse") or huber_delta <= 0 or rank_weight < 0 or rank_min_gap < 0 or tail_weight < 0:
             raise ValueError("Invalid loss settings")
         self.hidden_size, self.location_bins, self.head_size = hidden_size, location_bins, head_size
         self.learning_rate, self.weight_decay = learning_rate, weight_decay
@@ -84,6 +84,10 @@ class RNNStrengthPredictor:
 
     def _data_loss_and_gradient(self, prediction, target):
         residual = prediction - target
+        if self.loss_type == "balanced_group_mse":
+            weights = np.where((target <= self.group_bounds[0]) | (target >= self.group_bounds[1]), 1.5, 1.0)
+            normalizer = float(np.mean(weights))
+            return float(.5 * np.mean(weights * residual ** 2) / normalizer), weights * residual / (len(residual) * normalizer)
         if self.loss_type == "tail_weighted_mse":
             weights = 1.0 + self.tail_weight * np.abs(target)
             normalizer = float(np.mean(weights))
@@ -122,6 +126,7 @@ class RNNStrengthPredictor:
         self.target_mean, scale = float(y.mean()), float(y.std())
         self.target_scale = scale if scale > 1e-12 else 1.0
         normalized = (y - self.target_mean) / self.target_scale
+        self.group_bounds = np.quantile(normalized, [1/3, 2/3])
         rng = np.random.default_rng(self.seed)
         self._initialize(rng)
         first = {name: np.zeros_like(v) for name, v in self.parameters.items()}
