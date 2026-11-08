@@ -1,0 +1,6 @@
+# Added after reviewing the fractional-boundary results; exploratory analysis.
+[experiment]
+reference_protocol = "m4_knn_position_2026-11-08.toml"
+neighbors = 10
+boundary_tie_rule = "stable ascending fit row index; independent of labels"
+tie_tolerance = 0.0
