@@ -1,0 +1,10 @@
+# Fixed before inspecting results.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+sequence_length = 50
+weight_rule = "1 + 10 * training-only single-position explained target variance fraction"
+tie_tolerance = 1e-10
+tie_rule = "mean labels of equal-distance nearest fit sequences"
+validation_used_for_selection = false
+test_used = false
