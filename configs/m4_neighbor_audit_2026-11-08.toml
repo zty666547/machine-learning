@@ -1,0 +1,10 @@
+# Frozen before inspecting the audit.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+sequence_length = 50
+neighbors = 1
+tie_rule = "mean labels over all equal-distance nearest fit sequences"
+distance = "aligned Hamming distance"
+validation_used_for_selection = false
+test_used = false
