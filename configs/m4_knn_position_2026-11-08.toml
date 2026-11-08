@@ -1,0 +1,10 @@
+# Frozen before observing this audit.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+neighbors = 10
+position_rule = "1 + 10 * training-only single-position explained target variance fraction"
+tie_tolerance = 1e-10
+boundary_tie_rule = "fractional equal shares for all ties at kth position; weights sum to k"
+validation_used_for_selection = false
+test_used = false
