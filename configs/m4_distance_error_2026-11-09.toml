@@ -1,0 +1,11 @@
+# Fixed before results of this audit.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+distance_reference = "outer training fold including fit and early stop"
+distance = "aligned 50bp Hamming distance"
+distance_bins = [[0,21],[22,23],[24,24],[25,50]]
+model = "previously selected motif CNN"
+test_used = false
+development_used = false
