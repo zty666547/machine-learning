@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+RBF 支持向量回归与线性模型对照见 [RBF SVR 实验](reports/m4_rbf_svr_2026-11-09.md)。
+
 短片段特征 MLP 与岭回归的配对对照见 [k-mer MLP 实验](reports/m4_kmer_mlp_2026-11-09.md)。
 
 将 CNN 集成放入融合筛选器的配对比较见 [融合集成实验](reports/m4_fusion_cnn_ensemble_2026-11-09.md)。

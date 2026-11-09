@@ -1,0 +1,224 @@
+{
+  "protocol": "Same position/global features and all outer-training rows for RBF SVR and ridge. Standardization and gamma fit only on each training fold. SVR deterministic; dev previously reused and test loaded for format checking only.",
+  "fold_seed": 20261029,
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "5e5a70f22f386c42aefd52ccbf5d895cfbbaa5c5bb7ae02cc106f45382ab353f",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "train_count": 8318,
+  "validation_count": 1783,
+  "models": {
+    "ridge": {
+      "training_oof": {
+        "mae": 0.47641544650961826,
+        "rmse": 0.6308071325879044,
+        "pearson": 0.22886047880503804,
+        "spearman": 0.20398806130084263,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.26365872769777393,
+        "prediction_to_target_std_ratio": 0.41418533564653076,
+        "residual_vs_target_pearson": -0.9134826872311064,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.5177575208319,
+            "rmse": 0.5911990823507249,
+            "pearson": 0.03815022542465667,
+            "spearman": 0.0448560082702625,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.224275370816419,
+            "mean_signed_error": 0.5092432683434243
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.24468439796795535,
+            "rmse": 0.30676085240592255,
+            "pearson": 0.04621661341358859,
+            "spearman": 0.04596995462506046,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.270215556511647,
+            "mean_signed_error": 0.12918231342524691
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.6667208538164348,
+            "rmse": 0.866039709270352,
+            "pearson": 0.20075665646496987,
+            "spearman": 0.191739698159979,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.3485179685566813,
+            "mean_signed_error": -0.6411132491173519
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4589108352927873,
+        "rmse": 0.596132760460199,
+        "pearson": 0.2202985150740288,
+        "spearman": 0.21007388541615832,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.25567618854394936,
+        "prediction_to_target_std_ratio": 0.4277754778000445,
+        "residual_vs_target_pearson": -0.9082558984811115,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.5084626743344507,
+            "rmse": 0.5786389078550602,
+            "pearson": 0.030079353337086674,
+            "spearman": 0.05752735431583322,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.2209905375352306,
+            "mean_signed_error": 0.5008501719043083
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.250310262647269,
+            "rmse": 0.308729552475984,
+            "pearson": 0.04943638184785571,
+            "spearman": 0.055493086067401824,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.2804547093057232,
+            "mean_signed_error": 0.1437267775679415
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6246774055397809,
+            "rmse": 0.8008290176899083,
+            "pearson": 0.18883991907406752,
+            "spearman": 0.19964892556425923,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.341583948649314,
+            "mean_signed_error": -0.5991991852703326
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773,
+          "support_vectors": null
+        },
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773,
+          "support_vectors": null
+        },
+        {
+          "fit_count": 5546,
+          "holdout_count": 2772,
+          "support_vectors": null
+        }
+      ],
+      "final_support_vectors": null
+    },
+    "svr": {
+      "training_oof": {
+        "mae": 0.45759932800582925,
+        "rmse": 0.6204892034003352,
+        "pearson": 0.24348521791661384,
+        "spearman": 0.22765911290191265,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.19231181697106609,
+        "prediction_to_target_std_ratio": 0.3021054343866035,
+        "residual_vs_target_pearson": -0.9534487317630702,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.4741552422156165,
+            "rmse": 0.530235397731519,
+            "pearson": 0.05286677214112137,
+            "spearman": 0.06086424899800309,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.186619750598662,
+            "mean_signed_error": 0.47158764812566756
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.18873596220961977,
+            "rmse": 0.2358694218937985,
+            "pearson": 0.05027216483811474,
+            "spearman": 0.05184709657587921,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.2257657051136968,
+            "mean_signed_error": 0.08473246202729698
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.7098098220135293,
+            "rmse": 0.9044986539680745,
+            "pearson": 0.19756575789048791,
+            "spearman": 0.1950520923297301,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.2859512381656826,
+            "mean_signed_error": -0.7036799795083508
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4387331964242697,
+        "rmse": 0.584260939435727,
+        "pearson": 0.23981614050972094,
+        "spearman": 0.23823355921351907,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.2010891124568879,
+        "prediction_to_target_std_ratio": 0.3364450622152698,
+        "residual_vs_target_pearson": -0.9422924891366806,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.4632054188827296,
+            "rmse": 0.5213683947300686,
+            "pearson": 0.05344771004046139,
+            "spearman": 0.07384434622012717,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.1804330468304083,
+            "mean_signed_error": 0.46029268119948524
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.1977135360466628,
+            "rmse": 0.24437103312488065,
+            "pearson": 0.049143018747829746,
+            "spearman": 0.055194158426880024,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.2343025361754885,
+            "mean_signed_error": 0.09757460443770712
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6618345106237727,
+            "rmse": 0.8346152286557168,
+            "pearson": 0.1742466384201451,
+            "spearman": 0.20718989165061263,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.2882792813263992,
+            "mean_signed_error": -0.6525038525932473
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773,
+          "support_vectors": 4680
+        },
+        {
+          "fit_count": 5545,
+          "holdout_count": 2773,
+          "support_vectors": 4735
+        },
+        {
+          "fit_count": 5546,
+          "holdout_count": 2772,
+          "support_vectors": 4767
+        }
+      ],
+      "final_support_vectors": 7063
+    }
+  }
+}
