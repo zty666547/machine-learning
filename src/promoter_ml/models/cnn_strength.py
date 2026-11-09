@@ -163,3 +163,22 @@ class MotifCNNStrengthPredictor:
             hidden_size=self.hidden_size,
             **self.parameters,
         )
+
+    @classmethod
+    def load(cls, path: str | Path) -> "MotifCNNStrengthPredictor":
+        """Load a saved inference checkpoint; training state is not restored."""
+        with np.load(Path(path), allow_pickle=False) as saved:
+            model = cls(filters=int(saved["filter_count"]), kernel_size=int(saved["kernel_size"]),
+                        location_bins=int(saved["location_bins"]), hidden_size=int(saved["hidden_size"]))
+            model.target_mean = float(saved["target_mean"])
+            model.target_scale = float(saved["target_scale"])
+            names = ("filters", "filter_bias", "head_weight", "head_bias", "output_weight", "output_bias")
+            model.parameters = {name: saved[name].copy() for name in names}
+        expected = ((model.filters, model.kernel_size, 4), (model.filters,),
+                    (model.filters * model.location_bins, model.hidden_size), (model.hidden_size,),
+                    (model.hidden_size, 1), (1,))
+        if min(model.filters, model.kernel_size, model.location_bins, model.hidden_size) < 1 or not np.isfinite(model.target_mean) or not np.isfinite(model.target_scale) or model.target_scale <= 0:
+            raise ValueError("Invalid CNN checkpoint metadata")
+        if any(model.parameters[n].shape != shape or not np.isfinite(model.parameters[n]).all() for n, shape in zip(names, expected)):
+            raise ValueError("Invalid CNN checkpoint parameters")
+        return model

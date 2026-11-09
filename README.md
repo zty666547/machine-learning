@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+三个 CNN 种子的等权集成对照见 [CNN 集成实验](reports/m4_cnn_ensemble_2026-11-09.md)。
+
 CNN 折外误差与训练序列距离的关系见 [距离分组检查](reports/m4_distance_error_2026-11-09.md)。
 
 固定邻居数量的距离对照见 [k 近邻比较](reports/m4_knn_position_2026-11-08.md)。
