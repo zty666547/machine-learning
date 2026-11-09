@@ -1,0 +1,16 @@
+# Fixed before inspecting the results.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+features = "position 1mer/2mer plus global 1-3mer and GC"
+comparison = "same outer training rows and features for ridge and RBF SVR"
+validation_used_for_selection = false
+test_used = false
+[ridge]
+alpha = 1000.0
+[svr]
+kernel = "rbf"
+C = 1.0
+epsilon = 0.1
+gamma = "scale"
+cache_size = 200
