@@ -1,0 +1,19 @@
+# Frozen before inspecting this comparison.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+features = "position 1mer/2mer plus global 1-3mer and GC"
+comparison = "MLP vs ridge fit on identical fit-only rows; MLP uses inner early-stop"
+validation_used_for_selection = false
+test_used = false
+[ridge]
+alpha = 1000.0
+[mlp]
+hidden_one = 128
+hidden_two = 64
+learning_rate = 0.001
+weight_decay = 0.0001
+batch_size = 256
+epochs = 150
+patience = 20
