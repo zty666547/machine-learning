@@ -1,0 +1,9 @@
+# Fixed before inspecting ensemble results.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+outer_folds = 3
+ensemble = "equal arithmetic mean of three predictions in log10 target scale"
+comparison = "same-fold individual CNNs averaged across seeds"
+validation_used_for_selection = false
+test_used = false
