@@ -1,0 +1,11 @@
+# Fixed before this paired comparison.
+[experiment]
+fold_seed = 20261029
+seeds = [20260912, 20260913, 20260914]
+baseline_seed = 20260912
+outer_folds = 3
+ridge_alpha = 10.0
+weights = [0.5, 0.4, 0.1]
+comparison = "single CNN vs three-seed equal CNN mean; same ridge predictions"
+development_used_for_selection = false
+test_used = false
