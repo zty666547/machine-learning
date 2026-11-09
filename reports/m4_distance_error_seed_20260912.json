@@ -1,0 +1,126 @@
+{
+  "protocol": "OOF CNN rerun, nearest aligned 50 bp distance to entire outer training fold including fit/early; distance is not causality or biological similarity. Development/test labels unused.",
+  "seed": 20260912,
+  "fold_seed": 20261029,
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "ba960e056ca2f6211e23d4a33f627b9816a1386eec2ee1f2dbe43fb6caf48c2c",
+  "numpy_version": "2.3.5",
+  "train_count": 8318,
+  "baseline_mae_reproduced": true,
+  "oof_mae": 0.4596061643390354,
+  "distance_absolute_error_pearson": -0.036279505764407555,
+  "bins": [
+    {
+      "distance": [
+        0,
+        21
+      ],
+      "count": 519,
+      "mae": 0.5118509625350317,
+      "mean_target": 2.4170906896676976,
+      "strong_fraction": 0.3930635838150289,
+      "by_strength": [
+        {
+          "group": "weak",
+          "count": 134,
+          "mae": 0.4472693893747979
+        },
+        {
+          "group": "medium",
+          "count": 181,
+          "mae": 0.1807132191781805
+        },
+        {
+          "group": "strong",
+          "count": 204,
+          "mae": 0.848075777981411
+        }
+      ]
+    },
+    {
+      "distance": [
+        22,
+        23
+      ],
+      "count": 2750,
+      "mae": 0.4571482989090698,
+      "mean_target": 2.2886185941188812,
+      "strong_fraction": 0.344,
+      "by_strength": [
+        {
+          "group": "weak",
+          "count": 921,
+          "mae": 0.4590546684208075
+        },
+        {
+          "group": "medium",
+          "count": 883,
+          "mae": 0.1636085575471097
+        },
+        {
+          "group": "strong",
+          "count": 946,
+          "mae": 0.7292834207931078
+        }
+      ]
+    },
+    {
+      "distance": [
+        24,
+        24
+      ],
+      "count": 2670,
+      "mae": 0.4574370628557592,
+      "mean_target": 2.27195136663283,
+      "strong_fraction": 0.32397003745318353,
+      "by_strength": [
+        {
+          "group": "weak",
+          "count": 894,
+          "mae": 0.4623484609033718
+        },
+        {
+          "group": "medium",
+          "count": 911,
+          "mae": 0.16816707592769228
+        },
+        {
+          "group": "strong",
+          "count": 865,
+          "mae": 0.7570141359620058
+        }
+      ]
+    },
+    {
+      "distance": [
+        25,
+        50
+      ],
+      "count": 2379,
+      "mae": 0.45348408810071317,
+      "mean_target": 2.2558613644090353,
+      "strong_fraction": 0.31862126944094155,
+      "by_strength": [
+        {
+          "group": "weak",
+          "count": 824,
+          "mae": 0.4639033248785372
+        },
+        {
+          "group": "medium",
+          "count": 797,
+          "mae": 0.16843847764543804
+        },
+        {
+          "group": "strong",
+          "count": 758,
+          "mae": 0.7418691810135462
+        }
+      ]
+    }
+  ]
+}
