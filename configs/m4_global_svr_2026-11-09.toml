@@ -1,0 +1,11 @@
+# Frozen before inspecting this comparison.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+cnn_seed = 20260912
+weights = [0.5, 0.4, 0.1]
+ridge_alpha = 10.0
+features = "global 1-3mer plus GC for both SVR and ridge"
+comparison = "same-feature global SVR vs global ridge, alone and inside fixed fusion"
+validation_used_for_selection = false
+test_used = false
