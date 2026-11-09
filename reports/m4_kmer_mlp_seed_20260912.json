@@ -1,0 +1,228 @@
+{
+  "protocol": "Same features and fit-only rows for ridge and MLP; MLP uses inner early-stop, ridge has no early-stop. Fold-aware feature/label scaling fitted only on fit rows. Development previously reused. Test loaded for format checks only.",
+  "seed": 20260912,
+  "fold_seed": 20261029,
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "a9a62d824662c3d45c1074e903e86981998fc4418a1de6b85c0bb1edc4a1a48d",
+  "numpy_version": "2.3.5",
+  "train_count": 8318,
+  "validation_count": 1783,
+  "models": {
+    "ridge": {
+      "training_oof": {
+        "mae": 0.4794574905800985,
+        "rmse": 0.6351454953351715,
+        "pearson": 0.2166862924559114,
+        "spearman": 0.1935368237939948,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.2687979865715158,
+        "prediction_to_target_std_ratio": 0.42225867226687264,
+        "residual_vs_target_pearson": -0.9106416427421372,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.5136297994446687,
+            "rmse": 0.588941347784002,
+            "pearson": 0.01989183108241657,
+            "spearman": 0.03199214502829543,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.218662478014089,
+            "mean_signed_error": 0.5036303755410946
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.24710484812766442,
+            "rmse": 0.30957095968537257,
+            "pearson": 0.040258848973559226,
+            "spearman": 0.039128993852064586,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.2608753229264886,
+            "mean_signed_error": 0.11984207984008867
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.6775540330960358,
+            "rmse": 0.8760321869206281,
+            "pearson": 0.19461120806731091,
+            "spearman": 0.19129625897444277,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.3381003210375058,
+            "mean_signed_error": -0.6515308966365276
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4599707992291174,
+        "rmse": 0.5966119274799575,
+        "pearson": 0.22308779060980993,
+        "spearman": 0.21352145167704983,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.26162890876795486,
+        "prediction_to_target_std_ratio": 0.43773505891135406,
+        "residual_vs_target_pearson": -0.9040182420372475,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.5058194599985478,
+            "rmse": 0.5777421972038368,
+            "pearson": 0.025525934681467407,
+            "spearman": 0.06395359411943428,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.2163714070329226,
+            "mean_signed_error": 0.496231041402
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.25332570808123034,
+            "rmse": 0.31268894971396216,
+            "pearson": 0.045250396279372836,
+            "spearman": 0.05008750420608992,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.2755002635945276,
+            "mean_signed_error": 0.13877233185674603
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6273027435321935,
+            "rmse": 0.8009460745122262,
+            "pearson": 0.20680780419936007,
+            "spearman": 0.21482456218276685,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.3384654635959676,
+            "mean_signed_error": -0.602317670323679
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 4436,
+          "early_stop_count": 0,
+          "holdout_count": 2773,
+          "epochs_run": null
+        },
+        {
+          "fit_count": 4436,
+          "early_stop_count": 0,
+          "holdout_count": 2773,
+          "epochs_run": null
+        },
+        {
+          "fit_count": 4436,
+          "early_stop_count": 0,
+          "holdout_count": 2772,
+          "epochs_run": null
+        }
+      ]
+    },
+    "mlp": {
+      "training_oof": {
+        "mae": 0.5046678513480055,
+        "rmse": 0.667454376406772,
+        "pearson": 0.15094615263729358,
+        "spearman": 0.14494819311965662,
+        "target_std": 0.6365718556554173,
+        "prediction_std": 0.31767585811082366,
+        "prediction_to_target_std_ratio": 0.49904163259580986,
+        "residual_vs_target_pearson": -0.8822873913872947,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 2773,
+            "mae": 0.5227548389045782,
+            "rmse": 0.6113138384593922,
+            "pearson": -0.0018541033728309065,
+            "spearman": 0.013459919426830594,
+            "mean_true_log_strength": 1.7150321024729949,
+            "mean_predicted_log_strength": 2.2153921268604435,
+            "mean_signed_error": 0.5003600243874488
+          },
+          "medium": {
+            "sample_count": 2772,
+            "mae": 0.2825923473250469,
+            "rmse": 0.3544295105186414,
+            "pearson": 0.04321612591454073,
+            "spearman": 0.0420973760819061,
+            "mean_true_log_strength": 2.1410332430864,
+            "mean_predicted_log_strength": 2.2540151776913087,
+            "mean_signed_error": 0.1129819346049089
+          },
+          "strong": {
+            "sample_count": 2773,
+            "mae": 0.7085762828868681,
+            "rmse": 0.9149020676024945,
+            "pearson": 0.13138578551460994,
+            "spearman": 0.1363602388950256,
+            "mean_true_log_strength": 2.989631217674034,
+            "mean_predicted_log_strength": 2.3160836727603105,
+            "mean_signed_error": -0.673547544913723
+          }
+        }
+      },
+      "development_validation": {
+        "mae": 0.4759974617257929,
+        "rmse": 0.6242691928704575,
+        "pearson": 0.17448905705899953,
+        "spearman": 0.16090236184773937,
+        "target_std": 0.5976878101073861,
+        "prediction_std": 0.3097420361598958,
+        "prediction_to_target_std_ratio": 0.5182338185954382,
+        "residual_vs_target_pearson": -0.8721287637032066,
+        "by_true_strength_group": {
+          "weak": {
+            "sample_count": 575,
+            "mae": 0.48449365758005974,
+            "rmse": 0.5720581946264666,
+            "pearson": 0.023450068811496826,
+            "spearman": 0.0030840938990446126,
+            "mean_true_log_strength": 1.7201403656309229,
+            "mean_predicted_log_strength": 2.1793383505478063,
+            "mean_signed_error": 0.45919798491688335
+          },
+          "medium": {
+            "sample_count": 611,
+            "mae": 0.2701325567908936,
+            "rmse": 0.3376183925599636,
+            "pearson": 0.023264509044958217,
+            "spearman": 0.029030756063804255,
+            "mean_true_log_strength": 2.1367279317377816,
+            "mean_predicted_log_strength": 2.232949290157188,
+            "mean_signed_error": 0.09622135841940643
+          },
+          "strong": {
+            "sample_count": 597,
+            "mae": 0.6785069161630124,
+            "rmse": 0.8556070881763919,
+            "pearson": 0.13522507380189222,
+            "spearman": 0.1576059994532865,
+            "mean_true_log_strength": 2.940783133919647,
+            "mean_predicted_log_strength": 2.2988737890087516,
+            "mean_signed_error": -0.6419093449108947
+          }
+        }
+      },
+      "folds": [
+        {
+          "fit_count": 4436,
+          "early_stop_count": 1109,
+          "holdout_count": 2773,
+          "epochs_run": 22
+        },
+        {
+          "fit_count": 4436,
+          "early_stop_count": 1109,
+          "holdout_count": 2773,
+          "epochs_run": 22
+        },
+        {
+          "fit_count": 4436,
+          "early_stop_count": 1110,
+          "holdout_count": 2772,
+          "epochs_run": 22
+        }
+      ]
+    }
+  }
+}
