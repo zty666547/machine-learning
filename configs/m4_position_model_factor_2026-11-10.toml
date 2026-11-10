@@ -1,0 +1,9 @@
+# Fixed before running this comparison.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+ridge_alpha = 10.0
+feature_sets = ["global 1-3mer plus GC", "position 1mer/2mer plus global 1-3mer and GC"]
+comparison = "both feature sets for ridge and RBF SVR using fixed prior SVR results"
+validation_used_for_selection = false
+test_used = false
