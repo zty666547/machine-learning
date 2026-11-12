@@ -1,0 +1,9 @@
+# Fixed before seeing the new-fold results.
+[experiment]
+fold_seeds = [20261110, 20261111]
+reference_fold_seed = 20261029
+outer_folds = 3
+features = "position 1mer/2mer plus global 1-3mer and GC"
+comparison = "prior fixed RBF SVR vs ridge on same outer training rows"
+validation_used = false
+test_used = false
