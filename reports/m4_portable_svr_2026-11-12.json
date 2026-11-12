@@ -1,0 +1,21 @@
+{
+  "purpose": "Reproduce fixed SVR and verify portable export; dev reused for consistency only, no selection. Test rows loaded for format checks only. Scores do not measure generated sequence activity.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "model_protocol_sha256": "5e5a70f22f386c42aefd52ccbf5d895cfbbaa5c5bb7ae02cc106f45382ab353f",
+  "export_protocol_sha256": "e0af612c8941a18943edfeeb701ccda2e3c19757159f5fd20a3855b4a1b4e40e",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "training_count": 8318,
+  "verification_count": 1783,
+  "support_vectors": 7063,
+  "feature_count": 1069,
+  "checkpoint_sha256": "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738",
+  "reference_development_mae": 0.4387331964242697,
+  "previous_development_mae": 0.4387331964242697,
+  "portable_max_absolute_difference": 9.237055564881302e-14,
+  "tolerance": 1e-08
+}
