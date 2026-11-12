@@ -1,0 +1,8 @@
+# Uses the already fixed SVR model and course training split.
+[export]
+model_protocol = "configs/m4_rbf_svr_2026-11-09.toml"
+reference_report = "reports/m4_rbf_svr_2026-11-09.json"
+feature_schema = "position_1mer_2mer_global_1to3mer_gc"
+verify_absolute_tolerance = 1e-8
+development_use = "prediction equivalence and reference MAE only; no model selection"
+test_used = false
