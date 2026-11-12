@@ -1,0 +1,13 @@
+# Fixed before this candidate-scoring comparison.
+[experiment]
+vae_seed = 20260912
+sample_seed = 20261030
+sample_count = 500
+targets = ["weak", "medium", "strong"]
+generators = ["autoregressive", "vae"]
+top_k = 50
+top_rule = "highest score within each generator and input condition; ties resolved by original row order"
+svr_checkpoint_sha256 = "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738"
+svr_role = "same-training-data exploratory comparator, not independent validation"
+validation_used_for_selection = false
+test_used = false
