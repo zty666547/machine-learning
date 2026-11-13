@@ -1,0 +1,9 @@
+# Method fixed after inspecting earlier high-score rankings; exploratory reuse.
+[experiment]
+candidate_sha256 = "76e1c0ae5c4901aa52f5da9b15e052787be456dfc67ab8f73a4be2f12f1a8148"
+source_report = "reports/m4_generated_svr_compare_2026-11-12.json"
+top_k = 50
+ranking = "ascending absolute difference between score and input target in log10 units"
+tie_rule = "stable original sample index"
+groups = ["weak", "medium", "strong"]
+generators = ["autoregressive", "vae"]
