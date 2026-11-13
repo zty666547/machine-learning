@@ -1,0 +1,841 @@
+{
+  "protocol": "Consolidation of previously inspected candidate records; 3 paired runs, 3 conditions, 500 per group; training data reference only. Same-data scoring is not biological validation.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "candidate_csv_sha256": "8e13a9c6cb70c3f42aeb7f9b9a8e39956fc679c60df08f710bfce9a436236ffb",
+  "prior_condition_sha256": "6e042e66c9f0ad9f7579f22f86bf743537b8a4c5d6e675792de90abde4521e74",
+  "protocol_sha256": "6e170e4809f0e39965a6d124778c4f8c6e4a957835792d89b6608da0769e0db1",
+  "numpy_version": "2.3.5",
+  "training_count": 8318,
+  "generated_record_count": 9000,
+  "unique_across_records": 9000,
+  "runs": [
+    {
+      "seed": 20260912,
+      "generator": "autoregressive",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "284de1365187bf38682b74e68249c7932273f8276e3232a5d4d567eb7dfe92e3",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7284982765531063,
+      "nearest_train_similarity_mean": 0.5279200000000001,
+      "gc_mean": 0.45252,
+      "position_3mer_js_to_train_group": 0.016613091069024963,
+      "m3_score_mean": 2.1974818130588356,
+      "svr_score_mean": 2.142899616213899
+    },
+    {
+      "seed": 20260912,
+      "generator": "autoregressive",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "ef5edda6d94d2e1cfa31e42fb48e508494da2cbab2523a391b87903abe2627b9",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7299491783567135,
+      "nearest_train_similarity_mean": 0.52688,
+      "gc_mean": 0.44352,
+      "position_3mer_js_to_train_group": 0.016768328163531566,
+      "m3_score_mean": 2.2325857337565096,
+      "svr_score_mean": 2.216558284896598
+    },
+    {
+      "seed": 20260912,
+      "generator": "autoregressive",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "56b3ac79b4ee533d32cf3e23722ddb6ad1c0e3cbc9adc74ee2b4af46f39d5a83",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.729947254509018,
+      "nearest_train_similarity_mean": 0.52692,
+      "gc_mean": 0.43244,
+      "position_3mer_js_to_train_group": 0.01632952880751366,
+      "m3_score_mean": 2.3040129643039826,
+      "svr_score_mean": 2.337517423748819
+    },
+    {
+      "seed": 20260912,
+      "generator": "vae",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "0dc9ed56455c3132b5d528f513fcb932a1f31cbbcfa0cce2ad48f89455552cbf",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7301814829659319,
+      "nearest_train_similarity_mean": 0.52568,
+      "gc_mean": 0.45896,
+      "position_3mer_js_to_train_group": 0.0313583290500768,
+      "m3_score_mean": 2.241171501296617,
+      "svr_score_mean": 2.2156321318410774
+    },
+    {
+      "seed": 20260912,
+      "generator": "vae",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "4c95d502d253741a34a637c9053b80a10073eb3b14b94bc1bdad592c0551c332",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7301861322645291,
+      "nearest_train_similarity_mean": 0.5251200000000001,
+      "gc_mean": 0.44744,
+      "position_3mer_js_to_train_group": 0.032688427340119446,
+      "m3_score_mean": 2.2561925850456452,
+      "svr_score_mean": 2.2214051604908374
+    },
+    {
+      "seed": 20260912,
+      "generator": "vae",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "4cf9bc17cb6cb05142b0c17b35db7cd2f03e801b0540a37849cd01db52020bb1",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7290640480961924,
+      "nearest_train_similarity_mean": 0.526,
+      "gc_mean": 0.43,
+      "position_3mer_js_to_train_group": 0.031055632484240092,
+      "m3_score_mean": 2.281911196688713,
+      "svr_score_mean": 2.271352711354595
+    },
+    {
+      "seed": 20260913,
+      "generator": "autoregressive",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "3a9403d1aeb66fbcd24f9da1d21c3c83a88ea938e7779f5b376231537ef41830",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7282340681362726,
+      "nearest_train_similarity_mean": 0.52624,
+      "gc_mean": 0.45536,
+      "position_3mer_js_to_train_group": 0.01724480820864904,
+      "m3_score_mean": 2.1893865604879448,
+      "svr_score_mean": 2.1281398366022315
+    },
+    {
+      "seed": 20260913,
+      "generator": "autoregressive",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "ecde5e19c1e7608b172007da087f369b11063beb31fdd62c7c852b9d27fb4e72",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7270959519038076,
+      "nearest_train_similarity_mean": 0.52876,
+      "gc_mean": 0.43748,
+      "position_3mer_js_to_train_group": 0.016942801610420135,
+      "m3_score_mean": 2.2370206028690283,
+      "svr_score_mean": 2.224982723705484
+    },
+    {
+      "seed": 20260913,
+      "generator": "autoregressive",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "b408c6dbee016567e9265ce74d77f7fabe11b7533a46039d7a72fffc1e952a6b",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7290635671342685,
+      "nearest_train_similarity_mean": 0.5266799999999999,
+      "gc_mean": 0.43252,
+      "position_3mer_js_to_train_group": 0.017474765223203657,
+      "m3_score_mean": 2.2985021115282427,
+      "svr_score_mean": 2.325765311591721
+    },
+    {
+      "seed": 20260913,
+      "generator": "vae",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "0965806b8d0ba6bfe1dc5cc5901e0b3f2c954b2c65415e153cb0245a52f546af",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7306409619238476,
+      "nearest_train_similarity_mean": 0.52552,
+      "gc_mean": 0.45368,
+      "position_3mer_js_to_train_group": 0.0335970068061767,
+      "m3_score_mean": 2.247766677760829,
+      "svr_score_mean": 2.2142398306679056
+    },
+    {
+      "seed": 20260913,
+      "generator": "vae",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "55c950df61cc288a117fca2e0673c52f9f73fec3c93a1fef471aaea008dc3637",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7319307414829658,
+      "nearest_train_similarity_mean": 0.5258400000000001,
+      "gc_mean": 0.44984,
+      "position_3mer_js_to_train_group": 0.03188213339571743,
+      "m3_score_mean": 2.2700938049295556,
+      "svr_score_mean": 2.2402501954136214
+    },
+    {
+      "seed": 20260913,
+      "generator": "vae",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "fd3b2abe00b140480a277f5ccf578ba162c42b1e7a230e35a7adda7879b887b7",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7312469739478957,
+      "nearest_train_similarity_mean": 0.5261600000000001,
+      "gc_mean": 0.43984,
+      "position_3mer_js_to_train_group": 0.031996950918824985,
+      "m3_score_mean": 2.2968873934593828,
+      "svr_score_mean": 2.2701418190466196
+    },
+    {
+      "seed": 20260914,
+      "generator": "autoregressive",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "30a2d0f8e6519ac1129be5f916c027ed7f762040b90c5ad81df34a6ebf7dd719",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7293343486973949,
+      "nearest_train_similarity_mean": 0.52716,
+      "gc_mean": 0.45272,
+      "position_3mer_js_to_train_group": 0.016016564415812114,
+      "m3_score_mean": 2.2004340303107828,
+      "svr_score_mean": 2.1462986547177274
+    },
+    {
+      "seed": 20260914,
+      "generator": "autoregressive",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "3a1803c4f4e214445f41843cc5056e341ccbbfea3643b1c3d85f524d7ff94eed",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.729396873747495,
+      "nearest_train_similarity_mean": 0.5277200000000001,
+      "gc_mean": 0.44124,
+      "position_3mer_js_to_train_group": 0.018170234876367302,
+      "m3_score_mean": 2.229666021212548,
+      "svr_score_mean": 2.2203542274783485
+    },
+    {
+      "seed": 20260914,
+      "generator": "autoregressive",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "d48a19aa78034dd53b628d5ee829b3f4168396846be6867df8d76aad7f11cc7e",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7284325450901804,
+      "nearest_train_similarity_mean": 0.52876,
+      "gc_mean": 0.4244,
+      "position_3mer_js_to_train_group": 0.01788465134195956,
+      "m3_score_mean": 2.302242889968322,
+      "svr_score_mean": 2.335690611835141
+    },
+    {
+      "seed": 20260914,
+      "generator": "vae",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "count": 500,
+      "sequence_sha256": "79d8133b0e28e47c9d0fb45b14f5c27f4b31eefc0cbda234a510ee8c464f9283",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7288384769539079,
+      "nearest_train_similarity_mean": 0.525,
+      "gc_mean": 0.45824,
+      "position_3mer_js_to_train_group": 0.03219066734526154,
+      "m3_score_mean": 2.228642535511258,
+      "svr_score_mean": 2.2077976759368347
+    },
+    {
+      "seed": 20260914,
+      "generator": "vae",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "count": 500,
+      "sequence_sha256": "989e8ec567d7a638357c70d060a084401478d85a38d641b1506c0e259da79bc6",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7301731462925852,
+      "nearest_train_similarity_mean": 0.5254000000000001,
+      "gc_mean": 0.44504,
+      "position_3mer_js_to_train_group": 0.030620995018284008,
+      "m3_score_mean": 2.2531886296734394,
+      "svr_score_mean": 2.224098736926728
+    },
+    {
+      "seed": 20260914,
+      "generator": "vae",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "count": 500,
+      "sequence_sha256": "5ed67f938ec5e757956343e8ac719d10d7e2412cf54e3150d31f9727bd38796c",
+      "valid_fraction": 1.0,
+      "unique_fraction": 1.0,
+      "novel_vs_train_fraction": 1.0,
+      "pairwise_hamming_fraction": 0.7293609619238477,
+      "nearest_train_similarity_mean": 0.5258800000000001,
+      "gc_mean": 0.43252,
+      "position_3mer_js_to_train_group": 0.03079433156948096,
+      "m3_score_mean": 2.2915875746599133,
+      "svr_score_mean": 2.2790137235165364
+    }
+  ],
+  "summary": [
+    {
+      "generator": "autoregressive",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7286888977955913,
+        "std_across_runs": 0.0004689752458718169,
+        "values": [
+          0.7284982765531063,
+          0.7282340681362726,
+          0.7293343486973949
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5271066666666666,
+        "std_across_runs": 0.0006868931665275376,
+        "values": [
+          0.5279200000000001,
+          0.52624,
+          0.52716
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.45353333333333334,
+        "std_across_runs": 0.0012942264957194376,
+        "values": [
+          0.45252,
+          0.45536,
+          0.45272
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.016624821231162042,
+        "std_across_runs": 0.0005014970263709981,
+        "values": [
+          0.016613091069024963,
+          0.01724480820864904,
+          0.016016564415812114
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.195767467952521,
+        "std_across_runs": 0.004670180705232403,
+        "values": [
+          2.1974818130588356,
+          2.1893865604879448,
+          2.2004340303107828
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.139112702511286,
+        "std_across_runs": 0.007882098087065992,
+        "values": [
+          2.142899616213899,
+          2.1281398366022315,
+          2.1462986547177274
+        ]
+      }
+    },
+    {
+      "generator": "autoregressive",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7288140013360053,
+        "std_across_runs": 0.0012355917567296074,
+        "values": [
+          0.7299491783567135,
+          0.7270959519038076,
+          0.729396873747495
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5277866666666666,
+        "std_across_runs": 0.00076895311228246,
+        "values": [
+          0.52688,
+          0.52876,
+          0.5277200000000001
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.4407466666666667,
+        "std_across_runs": 0.0024903725736434806,
+        "values": [
+          0.44352,
+          0.43748,
+          0.44124
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.017293788216773003,
+        "std_across_runs": 0.0006238211849842875,
+        "values": [
+          0.016768328163531566,
+          0.016942801610420135,
+          0.018170234876367302
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.2330907859460285,
+        "std_across_runs": 0.0030236596061794787,
+        "values": [
+          2.2325857337565096,
+          2.2370206028690283,
+          2.229666021212548
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.2206317453601434,
+        "std_across_runs": 0.0034448564984338194,
+        "values": [
+          2.216558284896598,
+          2.224982723705484,
+          2.2203542274783485
+        ]
+      }
+    },
+    {
+      "generator": "autoregressive",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7291477889111556,
+        "std_across_runs": 0.0006212386211729713,
+        "values": [
+          0.729947254509018,
+          0.7290635671342685,
+          0.7284325450901804
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5274533333333333,
+        "std_across_runs": 0.0009291334074765121,
+        "values": [
+          0.52692,
+          0.5266799999999999,
+          0.52876
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.4297866666666666,
+        "std_across_runs": 0.0038090885465627564,
+        "values": [
+          0.43244,
+          0.43252,
+          0.4244
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.01722964845755896,
+        "std_across_runs": 0.0006581100191130397,
+        "values": [
+          0.01632952880751366,
+          0.017474765223203657,
+          0.01788465134195956
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.3015859886001824,
+        "std_across_runs": 0.002297246777422592,
+        "values": [
+          2.3040129643039826,
+          2.2985021115282427,
+          2.302242889968322
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.332991115725227,
+        "std_across_runs": 0.0051635578479593625,
+        "values": [
+          2.337517423748819,
+          2.325765311591721,
+          2.335690611835141
+        ]
+      }
+    },
+    {
+      "generator": "vae",
+      "group": "weak",
+      "target_log_strength": 1.7150321024729949,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7298869739478958,
+        "std_across_runs": 0.0007647612647064389,
+        "values": [
+          0.7301814829659319,
+          0.7306409619238476,
+          0.7288384769539079
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5254,
+        "std_across_runs": 0.00029028721409436286,
+        "values": [
+          0.52568,
+          0.52552,
+          0.525
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.45696000000000003,
+        "std_across_runs": 0.002337862271392371,
+        "values": [
+          0.45896,
+          0.45368,
+          0.45824
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.03238200106717168,
+        "std_across_runs": 0.0009238960867864994,
+        "values": [
+          0.0313583290500768,
+          0.0335970068061767,
+          0.03219066734526154
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.2391935715229017,
+        "std_across_runs": 0.007931681571931377,
+        "values": [
+          2.241171501296617,
+          2.247766677760829,
+          2.228642535511258
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.212556546148606,
+        "std_across_runs": 0.0034126978485812215,
+        "values": [
+          2.2156321318410774,
+          2.2142398306679056,
+          2.2077976759368347
+        ]
+      }
+    },
+    {
+      "generator": "vae",
+      "group": "medium",
+      "target_log_strength": 2.1410332430864,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7307633400133601,
+        "std_across_runs": 0.0008254945193821935,
+        "values": [
+          0.7301861322645291,
+          0.7319307414829658,
+          0.7301731462925852
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5254533333333334,
+        "std_across_runs": 0.0002963481436118833,
+        "values": [
+          0.5251200000000001,
+          0.5258400000000001,
+          0.5254000000000001
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.44744,
+        "std_across_runs": 0.001959591794226553,
+        "values": [
+          0.44744,
+          0.44984,
+          0.44504
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.03173051858470696,
+        "std_across_runs": 0.0008508072204405933,
+        "values": [
+          0.032688427340119446,
+          0.03188213339571743,
+          0.030620995018284008
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.259825006549547,
+        "std_across_runs": 0.00736397094401771,
+        "values": [
+          2.2561925850456452,
+          2.2700938049295556,
+          2.2531886296734394
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.2285846976103953,
+        "std_across_runs": 0.008321727294730527,
+        "values": [
+          2.2214051604908374,
+          2.2402501954136214,
+          2.224098736926728
+        ]
+      }
+    },
+    {
+      "generator": "vae",
+      "group": "strong",
+      "target_log_strength": 2.989631217674034,
+      "valid_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "unique_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "novel_vs_train_fraction": {
+        "mean": 1.0,
+        "std_across_runs": 0.0,
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "pairwise_hamming_fraction": {
+        "mean": 0.7298906613226454,
+        "std_across_runs": 0.0009666876118386807,
+        "values": [
+          0.7290640480961924,
+          0.7312469739478957,
+          0.7293609619238477
+        ]
+      },
+      "nearest_train_similarity_mean": {
+        "mean": 0.5260133333333334,
+        "std_across_runs": 0.00011469767022721637,
+        "values": [
+          0.526,
+          0.5261600000000001,
+          0.5258800000000001
+        ]
+      },
+      "gc_mean": {
+        "mean": 0.43412,
+        "std_across_runs": 0.004173439828247202,
+        "values": [
+          0.43,
+          0.43984,
+          0.43252
+        ]
+      },
+      "position_3mer_js_to_train_group": {
+        "mean": 0.03128230499084868,
+        "std_across_runs": 0.0005164679040000621,
+        "values": [
+          0.031055632484240092,
+          0.031996950918824985,
+          0.03079433156948096
+        ]
+      },
+      "m3_score_mean": {
+        "mean": 2.29012872160267,
+        "std_across_runs": 0.006200419696032807,
+        "values": [
+          2.281911196688713,
+          2.2968873934593828,
+          2.2915875746599133
+        ]
+      },
+      "svr_score_mean": {
+        "mean": 2.273502751305917,
+        "std_across_runs": 0.0039280763803710116,
+        "values": [
+          2.271352711354595,
+          2.2701418190466196,
+          2.2790137235165364
+        ]
+      }
+    }
+  ]
+}

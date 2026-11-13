@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+两种生成器在固定候选上的统一评价见 [生成结果汇总](reports/m4_unified_generated_2026-11-13.md)。
+
 目标接近度排序的三个种子对照见 [多种子排序记录](reports/m4_target_repeat_2026-11-13.md)。
 
 生成序列按预测分数接近目标排序的探索见 [目标排序记录](reports/m4_target_ranking_2026-11-13.md)。
