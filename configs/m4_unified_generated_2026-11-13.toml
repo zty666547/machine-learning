@@ -1,0 +1,12 @@
+# Predeclared consolidation of previously observed generated sequences.
+[experiment]
+ranking_csv_sha256 = "8e13a9c6cb70c3f42aeb7f9b9a8e39956fc679c60df08f710bfce9a436236ffb"
+seeds = [20260912, 20260913, 20260914]
+groups = ["weak", "medium", "strong"]
+generators = ["autoregressive", "vae"]
+per_group = 500
+reference = "matching training-strength group for position 3mer JS; all train for novelty"
+novelty = "no exact match to course training sequences"
+diversity = "mean within-group normalized pairwise Hamming distance"
+validation_used_for_selection = false
+test_used = false
