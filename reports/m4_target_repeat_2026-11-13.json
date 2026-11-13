@@ -1,0 +1,152 @@
+{
+  "protocol": "Previously explored target-distance ranking repeated on two pre-existing seed pairs. Three runs share source data and fixed scoring models; not independent biological validation. Autoregressive training deterministic; VAE seeds differ.",
+  "protocol_sha256": "8c33311664f91352cc1f20ffa1685c6d805fc778477578b0c288fa69d0f77946",
+  "reference_result_sha256": "49b79cc0131958a1f1bba4d978d1c58d6964cfac301003c03039a68aa3f6b986",
+  "new_result_sha256": [
+    "d4f7d9f3c9df692d1451ee65a249b1b3da9e3f522404abd02e2688e9c4a63f1b",
+    "7c039bb9e992813322e4b2130ab036bcdd472ea9545d561588ad3d842e6956d7"
+  ],
+  "runs": [
+    [
+      20260912,
+      20261030
+    ],
+    [
+      20260913,
+      20261130
+    ],
+    [
+      20260914,
+      20261230
+    ]
+  ],
+  "top_k": 50,
+  "groups": [
+    {
+      "generator": "autoregressive",
+      "group": "weak",
+      "target_top_k_overlap_counts": [
+        21,
+        19,
+        23
+      ],
+      "target_top_k_overlap_mean": 21.0,
+      "target_distance_spearman_values": [
+        0.6320576962307849,
+        0.698189768759075,
+        0.6611983247932992
+      ],
+      "target_distance_spearman_mean": 0.663815263261053,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    },
+    {
+      "generator": "autoregressive",
+      "group": "medium",
+      "target_top_k_overlap_counts": [
+        9,
+        8,
+        8
+      ],
+      "target_top_k_overlap_mean": 8.333333333333334,
+      "target_distance_spearman_values": [
+        0.44325124500498003,
+        0.3997890871563486,
+        0.4096499585998344
+      ],
+      "target_distance_spearman_mean": 0.417563430253721,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    },
+    {
+      "generator": "autoregressive",
+      "group": "strong",
+      "target_top_k_overlap_counts": [
+        20,
+        19,
+        27
+      ],
+      "target_top_k_overlap_mean": 22.0,
+      "target_distance_spearman_values": [
+        0.7334201816807266,
+        0.6667431149724599,
+        0.6825250021000084
+      ],
+      "target_distance_spearman_mean": 0.6942294329177315,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    },
+    {
+      "generator": "vae",
+      "group": "weak",
+      "target_top_k_overlap_counts": [
+        19,
+        20,
+        24
+      ],
+      "target_top_k_overlap_mean": 21.0,
+      "target_distance_spearman_values": [
+        0.7279682238728954,
+        0.7012262609050436,
+        0.6940956403825614
+      ],
+      "target_distance_spearman_mean": 0.7077633750535002,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    },
+    {
+      "generator": "vae",
+      "group": "medium",
+      "target_top_k_overlap_counts": [
+        6,
+        6,
+        8
+      ],
+      "target_top_k_overlap_mean": 6.666666666666667,
+      "target_distance_spearman_values": [
+        0.44776239904959614,
+        0.43900236400945597,
+        0.4659115596462386
+      ],
+      "target_distance_spearman_mean": 0.45089210756843023,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    },
+    {
+      "generator": "vae",
+      "group": "strong",
+      "target_top_k_overlap_counts": [
+        26,
+        20,
+        25
+      ],
+      "target_top_k_overlap_mean": 23.666666666666668,
+      "target_distance_spearman_values": [
+        0.7226668906675626,
+        0.6752566210264841,
+        0.6898654794619177
+      ],
+      "target_distance_spearman_mean": 0.6959296637186547,
+      "unique_counts": [
+        500,
+        500,
+        500
+      ]
+    }
+  ]
+}
