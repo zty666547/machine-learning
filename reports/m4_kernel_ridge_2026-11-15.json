@@ -1,0 +1,231 @@
+{
+  "protocol": "One fixed training-only cluster OOF split. KRR and SVR use the same features and outer rows; model choices were developed using the same project data. Not an independent test or biological validation.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "config_sha256": "3992245f98a161c24114ed06d79ca53fe42e93b67dd50b6564434ddd2bc8f46e",
+  "svr_input_sha256": "66b1dea1e3bf4863022c4be5bd3a02d9e80e38b72181ad9682bc4527a995b831",
+  "predictions_sha256": "2b4741fbee9f519468fb103556f7525332c186a57a0af09e3380af9094f8cd0b",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "feature_count": 1069,
+  "folds": [
+    {
+      "fold": 1,
+      "train_count": 5545,
+      "holdout_count": 2773,
+      "gamma": 0.0009354536950421057,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7114415989003802,
+          "true_group_count": 896,
+          "svr": {
+            "true_group_mae": 0.4734334593104514,
+            "selected_true_distance": 0.4071882853400312,
+            "selected_predicted_distance": 0.09617257725871321
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.5095184960887147,
+            "selected_true_distance": 0.4187707889650325,
+            "selected_predicted_distance": 0.0994349027270056
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.1332139655937605,
+          "true_group_count": 912,
+          "svr": {
+            "true_group_mae": 0.18566055424943959,
+            "selected_true_distance": 0.3771515404215346,
+            "selected_predicted_distance": 0.002560318256222569
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.20503865531414162,
+            "selected_true_distance": 0.39423578426761574,
+            "selected_predicted_distance": 0.0025634404422119504
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.971131536936682,
+          "true_group_count": 965,
+          "svr": {
+            "true_group_mae": 0.7246617752197406,
+            "selected_true_distance": 0.6627954016381892,
+            "selected_predicted_distance": 0.2690962561359479
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.6982906133644001,
+            "selected_true_distance": 0.6582848959268114,
+            "selected_predicted_distance": 0.20977693110388146
+          }
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "train_count": 5545,
+      "holdout_count": 2773,
+      "gamma": 0.0009354536950421014,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7169634965865577,
+          "true_group_count": 945,
+          "svr": {
+            "true_group_mae": 0.47778311096675097,
+            "selected_true_distance": 0.40229410756615663,
+            "selected_predicted_distance": 0.0771611527061848
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.5112809921516549,
+            "selected_true_distance": 0.5374606695972866,
+            "selected_predicted_distance": 0.07266940023408595
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.147973383830614,
+          "true_group_count": 943,
+          "svr": {
+            "true_group_mae": 0.18367303472094076,
+            "selected_true_distance": 0.38997986783683003,
+            "selected_predicted_distance": 0.002372442202854028
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.20091093691823278,
+            "selected_true_distance": 0.35676401182630274,
+            "selected_predicted_distance": 0.00242356767918384
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9982263720607447,
+          "true_group_count": 885,
+          "svr": {
+            "true_group_mae": 0.7125897229345767,
+            "selected_true_distance": 0.7503290384599433,
+            "selected_predicted_distance": 0.26065386797105833
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.6816338900290855,
+            "selected_true_distance": 0.8272001990907768,
+            "selected_predicted_distance": 0.2183323926610333
+          }
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "train_count": 5546,
+      "holdout_count": 2772,
+      "gamma": 0.0009354536950420952,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7143231125810707,
+          "true_group_count": 930,
+          "svr": {
+            "true_group_mae": 0.47095946064309796,
+            "selected_true_distance": 0.28563804962240175,
+            "selected_predicted_distance": 0.06640766865896086
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.510662208908789,
+            "selected_true_distance": 0.45725690495754917,
+            "selected_predicted_distance": 0.08797259150617343
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.139277583466514,
+          "true_group_count": 924,
+          "svr": {
+            "true_group_mae": 0.19911473459421924,
+            "selected_true_distance": 0.39808951565244244,
+            "selected_predicted_distance": 0.0019009601274263942
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.21110959022257886,
+            "selected_true_distance": 0.3950715767625264,
+            "selected_predicted_distance": 0.002376090771286705
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9981173740963483,
+          "true_group_count": 918,
+          "svr": {
+            "true_group_mae": 0.6929944037931567,
+            "selected_true_distance": 0.9086526725898139,
+            "selected_predicted_distance": 0.2340628654029361
+          },
+          "kernel_ridge": {
+            "true_group_mae": 0.6644117080078805,
+            "selected_true_distance": 0.8863194224153327,
+            "selected_predicted_distance": 0.1909498407140787
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "svr": {
+      "mae": 0.45759932800582925,
+      "pearson": 0.24348521791661384,
+      "spearman": 0.22765911290191265,
+      "prediction_std": 0.19231181697106609
+    },
+    "kernel_ridge": {
+      "mae": 0.46563487321635616,
+      "pearson": 0.23081150351825422,
+      "spearman": 0.20822209621764254,
+      "prediction_std": 0.19936332690370084
+    },
+    "label_std": 0.6365718556554173,
+    "groups": [
+      {
+        "group": "weak",
+        "svr": {
+          "true_group_mae": 0.47405867697343346,
+          "selected_true_distance": 0.3650401475095299,
+          "selected_predicted_distance": 0.07991379954128629
+        },
+        "kernel_ridge": {
+          "true_group_mae": 0.5104872323830528,
+          "selected_true_distance": 0.4711627878399561,
+          "selected_predicted_distance": 0.08669229815575501
+        }
+      },
+      {
+        "group": "medium",
+        "svr": {
+          "true_group_mae": 0.1894827745215332,
+          "selected_true_distance": 0.3884069746369357,
+          "selected_predicted_distance": 0.0022779068621676638
+        },
+        "kernel_ridge": {
+          "true_group_mae": 0.20568639415165105,
+          "selected_true_distance": 0.3820237909521483,
+          "selected_predicted_distance": 0.002454366297560832
+        }
+      },
+      {
+        "group": "strong",
+        "svr": {
+          "true_group_mae": 0.7100819673158246,
+          "selected_true_distance": 0.7739257042293154,
+          "selected_predicted_distance": 0.25460432983664744
+        },
+        "kernel_ridge": {
+          "true_group_mae": 0.6814454038004554,
+          "selected_true_distance": 0.7906015058109737,
+          "selected_predicted_distance": 0.20635305482633115
+        }
+      }
+    ]
+  }
+}
