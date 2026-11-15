@@ -1,0 +1,15 @@
+# Frozen after the reused-development analysis, before this training OOF audit.
+[experiment]
+fold_seed = 20261029
+outer_folds = 3
+cnn_seed = 20260912
+groups = ["weak", "medium", "strong"]
+target_rule = "mean log10 label in each outer-training-fold tertile"
+pool = "all sequences in that outer holdout fold"
+top_k = 50
+ranking = "ascending absolute score minus fold-specific target in log10 units"
+tie_rule = "stable outer holdout index order"
+random_reference = "mean true distance across the holdout pool"
+oracle = "best top_k using actual labels; hindsight bound only"
+validation_used = false
+test_used = false
