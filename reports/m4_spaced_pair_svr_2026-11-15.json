@@ -1,0 +1,233 @@
+{
+  "protocol": "One fixed training-only cluster OOF split. SVR models use the same outer rows and hyperparameters but different features and gamma scale; model choices were developed using the same project data. Not an independent test or biological validation.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "config_sha256": "45be1503bb361939f72f9d053dfa0a62a141028e38306d96ec9794cd5e18e12f",
+  "svr_input_sha256": "66b1dea1e3bf4863022c4be5bd3a02d9e80e38b72181ad9682bc4527a995b831",
+  "predictions_sha256": "7e83b5b187e1f1fc2140864b9747c345aa6c2228a4fe7c143900272c2427c09b",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "feature_count": 2237,
+  "baseline_feature_count": 1069,
+  "spaced_pair_feature_count": 1168,
+  "folds": [
+    {
+      "fold": 1,
+      "train_count": 5545,
+      "holdout_count": 2773,
+      "gamma": 0.00044702726866339146,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7114415989003802,
+          "true_group_count": 896,
+          "svr": {
+            "true_group_mae": 0.4734334593104514,
+            "selected_true_distance": 0.4071882853400312,
+            "selected_predicted_distance": 0.09617257725871321
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.4811540436989514,
+            "selected_true_distance": 0.381089943432992,
+            "selected_predicted_distance": 0.1187893132173331
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.1332139655937605,
+          "true_group_count": 912,
+          "svr": {
+            "true_group_mae": 0.18566055424943959,
+            "selected_true_distance": 0.3771515404215346,
+            "selected_predicted_distance": 0.002560318256222569
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.1905320525803218,
+            "selected_true_distance": 0.4172385782706863,
+            "selected_predicted_distance": 0.0021589592438908413
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.971131536936682,
+          "true_group_count": 965,
+          "svr": {
+            "true_group_mae": 0.7246617752197406,
+            "selected_true_distance": 0.6627954016381892,
+            "selected_predicted_distance": 0.2690962561359479
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.7269097575048735,
+            "selected_true_distance": 0.7168508324097301,
+            "selected_predicted_distance": 0.27564913963373305
+          }
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "train_count": 5545,
+      "holdout_count": 2773,
+      "gamma": 0.0004470272686633905,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7169634965865577,
+          "true_group_count": 945,
+          "svr": {
+            "true_group_mae": 0.47778311096675097,
+            "selected_true_distance": 0.40229410756615663,
+            "selected_predicted_distance": 0.0771611527061848
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.48812539066705013,
+            "selected_true_distance": 0.4144272668891317,
+            "selected_predicted_distance": 0.09533818937019908
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.147973383830614,
+          "true_group_count": 943,
+          "svr": {
+            "true_group_mae": 0.18367303472094076,
+            "selected_true_distance": 0.38997986783683003,
+            "selected_predicted_distance": 0.002372442202854028
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.1805911377925173,
+            "selected_true_distance": 0.34420032564424374,
+            "selected_predicted_distance": 0.0020115455593652954
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9982263720607447,
+          "true_group_count": 885,
+          "svr": {
+            "true_group_mae": 0.7125897229345767,
+            "selected_true_distance": 0.7503290384599433,
+            "selected_predicted_distance": 0.26065386797105833
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.716763826921149,
+            "selected_true_distance": 0.7407004332130006,
+            "selected_predicted_distance": 0.28232013810275974
+          }
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "train_count": 5546,
+      "holdout_count": 2772,
+      "gamma": 0.0004470272686633894,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7143231125810707,
+          "true_group_count": 930,
+          "svr": {
+            "true_group_mae": 0.47095946064309796,
+            "selected_true_distance": 0.28563804962240175,
+            "selected_predicted_distance": 0.06640766865896086
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.48348418333453486,
+            "selected_true_distance": 0.3424069631085015,
+            "selected_predicted_distance": 0.07970288744195594
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.139277583466514,
+          "true_group_count": 924,
+          "svr": {
+            "true_group_mae": 0.19911473459421924,
+            "selected_true_distance": 0.39808951565244244,
+            "selected_predicted_distance": 0.0019009601274263942
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.19892222342670576,
+            "selected_true_distance": 0.4583456572885551,
+            "selected_predicted_distance": 0.0025894081765785513
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9981173740963483,
+          "true_group_count": 918,
+          "svr": {
+            "true_group_mae": 0.6929944037931567,
+            "selected_true_distance": 0.9086526725898139,
+            "selected_predicted_distance": 0.2340628654029361
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.6925621490841966,
+            "selected_true_distance": 0.735833728624952,
+            "selected_predicted_distance": 0.25855887196612704
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "svr": {
+      "mae": 0.45759932800582925,
+      "pearson": 0.24348521791661384,
+      "spearman": 0.22765911290191265,
+      "prediction_std": 0.19231181697106609
+    },
+    "spaced_pair_svr": {
+      "mae": 0.4618268301094405,
+      "pearson": 0.22194796921428292,
+      "spearman": 0.20887908879124703,
+      "prediction_std": 0.18553765353288
+    },
+    "label_std": 0.6365718556554173,
+    "groups": [
+      {
+        "group": "weak",
+        "svr": {
+          "true_group_mae": 0.47405867697343346,
+          "selected_true_distance": 0.3650401475095299,
+          "selected_predicted_distance": 0.07991379954128629
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.4842545392335121,
+          "selected_true_distance": 0.37930805781020843,
+          "selected_predicted_distance": 0.09794346334316271
+        }
+      },
+      {
+        "group": "medium",
+        "svr": {
+          "true_group_mae": 0.1894827745215332,
+          "selected_true_distance": 0.3884069746369357,
+          "selected_predicted_distance": 0.0022779068621676638
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.19001513793318162,
+          "selected_true_distance": 0.40659485373449505,
+          "selected_predicted_distance": 0.002253304326611563
+        }
+      },
+      {
+        "group": "strong",
+        "svr": {
+          "true_group_mae": 0.7100819673158246,
+          "selected_true_distance": 0.7739257042293154,
+          "selected_predicted_distance": 0.25460432983664744
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.7120785778367398,
+          "selected_true_distance": 0.7311283314158943,
+          "selected_predicted_distance": 0.2721760499008733
+        }
+      }
+    ]
+  }
+}
