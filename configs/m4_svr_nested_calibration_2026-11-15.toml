@@ -1,0 +1,13 @@
+# Frozen before running this experiment. Prior project development used these data.
+[experiment]
+outer_fold_seed = 20261029
+outer_folds = 3
+inner_fold_seed_base = 20261115
+inner_folds = 2
+strategy = "ordinary least squares intercept+slope on inner cluster-OOF SVR predictions"
+comparison = "same outer-fit SVR predictions before and after affine calibration"
+target_rule = "mean log10 labels of each outer-training tertile"
+top_k = 50
+ranking = "absolute predicted log10 minus fold-specific target; stable index tie"
+validation_used = false
+test_used = false
