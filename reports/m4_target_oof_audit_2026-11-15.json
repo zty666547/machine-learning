@@ -1,0 +1,292 @@
+{
+  "protocol": "Training-only cluster-separated OOF; targets estimated only on outer training labels; CNN fit/early within outer train; ridge/SVR fit full outer train. Model and data used in earlier development, so not independent final testing. Test/dev only loaded for format checks; oracle hindsight only.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "d667de2e46ac9500488df3d6dc62e8a7a18f9553a8f25d5d5e214347a0170521",
+  "svr_protocol_sha256": "5e5a70f22f386c42aefd52ccbf5d895cfbbaa5c5bb7ae02cc106f45382ab353f",
+  "cnn_member_sha256": "bfe4244dab43fde77a7160a40f6befaf59a0d3c39604ac239ebad0b29c71a5c4",
+  "selected_csv_sha256": "c61d574ba34e3a8eed4ef3757db83a71996e1958b62e2ffe4ab5bbda605dc40f",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "cnn_numpy_version": "2.3.5",
+  "train_count": 8318,
+  "folds": [
+    {
+      "fold": 1,
+      "fit_count": 4436,
+      "early_stop_count": 1109,
+      "holdout_count": 2773,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7114415989003802,
+          "random_pool_mean_true_distance": 0.6308853977102992,
+          "oracle_topk_true_distance": 0.007201965501660785,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.3012029254611115,
+              "median_true_distance_to_target": 0.18170364184373433,
+              "mean_predicted_distance_to_target": 0.20458841050751198,
+              "selected_true_mean": 1.925963533802319
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.40718828534003115,
+              "median_true_distance_to_target": 0.18653844455775948,
+              "mean_predicted_distance_to_target": 0.09617257725871321,
+              "selected_true_mean": 2.012198074984505
+            }
+          },
+          "top_k_overlap_count": 17
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.1332139655937605,
+          "random_pool_mean_true_distance": 0.4744749035229115,
+          "oracle_topk_true_distance": 0.006141576790155172,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.3113948197169433,
+              "median_true_distance_to_target": 0.2567379578001412,
+              "mean_predicted_distance_to_target": 0.0019860514418507157,
+              "selected_true_mean": 2.079301112608094
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.3771515404215345,
+              "median_true_distance_to_target": 0.33881240651950884,
+              "mean_predicted_distance_to_target": 0.002560318256222569,
+              "selected_true_mean": 2.1058228579566105
+            }
+          },
+          "top_k_overlap_count": 4
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.971131536936682,
+          "random_pool_mean_true_distance": 0.8329821992257405,
+          "oracle_topk_true_distance": 0.021713807590562403,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.7535332186580598,
+              "median_true_distance_to_target": 0.7080315910692683,
+              "mean_predicted_distance_to_target": 0.34986556400913793,
+              "selected_true_mean": 2.8893641060893214
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.6627954016381892,
+              "median_true_distance_to_target": 0.6867722310464797,
+              "mean_predicted_distance_to_target": 0.2690962561359479,
+              "selected_true_mean": 2.915304538785506
+            }
+          },
+          "top_k_overlap_count": 17
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_count": 4436,
+      "early_stop_count": 1109,
+      "holdout_count": 2773,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7169634965865577,
+          "random_pool_mean_true_distance": 0.5986542367821542,
+          "oracle_topk_true_distance": 0.008728807715171096,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.36325726057311847,
+              "median_true_distance_to_target": 0.21985858414158443,
+              "mean_predicted_distance_to_target": 0.20413660381004597,
+              "selected_true_mean": 2.009565914547921
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.4022941075661567,
+              "median_true_distance_to_target": 0.21066685266296248,
+              "mean_predicted_distance_to_target": 0.07716115270618479,
+              "selected_true_mean": 2.028847345000064
+            }
+          },
+          "top_k_overlap_count": 9
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.147973383830614,
+          "random_pool_mean_true_distance": 0.456604451298564,
+          "oracle_topk_true_distance": 0.0066547470665241715,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.38727434743129374,
+              "median_true_distance_to_target": 0.3301845373070357,
+              "mean_predicted_distance_to_target": 0.001926717996752103,
+              "selected_true_mean": 2.1773003073544945
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.38997986783683003,
+              "median_true_distance_to_target": 0.2787746986889307,
+              "mean_predicted_distance_to_target": 0.002372442202854028,
+              "selected_true_mean": 2.2128150035896543
+            }
+          },
+          "top_k_overlap_count": 1
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9982263720607447,
+          "random_pool_mean_true_distance": 0.8672575734087431,
+          "oracle_topk_true_distance": 0.017607014567206515,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.8437094809519979,
+              "median_true_distance_to_target": 0.7419898388548218,
+              "mean_predicted_distance_to_target": 0.36932928272396714,
+              "selected_true_mean": 2.7862686940239594
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.7503290384599433,
+              "median_true_distance_to_target": 0.7419898388548218,
+              "mean_predicted_distance_to_target": 0.2606538679710583,
+              "selected_true_mean": 2.6545028119641905
+            }
+          },
+          "top_k_overlap_count": 21
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "fit_count": 4436,
+      "early_stop_count": 1110,
+      "holdout_count": 2772,
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7143231125810707,
+          "random_pool_mean_true_distance": 0.6041342782475884,
+          "oracle_topk_true_distance": 0.006757889813517131,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.3600665509512865,
+              "median_true_distance_to_target": 0.32948615083636,
+              "mean_predicted_distance_to_target": 0.19721653289226806,
+              "selected_true_mean": 2.0212388010509175
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.28563804962240175,
+              "median_true_distance_to_target": 0.2457931019558488,
+              "mean_predicted_distance_to_target": 0.06640766865896088,
+              "selected_true_mean": 1.9518035430640541
+            }
+          },
+          "top_k_overlap_count": 15
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.139277583466514,
+          "random_pool_mean_true_distance": 0.45498084528806193,
+          "oracle_topk_true_distance": 0.0058571952418752906,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.37409824408116554,
+              "median_true_distance_to_target": 0.2454610535264774,
+              "mean_predicted_distance_to_target": 0.0019330263681957315,
+              "selected_true_mean": 2.1813227607120194
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.3980895156524425,
+              "median_true_distance_to_target": 0.30420557926115355,
+              "mean_predicted_distance_to_target": 0.0019009601274263942,
+              "selected_true_mean": 2.247755552782121
+            }
+          },
+          "top_k_overlap_count": 1
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9981173740963483,
+          "random_pool_mean_true_distance": 0.8588729272848075,
+          "oracle_topk_true_distance": 0.024132098344278034,
+          "models": {
+            "m3": {
+              "mean_true_distance_to_target": 0.6942477715844139,
+              "median_true_distance_to_target": 0.633328602482889,
+              "mean_predicted_distance_to_target": 0.37303746179177466,
+              "selected_true_mean": 2.6836547318487214
+            },
+            "svr": {
+              "mean_true_distance_to_target": 0.9086526725898141,
+              "median_true_distance_to_target": 0.843142671330189,
+              "mean_predicted_distance_to_target": 0.2340628654029361,
+              "selected_true_mean": 3.0195078503589707
+            }
+          },
+          "top_k_overlap_count": 15
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "group": "weak",
+      "targets": [
+        1.7114415989003802,
+        1.7169634965865577,
+        1.7143231125810707
+      ],
+      "random_mean": 0.611224637580014,
+      "oracle_mean": 0.0075628876767830045,
+      "m3_mean": 0.3415089123285055,
+      "svr_mean": 0.3650401475095299,
+      "m3_predicted_gap_mean": 0.20198051573660866,
+      "svr_predicted_gap_mean": 0.07991379954128629,
+      "top_k_overlap_counts": [
+        17,
+        9,
+        15
+      ]
+    },
+    {
+      "group": "medium",
+      "targets": [
+        2.1332139655937605,
+        2.147973383830614,
+        2.139277583466514
+      ],
+      "random_mean": 0.46202006670317913,
+      "oracle_mean": 0.006217839699518211,
+      "m3_mean": 0.3575891370764675,
+      "svr_mean": 0.38840697463693563,
+      "m3_predicted_gap_mean": 0.0019485986022661835,
+      "svr_predicted_gap_mean": 0.0022779068621676638,
+      "top_k_overlap_counts": [
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "group": "strong",
+      "targets": [
+        2.971131536936682,
+        2.9982263720607447,
+        2.9981173740963483
+      ],
+      "random_mean": 0.8530375666397637,
+      "oracle_mean": 0.02115097350068232,
+      "m3_mean": 0.7638301570648238,
+      "svr_mean": 0.7739257042293155,
+      "m3_predicted_gap_mean": 0.3640774361749599,
+      "svr_predicted_gap_mean": 0.25460432983664744,
+      "top_k_overlap_counts": [
+        17,
+        21,
+        15
+      ]
+    }
+  ],
+  "oof_m3_mae_reproduced": 0.4572461403413959,
+  "oof_svr_mae_reproduced": 0.45759932800582925
+}
