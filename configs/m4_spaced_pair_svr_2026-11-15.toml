@@ -1,0 +1,14 @@
+# Fixed before this comparison. These distances are generic design choices, not motif annotations.
+[experiment]
+outer_fold_seed = 20261029
+outer_folds = 3
+sequence_length = 50
+spacings = [10, 17]
+features = "existing position/global k-mer features plus one-hot base pairs at fixed start and spacings"
+model = "same RBF SVR hyperparameters as baseline; gamma scale recomputed on each training fold"
+svr_comparison = "same rows, target and cluster folds; prior original-feature SVR OOF predictions"
+target_rule = "mean log10 labels in each outer-training tertile"
+top_k = 50
+selection = "ascending absolute predicted minus target; stable held-out index"
+validation_used = false
+test_used = false
