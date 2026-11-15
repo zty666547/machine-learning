@@ -1,0 +1,11 @@
+# Diagnostic plan fixed before this analysis; development set already used in development.
+[experiment]
+groups = ["weak", "medium", "strong"]
+target_rule = "mean log10 label in each training tertile"
+pool = "all 1783 development validation sequences for each target"
+top_k = 50
+ranking = "ascending absolute predicted log10 score minus training-derived target"
+tie_rule = "stable original validation row order"
+random_reference = "mean absolute true label distance over entire pool; expected random-subset mean"
+oracle = "best 50 ranked by true target distance; retrospective lower bound, not deployable"
+svr_checkpoint_sha256 = "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738"
