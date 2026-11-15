@@ -1,0 +1,14 @@
+# Frozen before KRR training and evaluation.
+[experiment]
+outer_fold_seed = 20261029
+outer_folds = 3
+features = "position 1mer/2mer plus global 1-3mer and GC"
+model = "RBF kernel ridge regression"
+alpha = 1.0
+gamma_rule = "1 / (n_features * variance of standardized outer-training feature matrix)"
+svr_comparison = "same outer rows, features and folds; frozen original SVR OOF predictions"
+target_rule = "mean log10 labels in each outer-training tertile"
+top_k = 50
+selection = "ascending absolute predicted minus target; stable held-out index"
+validation_used = false
+test_used = false
