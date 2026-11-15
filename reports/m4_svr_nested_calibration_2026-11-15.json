@@ -1,0 +1,241 @@
+{
+  "protocol": "Nested similarity-cluster OOF; inner 2-fold affine calibration within each outer training set; three outer held-out folds; prior development reused these data; no fresh independent test.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "config_sha256": "6bc39046b2d3fd65cef33b268c20f4e85e0fb9adc5e19ab8ebd452e25aa23465",
+  "svr_config_sha256": "5e5a70f22f386c42aefd52ccbf5d895cfbbaa5c5bb7ae02cc106f45382ab353f",
+  "predictions_sha256": "66b1dea1e3bf4863022c4be5bd3a02d9e80e38b72181ad9682bc4527a995b831",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "folds": [
+    {
+      "fold": 1,
+      "calibration_intercept": 0.8534210932569406,
+      "calibration_slope": 0.6389816659285105,
+      "inner_train_sizes": [
+        2772,
+        2773
+      ],
+      "holdout_count": 2773,
+      "groups": [
+        {
+          "group": "weak",
+          "target": 1.7114415989003802,
+          "true_group_count": 896,
+          "raw": {
+            "selection_true_distance": 0.4071882853400312,
+            "selection_predicted_distance": 0.09617257725871321,
+            "true_group_mae": 0.4734334593104514
+          },
+          "calibrated": {
+            "selection_true_distance": 0.4071882853400312,
+            "selection_predicted_distance": 0.29161372754854553,
+            "true_group_mae": 0.5370858517764167
+          }
+        },
+        {
+          "group": "medium",
+          "target": 2.1332139655937605,
+          "true_group_count": 912,
+          "raw": {
+            "selection_true_distance": 0.3771515404215346,
+            "selection_predicted_distance": 0.002560318256222569,
+            "true_group_mae": 0.18566055424943959
+          },
+          "calibrated": {
+            "selection_true_distance": 0.3443178097013621,
+            "selection_predicted_distance": 0.0022778210047521698,
+            "true_group_mae": 0.17671470804549946
+          }
+        },
+        {
+          "group": "strong",
+          "target": 2.971131536936682,
+          "true_group_count": 965,
+          "raw": {
+            "selection_true_distance": 0.6627954016381892,
+            "selection_predicted_distance": 0.2690962561359479,
+            "true_group_mae": 0.7246617752197406
+          },
+          "calibrated": {
+            "selection_true_distance": 0.6627954016381892,
+            "selection_predicted_distance": 0.39115943855607765,
+            "true_group_mae": 0.691002533925025
+          }
+        }
+      ],
+      "mae_raw": 0.46621616231687807,
+      "mae_calibrated": 0.4721277252675131
+    },
+    {
+      "fold": 2,
+      "calibration_intercept": 0.5666658427924605,
+      "calibration_slope": 0.7678617020809652,
+      "inner_train_sizes": [
+        2772,
+        2773
+      ],
+      "holdout_count": 2773,
+      "groups": [
+        {
+          "group": "weak",
+          "target": 1.7169634965865577,
+          "true_group_count": 945,
+          "raw": {
+            "selection_true_distance": 0.40229410756615663,
+            "selection_predicted_distance": 0.0771611527061848,
+            "true_group_mae": 0.47778311096675097
+          },
+          "calibrated": {
+            "selection_true_distance": 0.40229410756615663,
+            "selection_predicted_distance": 0.2198920130251949,
+            "true_group_mae": 0.5331304836443649
+          }
+        },
+        {
+          "group": "medium",
+          "target": 2.147973383830614,
+          "true_group_count": 943,
+          "raw": {
+            "selection_true_distance": 0.38997986783683003,
+            "selection_predicted_distance": 0.002372442202854028,
+            "true_group_mae": 0.18367303472094076
+          },
+          "calibrated": {
+            "selection_true_distance": 0.3541516403285489,
+            "selection_predicted_distance": 0.002282368163111874,
+            "true_group_mae": 0.1829406825511372
+          }
+        },
+        {
+          "group": "strong",
+          "target": 2.9982263720607447,
+          "true_group_count": 885,
+          "raw": {
+            "selection_true_distance": 0.7503290384599433,
+            "selection_predicted_distance": 0.26065386797105833,
+            "true_group_mae": 0.7125897229345767
+          },
+          "calibrated": {
+            "selection_true_distance": 0.7503290384599433,
+            "selection_predicted_distance": 0.3294834467079276,
+            "true_group_mae": 0.6760751316908028
+          }
+        }
+      ],
+      "mae_raw": 0.4527048742886863,
+      "mae_calibrated": 0.45966385223079975
+    },
+    {
+      "fold": 3,
+      "calibration_intercept": 0.7157104676973141,
+      "calibration_slope": 0.7015259561700524,
+      "inner_train_sizes": [
+        2773,
+        2773
+      ],
+      "holdout_count": 2772,
+      "groups": [
+        {
+          "group": "weak",
+          "target": 1.7143231125810707,
+          "true_group_count": 930,
+          "raw": {
+            "selection_true_distance": 0.28563804962240175,
+            "selection_predicted_distance": 0.06640766865896086,
+            "true_group_mae": 0.47095946064309796
+          },
+          "calibrated": {
+            "selection_true_distance": 0.2951456374113289,
+            "selection_predicted_distance": 0.2368830507317893,
+            "true_group_mae": 0.5314435256821537
+          }
+        },
+        {
+          "group": "medium",
+          "target": 2.139277583466514,
+          "true_group_count": 924,
+          "raw": {
+            "selection_true_distance": 0.39808951565244244,
+            "selection_predicted_distance": 0.0019009601274263942,
+            "true_group_mae": 0.19911473459421924
+          },
+          "calibrated": {
+            "selection_true_distance": 0.41275789052260636,
+            "selection_predicted_distance": 0.003477171183343053,
+            "true_group_mae": 0.18858264185981577
+          }
+        },
+        {
+          "group": "strong",
+          "target": 2.9981173740963483,
+          "true_group_count": 918,
+          "raw": {
+            "selection_true_distance": 0.9086526725898139,
+            "selection_predicted_distance": 0.2340628654029361,
+            "true_group_mae": 0.6929944037931567
+          },
+          "calibrated": {
+            "selection_true_distance": 0.9086526725898139,
+            "selection_predicted_distance": 0.3396033411660592,
+            "true_group_mae": 0.6571756664022363
+          }
+        }
+      ],
+      "mae_raw": 0.4538756045617812,
+      "mae_calibrated": 0.45879513049066584
+    }
+  ],
+  "summary": {
+    "mae_raw": 0.4575993280058292,
+    "mae_calibrated": 0.46352947176279724,
+    "groups": [
+      {
+        "group": "weak",
+        "raw": {
+          "selection_true_distance": 0.3650401475095299,
+          "selection_predicted_distance": 0.07991379954128629,
+          "true_group_mae": 0.47405867697343346
+        },
+        "calibrated": {
+          "selection_true_distance": 0.3682093434391722,
+          "selection_predicted_distance": 0.24946293043517656,
+          "true_group_mae": 0.5338866203676451
+        }
+      },
+      {
+        "group": "medium",
+        "raw": {
+          "selection_true_distance": 0.3884069746369357,
+          "selection_predicted_distance": 0.0022779068621676638,
+          "true_group_mae": 0.1894827745215332
+        },
+        "calibrated": {
+          "selection_true_distance": 0.3704091135175058,
+          "selection_predicted_distance": 0.002679120117069032,
+          "true_group_mae": 0.18274601081881747
+        }
+      },
+      {
+        "group": "strong",
+        "raw": {
+          "selection_true_distance": 0.7739257042293154,
+          "selection_predicted_distance": 0.25460432983664744,
+          "true_group_mae": 0.7100819673158246
+        },
+        "calibrated": {
+          "selection_true_distance": 0.7739257042293154,
+          "selection_predicted_distance": 0.3534154088100215,
+          "true_group_mae": 0.6747511106726881
+        }
+      }
+    ],
+    "raw_pearson": 0.243485217916614,
+    "raw_spearman": 0.22765911290191265,
+    "calibrated_pearson": 0.24161814111777954,
+    "calibrated_spearman": 0.22715518560255665
+  }
+}

@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+SVR 的嵌套折外线性校准尝试见 [校准实验](reports/m4_svr_nested_calibration_2026-11-15.md)；该方案没有一致改善，未替换现有预测器。
+
 训练集相似性簇折外的目标筛选检查见 [折外筛选诊断](reports/m4_target_oof_audit_2026-11-15.md)；该检查不构成独立测试或生物实验验证。
 
 已标注开发集的目标接近度筛选回顾见 [目标筛选诊断](reports/m4_target_reality_audit_2026-11-15.md)。
