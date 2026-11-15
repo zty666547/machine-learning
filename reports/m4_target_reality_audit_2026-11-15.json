@@ -1,0 +1,105 @@
+{
+  "protocol": "Retrospective diagnostic on reused development pool; target values from training labels. M3 used same dev labels for early stop and past weight selection. SVR training excludes dev but dev used in development. Oracle uses dev truth only as hindsight lower bound; no test metrics or independent biological validation.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "protocol_sha256": "8e60409ab055724a7a3b0fd686bc532ca4da12d40a5ef34beff8e9bd2e8aa4ce",
+  "svr_checkpoint_sha256": "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738",
+  "selected_csv_sha256": "9d71b6d0915bbe81ec819572d3f1c2e5ca2eea78fad9f065f883e19a31c67b3e",
+  "numpy_version": "2.3.5",
+  "training_count": 8318,
+  "development_count": 1783,
+  "m3_validation_pearson_reproduced": 0.28657419371048837,
+  "svr_validation_mae_reproduced": 0.4387331964242686,
+  "groups": [
+    {
+      "group": "weak",
+      "target_log10": 1.7150321024729949,
+      "pool_count": 1783,
+      "top_k": 50,
+      "random_pool_mean_true_distance": 0.5963295149048533,
+      "oracle_topk_true_distance": 0.008341310307740128,
+      "models": {
+        "m3": {
+          "mean_true_distance_to_target": 0.298477789108564,
+          "median_true_distance_to_target": 0.16937857957854763,
+          "mean_predicted_distance_to_target": 0.2026198504874388,
+          "selected_true_mean": 1.9304657262682385,
+          "selected_true_min": 1.2748503200166648,
+          "selected_true_max": 2.971322245242813,
+          "target_distance_spearman": 0.2633695417654993
+        },
+        "svr": {
+          "mean_true_distance_to_target": 0.4793765504406089,
+          "median_true_distance_to_target": 0.2575096991520488,
+          "mean_predicted_distance_to_target": 0.09362541434365192,
+          "selected_true_mean": 2.116640073743352,
+          "selected_true_min": 1.1089031276673134,
+          "selected_true_max": 4.652718005226175,
+          "target_distance_spearman": 0.23239426016692516
+        }
+      },
+      "top_k_overlap_count": 16
+    },
+    {
+      "group": "medium",
+      "target_log10": 2.1410332430864,
+      "pool_count": 1783,
+      "top_k": 50,
+      "random_pool_mean_true_distance": 0.4428329248560049,
+      "oracle_topk_true_distance": 0.013633584155240878,
+      "models": {
+        "m3": {
+          "mean_true_distance_to_target": 0.37215689012982334,
+          "median_true_distance_to_target": 0.2794409098094338,
+          "mean_predicted_distance_to_target": 0.002884781479287621,
+          "selected_true_mean": 2.1553703797261248,
+          "selected_true_min": 1.3481100684802376,
+          "selected_true_max": 4.461408327028496,
+          "target_distance_spearman": 0.12005417816303901
+        },
+        "svr": {
+          "mean_true_distance_to_target": 0.36482817627725,
+          "median_true_distance_to_target": 0.3317477290263352,
+          "mean_predicted_distance_to_target": 0.0031968005310573666,
+          "selected_true_mean": 2.083982114276618,
+          "selected_true_min": 1.3988077302032644,
+          "selected_true_max": 3.101461802727619,
+          "target_distance_spearman": 0.08598327267826733
+        }
+      },
+      "top_k_overlap_count": 3
+    },
+    {
+      "group": "strong",
+      "target_log10": 2.989631217674034,
+      "pool_count": 1783,
+      "top_k": 50,
+      "random_pool_mean_true_distance": 0.8368347030014919,
+      "oracle_topk_true_distance": 0.026115636577170597,
+      "models": {
+        "m3": {
+          "mean_true_distance_to_target": 0.6606749360776706,
+          "median_true_distance_to_target": 0.6435793475171918,
+          "mean_predicted_distance_to_target": 0.3490949720882612,
+          "selected_true_mean": 2.7657282979081605,
+          "selected_true_min": 1.4072208929273964,
+          "selected_true_max": 4.318364313646578,
+          "target_distance_spearman": 0.20325905735307787
+        },
+        "svr": {
+          "mean_true_distance_to_target": 0.6942395764813059,
+          "median_true_distance_to_target": 0.6427040454293165,
+          "mean_predicted_distance_to_target": 0.2788979888149391,
+          "selected_true_mean": 2.660081035484433,
+          "selected_true_min": 1.189770956346874,
+          "selected_true_max": 4.262848892101896,
+          "target_distance_spearman": 0.19491468260211697
+        }
+      },
+      "top_k_overlap_count": 18
+    }
+  ]
+}
