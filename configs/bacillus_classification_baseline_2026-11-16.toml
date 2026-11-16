@@ -1,0 +1,19 @@
+# Frozen before clustering, splitting and first classifier results.
+[experiment]
+species = "Bacillus subtilis"
+task = "81 bp binary promoter classification; independent from strength prediction"
+seed = 20261116
+similarity = "aligned 81 bp Hamming identity >= 90%; transitive components"
+max_mismatches = 8
+split = "stratified-group 5-fold test holdout; then stratified-group 4-fold validation holdout from remaining"
+test_usage = "reserved; no model predictions, threshold choice, or test metrics"
+models = ["majority_class", "global_kmer_logistic", "position_kmer_logistic"]
+features = "global normalized 1-3mer and GC; position model adds 1mer and 2mer one-hots"
+scaling = "StandardScaler fit only on training rows"
+logistic_C = 1.0
+logistic_solver = "liblinear"
+threshold = 0.5
+primary = "validation balanced accuracy and F1; report precision recall AUROC and accuracy"
+strength_data = "read-only overlap and descriptive inspection; no model fitting or prediction on strength rows"
+overlap_check = "exact full 61 bp strength sequence contained in 81 bp classification sequence, forward and reverse complement"
+logistic_max_iter = 2000
