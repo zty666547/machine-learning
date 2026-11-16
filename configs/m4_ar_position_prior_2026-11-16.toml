@@ -1,0 +1,14 @@
+# Fixed before running; development data have been reused in previous model work.
+[experiment]
+order = 3
+condition_bins = 3
+smoothing_per_base = 0.1
+prior_total_mass = 0.4
+comparison = "existing uniform prior versus position-specific prior with same total pseudocount mass"
+primary = "development-validation conditional teacher-forced NLL in bits per nucleotide"
+group_boundaries = "training target tertiles"
+target_rule = "mean log10 training label within tertile"
+sampling_seeds = [20261116, 20261117, 20261118]
+samples_per_group = 300
+secondary = "position 3mer JS against same-strength validation group; GC; validity, uniqueness, exact novelty"
+test_used = false
