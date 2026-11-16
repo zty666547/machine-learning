@@ -1,0 +1,12 @@
+# Added after inspecting the initial classifier results, before the GC-control calculation.
+[experiment]
+seed = 20261116
+feature = "fraction of G and C bases across the full 81 bp sequence"
+model = "training-only StandardScaler and logistic regression"
+logistic_C = 1.0
+logistic_solver = "liblinear"
+logistic_max_iter = 2000
+threshold = 0.5
+split = "reuse fixed bacillus_classification_split_2026-11-16.csv"
+test_usage = "no test GC features, predictions or metrics"
+interpretation = "post-hoc shortcut diagnostic; no causal conclusion"
