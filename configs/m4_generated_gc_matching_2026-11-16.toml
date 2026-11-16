@@ -1,0 +1,14 @@
+# Fixed after observing prior generated data summaries but before this GC-matching analysis.
+[experiment]
+input_sha256 = "8e13a9c6cb70c3f42aeb7f9b9a8e39956fc679c60df08f710bfce9a436236ffb"
+seeds = [20260912, 20260913, 20260914]
+generators = ["autoregressive", "vae"]
+groups = ["weak", "strong"]
+expected_per_group = 500
+match_variable = "exact GC count out of 50 positions, within generator and run"
+match_rule = "per GC count use min(group counts), uniform random without replacement independently by group"
+match_random_seed = 20261116
+comparison = "matched strong-minus-weak mean M3 and SVR predicted log scores; compare unmatched means"
+selection_uses_scores = false
+validation_used = false
+test_used = false
