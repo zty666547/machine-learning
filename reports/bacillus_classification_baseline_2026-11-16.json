@@ -1,0 +1,145 @@
+{
+  "protocol": "Species-specific promoter classification; 81 bp aligned-Hamming cluster groups; stratified-group split uses all class labels for stratification, test labels counted and test sequences inspected only for label-free overlap. No test model predictions/metrics. Strength data not used for fitting, labels or evaluation.",
+  "classification_csv_sha256": "7d0a2fb95b4b19f89d940d5ea926f32dce6a99c40dce2d6381afb404d2c4092a",
+  "strength_csv_sha256": "58f4cb9664c2058adf75fa327ae845013496fa17e23faca95f134f6c42094ad6",
+  "raw_classification_sha256": "87cae44c1e69668866869511f2a58c930a3b61d6a275c8bca718d0fcdb7ddcf5",
+  "raw_strength_sha256": "3cff8a17718cac375a2bf180447fc84e0ff101c304788d625861ea0348b6adea",
+  "config_sha256": "e206e22d016276983c51515177e194a05de80edd33bead52fa1210d48e196082",
+  "split_sha256": "05782662b5966606d61de181017b383247234983452337332b28c0b9bb3431ee",
+  "validation_predictions_sha256": "3e7b0ee7c68f445437221165fde382754259d6547e8bc2493b09ea7aaa0b98d7",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "clustering": {
+    "count": 1500,
+    "singleton_count": 1500,
+    "largest_size": 1,
+    "edge_count": 0,
+    "mixed_label_components": 0
+  },
+  "splits": {
+    "train": {
+      "count": 900,
+      "label_0": 485,
+      "label_1": 415
+    },
+    "validation": {
+      "count": 300,
+      "label_0": 162,
+      "label_1": 138
+    },
+    "test": {
+      "count": 300,
+      "label_0": 162,
+      "label_1": 138
+    }
+  },
+  "source_sequence_types": {
+    "gene": 1500
+  },
+  "strength_data_audit": {
+    "rows": 60,
+    "unique_sequences": 59,
+    "repeated_sequence_count": 1,
+    "exact_full_61bp_subsequence_matches": [
+      {
+        "strength_source_row": 17,
+        "matches": [
+          {
+            "source_row": 1369,
+            "split": "train",
+            "orientation": "forward"
+          }
+        ]
+      },
+      {
+        "strength_source_row": 44,
+        "matches": [
+          {
+            "source_row": 213,
+            "split": "test",
+            "orientation": "forward"
+          }
+        ]
+      },
+      {
+        "strength_source_row": 55,
+        "matches": [
+          {
+            "source_row": 1071,
+            "split": "train",
+            "orientation": "forward"
+          }
+        ]
+      }
+    ],
+    "note": "Exact containment only, either orientation; not an approximate or coordinate-based independence check."
+  },
+  "models": {
+    "majority_class": {
+      "validation_count": 300,
+      "accuracy": 0.54,
+      "balanced_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "auroc": 0.5,
+      "average_precision": 0.46,
+      "confusion_matrix_0_1": [
+        [
+          162,
+          0
+        ],
+        [
+          138,
+          0
+        ]
+      ],
+      "feature_count": 1
+    },
+    "global_kmer_logistic": {
+      "validation_count": 300,
+      "accuracy": 0.9,
+      "balanced_accuracy": 0.8982823403113258,
+      "precision": 0.9029850746268657,
+      "recall": 0.8768115942028986,
+      "specificity": 0.9197530864197531,
+      "f1": 0.8897058823529411,
+      "auroc": 0.9644390767579173,
+      "average_precision": 0.9646190286316794,
+      "confusion_matrix_0_1": [
+        [
+          149,
+          13
+        ],
+        [
+          17,
+          121
+        ]
+      ],
+      "feature_count": 85
+    },
+    "position_kmer_logistic": {
+      "validation_count": 300,
+      "accuracy": 0.94,
+      "balanced_accuracy": 0.940150295222759,
+      "precision": 0.9285714285714286,
+      "recall": 0.9420289855072463,
+      "specificity": 0.9382716049382716,
+      "f1": 0.935251798561151,
+      "auroc": 0.9829128645553766,
+      "average_precision": 0.9817781475561397,
+      "confusion_matrix_0_1": [
+        [
+          152,
+          10
+        ],
+        [
+          8,
+          130
+        ]
+      ],
+      "feature_count": 1689
+    }
+  }
+}
