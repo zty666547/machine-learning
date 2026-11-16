@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+远距离碱基组合方案的两套新增分折对照见 [分折敏感性检查](reports/m4_spaced_pair_fold_check_2026-11-16.md)；强目标筛选结果随分折变化。
+
 基于远距离碱基组合特征的 SVR 探索见 [组合特征实验](reports/m4_spaced_pair_svr_2026-11-15.md)；该方案未全面改善预测器。
 
 核岭回归与 SVR 在相同序列特征及训练分折下的对照见 [核岭回归实验](reports/m4_kernel_ridge_2026-11-15.md)；本次未替换预测器。

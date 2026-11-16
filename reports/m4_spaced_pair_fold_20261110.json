@@ -1,0 +1,246 @@
+{
+  "protocol": "Paired fixed SVR features on new cluster folds chosen after prior result. Shared training data and prior development; not independent test or biological validation.",
+  "fold_seed": 20261110,
+  "fold_sha256": "ab9fe7536bac9c50af8ae844a6f5350b2bd10dd08d8fe86939bba60aae232304",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "config_sha256": "fe4b544c6209e8a11119e4669397031824192f25f1553eea59cfe017afbd8786",
+  "svr_config_sha256": "5e5a70f22f386c42aefd52ccbf5d895cfbbaa5c5bb7ae02cc106f45382ab353f",
+  "feature_config_sha256": "45be1503bb361939f72f9d053dfa0a62a141028e38306d96ec9794cd5e18e12f",
+  "predictions_sha256": "79fb6990a975503293cb607c9d57006e48aeb7613f2fa80529d5afa80e1752bf",
+  "numpy_version": "2.5.4",
+  "sklearn_version": "1.9.1",
+  "feature_counts": {
+    "baseline": 1069,
+    "added": 1168,
+    "expanded": 2237
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit_count": 5545,
+      "holdout_count": 2773,
+      "gamma": {
+        "svr": 0.0009354536950421004,
+        "spaced_pair_svr": 0.0004470272686633904
+      },
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7192587432962911,
+          "holdout_group_count": 967,
+          "svr": {
+            "true_group_mae": 0.4882111301920512,
+            "selected_true_distance": 0.3580889786973939,
+            "selected_predicted_distance": 0.08088356779272639
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.49680319316826194,
+            "selected_true_distance": 0.34902133680341946,
+            "selected_predicted_distance": 0.08612091212384008
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.1475292793238308,
+          "holdout_group_count": 943,
+          "svr": {
+            "true_group_mae": 0.1912416127358665,
+            "selected_true_distance": 0.31630654883862336,
+            "selected_predicted_distance": 0.0036963923801118528
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.18757150789503887,
+            "selected_true_distance": 0.45358418158177455,
+            "selected_predicted_distance": 0.002914882413091755
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 3.005463093885313,
+          "holdout_group_count": 863,
+          "svr": {
+            "true_group_mae": 0.700365554132491,
+            "selected_true_distance": 0.8532709746332674,
+            "selected_predicted_distance": 0.2471545390815227
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.7081450528458453,
+            "selected_true_distance": 0.8506146594697657,
+            "selected_predicted_distance": 0.268438924865403
+          }
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_count": 5545,
+      "holdout_count": 2773,
+      "gamma": {
+        "svr": 0.0009354536950421018,
+        "spaced_pair_svr": 0.0004470272686633909
+      },
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7134052950195324,
+          "holdout_group_count": 909,
+          "svr": {
+            "true_group_mae": 0.4694099848876551,
+            "selected_true_distance": 0.3189925873104602,
+            "selected_predicted_distance": 0.08739351371791633
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.4813411225015889,
+            "selected_true_distance": 0.32673424863746653,
+            "selected_predicted_distance": 0.10675418629867442
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.1399842817650336,
+          "holdout_group_count": 914,
+          "svr": {
+            "true_group_mae": 0.18875054647742107,
+            "selected_true_distance": 0.3860020266075157,
+            "selected_predicted_distance": 0.0024667429117230457
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.18904549187372258,
+            "selected_true_distance": 0.4308057296518203,
+            "selected_predicted_distance": 0.0025641516529626074
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.9744608003092314,
+          "holdout_group_count": 950,
+          "svr": {
+            "true_group_mae": 0.7278599260581478,
+            "selected_true_distance": 0.6384116141760185,
+            "selected_predicted_distance": 0.27522368558333965
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.7302180820971136,
+            "selected_true_distance": 0.7226975811953319,
+            "selected_predicted_distance": 0.2896411586732201
+          }
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "fit_count": 5546,
+      "holdout_count": 2772,
+      "gamma": {
+        "svr": 0.0009354536950420968,
+        "spaced_pair_svr": 0.0004470272686633892
+      },
+      "groups": [
+        {
+          "group": "weak",
+          "target_log10": 1.7107457637313233,
+          "holdout_group_count": 887,
+          "svr": {
+            "true_group_mae": 0.46725156364870407,
+            "selected_true_distance": 0.4096775025247382,
+            "selected_predicted_distance": 0.07141278613013928
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.4796604964356217,
+            "selected_true_distance": 0.400616268486284,
+            "selected_predicted_distance": 0.09281553039181265
+          }
+        },
+        {
+          "group": "medium",
+          "target_log10": 2.133489154416393,
+          "holdout_group_count": 922,
+          "svr": {
+            "true_group_mae": 0.1825113454308992,
+            "selected_true_distance": 0.3663051176623383,
+            "selected_predicted_distance": 0.0023090434300172013
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.18115270004418801,
+            "selected_true_distance": 0.47006391673909426,
+            "selected_predicted_distance": 0.0027094360122144855
+          }
+        },
+        {
+          "group": "strong",
+          "target_log10": 2.987460966872123,
+          "holdout_group_count": 963,
+          "svr": {
+            "true_group_mae": 0.7008970238693262,
+            "selected_true_distance": 0.7682720546199511,
+            "selected_predicted_distance": 0.2533474322504034
+          },
+          "spaced_pair_svr": {
+            "true_group_mae": 0.7001960995634352,
+            "selected_true_distance": 0.7862416657081771,
+            "selected_predicted_distance": 0.2923128056289682
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "svr": {
+      "mae": 0.45746892448308585,
+      "pearson": 0.24179230789380135,
+      "spearman": 0.22486637329040246,
+      "prediction_std": 0.19245543370493648
+    },
+    "spaced_pair_svr": {
+      "mae": 0.46155591872111157,
+      "pearson": 0.2162902390406763,
+      "spearman": 0.2041214249366184,
+      "prediction_std": 0.1835385089578833
+    },
+    "groups": [
+      {
+        "group": "weak",
+        "svr": {
+          "true_group_mae": 0.4749575595761368,
+          "selected_true_distance": 0.3622530228441974,
+          "selected_predicted_distance": 0.07989662254692732
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.48593493736849086,
+          "selected_true_distance": 0.35879061797572337,
+          "selected_predicted_distance": 0.09523020960477573
+        }
+      },
+      {
+        "group": "medium",
+        "svr": {
+          "true_group_mae": 0.18750116821472892,
+          "selected_true_distance": 0.35620456436949244,
+          "selected_predicted_distance": 0.0028240595739506998
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.18592323327098315,
+          "selected_true_distance": 0.45148460932422974,
+          "selected_predicted_distance": 0.002729490026089616
+        }
+      },
+      {
+        "group": "strong",
+        "svr": {
+          "true_group_mae": 0.7097075013533217,
+          "selected_true_distance": 0.7533182144764123,
+          "selected_predicted_distance": 0.2585752189717552
+        },
+        "spaced_pair_svr": {
+          "true_group_mae": 0.7128530781687981,
+          "selected_true_distance": 0.7865179687910916,
+          "selected_predicted_distance": 0.28346429638919707
+        }
+      }
+    ]
+  }
+}
