@@ -1,0 +1,259 @@
+{
+  "protocol": "Conditional NLL and sampled sequence structure on repeatedly used validation data; no new independent test or biological validation. Training-derived target used as condition; observed validation target used for teacher-forced NLL only.",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "config_sha256": "957e2b7903041d3653918690ea01bca4c6093369fa4ecdef4093c64706cea7e0",
+  "samples_sha256": "172586480e35f8761765ffdd8e57fc48f8a51957ef8b3dcad99505f9fa50215f",
+  "nll_csv_sha256": "76c58a1b7be06c445060e9abf5969da34294b099bc0c9fab514ad199a344fce0",
+  "numpy_version": "2.3.5",
+  "train_count": 8318,
+  "validation_count": 1783,
+  "validation_outside_bin_centres_count": 457,
+  "bin_centres": [
+    1.7150321024729949,
+    2.1410332430864,
+    2.989631217674034
+  ],
+  "run_results": [
+    {
+      "model": "uniform",
+      "group": "weak",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.04393826345730593,
+      "gc_fraction": 0.4586,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "weak",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.047500678072448836,
+      "gc_fraction": 0.45713333333333334,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "weak",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.0492238300386848,
+      "gc_fraction": 0.4563333333333333,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "medium",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.046393052554779955,
+      "gc_fraction": 0.44866666666666666,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "medium",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.04529408671795718,
+      "gc_fraction": 0.4464666666666667,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "medium",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.04268829374814808,
+      "gc_fraction": 0.45426666666666665,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "strong",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.04490244815364134,
+      "gc_fraction": 0.4322,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "strong",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.0449299805971633,
+      "gc_fraction": 0.4352,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "uniform",
+      "group": "strong",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.047972746148408414,
+      "gc_fraction": 0.43046666666666666,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "weak",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.0439581653714996,
+      "gc_fraction": 0.45786666666666664,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "weak",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.04740075470926083,
+      "gc_fraction": 0.4568,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "weak",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.04951292986989577,
+      "gc_fraction": 0.45653333333333335,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "medium",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.04590358939485046,
+      "gc_fraction": 0.4474666666666667,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "medium",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.04533482280168119,
+      "gc_fraction": 0.4461333333333333,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "medium",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.043043017114446656,
+      "gc_fraction": 0.4537333333333333,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "strong",
+      "seed": 20261116,
+      "position_3mer_js_to_validation": 0.04489180855677497,
+      "gc_fraction": 0.4316,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "strong",
+      "seed": 20261117,
+      "position_3mer_js_to_validation": 0.04524911113648095,
+      "gc_fraction": 0.4344,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    },
+    {
+      "model": "position_prior",
+      "group": "strong",
+      "seed": 20261118,
+      "position_3mer_js_to_validation": 0.04773874689923547,
+      "gc_fraction": 0.42966666666666664,
+      "unique_fraction": 1.0,
+      "exact_novel_fraction": 1.0
+    }
+  ],
+  "summary": {
+    "nll_bits_per_base": {
+      "uniform": 1.9233572734479834,
+      "position_prior": 1.9243078181176945
+    },
+    "nll_by_group": {
+      "weak": {
+        "uniform": 1.918156551097864,
+        "position_prior": 1.918922668050955
+      },
+      "medium": {
+        "uniform": 1.9252633368509042,
+        "position_prior": 1.9258366369458395
+      },
+      "strong": {
+        "uniform": 1.9264155826810385,
+        "position_prior": 1.927929849917323
+      }
+    },
+    "target_log10": {
+      "weak": 1.7150321024729949,
+      "medium": 2.1410332430864,
+      "strong": 2.989631217674034
+    },
+    "sampling": [
+      {
+        "model": "uniform",
+        "group": "weak",
+        "position_3mer_js_to_validation": 0.04688759052281319,
+        "gc_fraction": 0.4573555555555555,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      },
+      {
+        "model": "uniform",
+        "group": "medium",
+        "position_3mer_js_to_validation": 0.044791811006961745,
+        "gc_fraction": 0.4498,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      },
+      {
+        "model": "uniform",
+        "group": "strong",
+        "position_3mer_js_to_validation": 0.04593505829973768,
+        "gc_fraction": 0.43262222222222224,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      },
+      {
+        "model": "position_prior",
+        "group": "weak",
+        "position_3mer_js_to_validation": 0.0469572833168854,
+        "gc_fraction": 0.4570666666666667,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      },
+      {
+        "model": "position_prior",
+        "group": "medium",
+        "position_3mer_js_to_validation": 0.04476047643699277,
+        "gc_fraction": 0.44911111111111107,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      },
+      {
+        "model": "position_prior",
+        "group": "strong",
+        "position_3mer_js_to_validation": 0.0459598888641638,
+        "gc_fraction": 0.4318888888888888,
+        "unique_fraction": 1.0,
+        "exact_novel_fraction": 1.0
+      }
+    ]
+  }
+}

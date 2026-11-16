@@ -28,6 +28,8 @@ M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布�
 
 进一步比较门控循环模型 GRU 与改变训练目标的 Huber-RNN，见 [M4 多策略实验](reports/m4_gru_loss_strategies_2026-11-06.md)；总体 MAE 的变化需结合强弱组误差和预测范围解释。
 
+连续自回归的位置先验尝试及开发验证对照见 [位置先验实验](reports/m4_ar_position_prior_2026-11-16.md)；本次未替换原生成器。
+
 两种生成器弱、强目标的 GC 匹配评分检查见 [GC 匹配分析](reports/m4_generated_gc_matching_2026-11-16.md)；评分差异不是实测强度差异。
 
 远距离碱基组合方案的两套新增分折对照见 [分折敏感性检查](reports/m4_spaced_pair_fold_check_2026-11-16.md)；强目标筛选结果随分折变化。
