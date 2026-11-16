@@ -1,0 +1,13 @@
+# Preregistered follow-up after inspecting 20261029 results; all data were used in prior development.
+[experiment]
+reference_fold_seed = 20261029
+new_fold_seeds = [20261110, 20261111]
+outer_folds = 3
+spacings = [10, 17]
+features = "original position/global features, and same plus fixed position-specific spaced pairs"
+models = "same RBF SVR parameters; per-fold StandardScaler and gamma scale"
+target_rule = "mean log10 label within each outer-training tertile"
+top_k = 50
+selection = "absolute predicted minus target ascending, stable held-out index"
+validation_used = false
+test_used = false
