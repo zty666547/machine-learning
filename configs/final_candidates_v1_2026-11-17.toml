@@ -1,0 +1,18 @@
+# Frozen after previous exploration, before v1 selection. No independent validation claim.
+[experiment]
+version = "computational_candidates_v1"
+input_sha256 = "8e13a9c6cb70c3f42aeb7f9b9a8e39956fc679c60df08f710bfce9a436236ffb"
+generators = ["autoregressive", "vae"]
+groups = ["weak", "medium", "strong"]
+seeds = [20260912, 20260913, 20260914]
+expected_records_per_bucket = 500
+quota_per_bucket = 5
+sequence_length = 50
+max_homopolymer_run = 8
+minimum_training_hamming_distance = 6
+minimum_selected_hamming_distance = 10
+ranking = "M3 absolute score-target gap ascending, then SVR absolute gap, then sample index"
+iteration_order = "generator, group, run in configured order; greedy global diversity exclusion"
+reference = "8318 training sequences only, aligned Hamming comparison"
+motif_policy = "annotate sigma70 candidate motifs only under assumed -50..-1 window; not an eligibility filter"
+score_threshold = "none; selected records may remain far from target"
