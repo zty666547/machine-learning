@@ -4,6 +4,8 @@
 
 项目阶段性进展与关键实验结论见 [更新日志](CHANGELOG.md)。
 
+大肠杆菌计算候选清单 v1 已按固定规则导出 90 条，见 [候选清单与复现](reports/final_candidates_v1_2026-11-17.md)。本地 CSV、FASTA 和校验清单位于 `outputs/final_candidates_v1/`，入选不表示实测强度命中目标。
+
 大肠杆菌序列与强度数组已逐字节匹配公开 PromoA 数据；关于来源、TSS 文献依据和标签解释边界，见 [数据来源与标签核验](reports/m4_ecoli_provenance_2026-10-29.md)。
 
 M4 比较连续自回归与连续 VAE 的逐位置碱基及 3-mer/5-mer 分布，并探索假定 TSS 对齐下的 σ70 候选序列，见 [生成序列结构分析](reports/m4_structure_analysis_2026-10-30.md)。该分析不构成启动子功能验证。
