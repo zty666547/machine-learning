@@ -1,0 +1,18 @@
+[package]
+name = "G25_PR03-01_mainline_handoff_v1_2026-11-19"
+base_repository_commit = "e688be7685c99336fda1d02a4c58aebf2df55479"
+source_directories = ["src", "scripts", "configs", "reports", "tests", "data/splits", "reproduction"]
+source_top_files = ["README.md", "CHANGELOG.md", "pyproject.toml", ".gitignore"]
+allowed_suffixes = [".py", ".toml", ".md", ".json", ".csv", ".txt"]
+excluded_source_files = ["reports/mainline_handoff_v1_2026-11-19.json"]
+generated_files = [
+"outputs/m4_target_repeats/rankings_all.csv",
+"outputs/final_candidates_v1/candidates.csv",
+"outputs/final_candidates_v1/candidates.fasta",
+"outputs/final_candidates_v1/pool_audit.csv",
+"outputs/final_candidates_v1/manifest.json",
+"outputs/final_candidates_v1/README.md"
+]
+raw_course_data_included = false
+trained_model_checkpoints_included = false
+scope = "source snapshot and existing generated-record audit; no claim of fresh full-model retraining"
