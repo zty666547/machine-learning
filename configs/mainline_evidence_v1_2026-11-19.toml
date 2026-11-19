@@ -1,0 +1,17 @@
+# Consolidation and artifact audit only; not a new model-selection experiment.
+[evidence]
+reports = [
+"m4_ecoli_provenance_audit_2026-10-29.json",
+"m3_screening_evaluator_tuning.json",
+"m4_unified_generated_2026-11-13.json",
+"m4_generated_gc_matching_2026-11-16.json",
+"m4_target_oof_audit_2026-11-15.json",
+"final_candidates_v1_2026-11-17.json",
+"m4_external_screening_results_2026-11-03.json"
+]
+input_count = 9000
+selected_count = 90
+training_count = 8318
+validation_count = 1783
+test_count = 1783
+interpretation = "recompute generated statistics and audit candidate artifacts; reuse archived predictive-model results; no model retraining, external revalidation or wet experiment"
