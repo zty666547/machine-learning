@@ -1,0 +1,41 @@
+{
+  "delivery_path": "outputs/mainline_handoff_v1/",
+  "build": {
+    "package": "G25_PR03-01_mainline_handoff_v1_2026-11-19.zip",
+    "zip_sha256": "9068884b4f50d65fa988379c5e1c83a527f7a2ba72291ca60c3439421897d3d3",
+    "zip_bytes": 2105905,
+    "entry_count": 396,
+    "manifest_exact": true,
+    "zip_testzip_passed": true,
+    "all_members_match_source": true,
+    "raw_course_data_included": false,
+    "trained_model_checkpoints_included": false
+  },
+  "isolated_extracted_validation": {
+    "scope": "Fresh extraction and isolated virtual environment. Existing-record audit and candidate rebuild only; raw data supplied externally; no full-model retraining.",
+    "archive_sha256": "9068884b4f50d65fa988379c5e1c83a527f7a2ba72291ca60c3439421897d3d3",
+    "runtime": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "openpyxl": "3.1.5",
+      "et_xmlfile": "2.0.0"
+    },
+    "isolated_virtual_environment": true,
+    "inherited_pythonpath_removed": true,
+    "unit_tests": {
+      "count": 65,
+      "passed": true
+    },
+    "archived_evidence_json_byte_identical": true,
+    "archived_conclusion_md_byte_identical": true,
+    "rebuilt_candidate_file_count": 5,
+    "all_candidate_files_byte_identical": true,
+    "zip_rebuilt_from_extracted_contents_byte_identical": true,
+    "source_manifest_still_matches_after_run": true,
+    "unlisted_file_negative_control_rejected": true,
+    "modified_fasta_negative_control_rejected": true,
+    "dependency_gap_found_and_fixed": "Excel audit tests require openpyxl and et-xmlfile; both added to audit requirements.",
+    "manifest_files_verified": 395
+  },
+  "scope_note": "交接包校验、已有记录核验及候选重建已实际执行；未执行所有历史模型的重新训练，原始课程数据由包外提供。"
+}

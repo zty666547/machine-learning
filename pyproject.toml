@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "promoter-conditional-generation"
 version = "0.1.0"
 description = "PR03-01 conditional promoter generation course project"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "numpy>=1.24",
 ]

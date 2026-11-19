@@ -1,0 +1,4 @@
+# Separate historical classical-model environment. Not used in the handoff audit.
+# This is a direct-dependency list, not a fully locked environment.
+numpy==2.5.4
+scikit-learn==1.9.1

@@ -1,0 +1,5 @@
+# Used for existing-result and candidate audits. Python 3.12 tested; minimum 3.11.
+numpy==2.3.5
+# Full repository tests import the Excel source-audit module.
+openpyxl==3.1.5
+et-xmlfile==2.0.0
