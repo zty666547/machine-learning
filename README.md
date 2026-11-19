@@ -4,6 +4,8 @@
 
 项目阶段性进展与关键实验结论见 [更新日志](CHANGELOG.md)。
 
+主线结果、三个研究问题的回答及可复现核验入口见 [主线结论稿 v1](reports/mainline_results_v1_2026-11-19.md)。本稿区分重新计算的序列统计和引用的历史模型成绩。
+
 大肠杆菌计算候选清单 v1 已按固定规则导出 90 条，见 [候选清单与复现](reports/final_candidates_v1_2026-11-17.md)。本地 CSV、FASTA 和校验清单位于 `outputs/final_candidates_v1/`，入选不表示实测强度命中目标。
 
 大肠杆菌序列与强度数组已逐字节匹配公开 PromoA 数据；关于来源、TSS 文献依据和标签解释边界，见 [数据来源与标签核验](reports/m4_ecoli_provenance_2026-10-29.md)。
