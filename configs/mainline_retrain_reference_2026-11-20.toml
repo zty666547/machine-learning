@@ -1,0 +1,15 @@
+# Reproduction of fixed historical reference run, not a new selection experiment.
+[reproduction]
+reference_run_seed = 20260912
+reference_sampling_seed = 20261030
+records = 3000
+sample_count_per_group = 500
+numpy_mainline = "2.3.5"
+numpy_svr_training = "2.5.4"
+sklearn_svr_training = "1.9.1"
+reference_candidate_sha256 = "76e1c0ae5c4901aa52f5da9b15e052787be456dfc67ab8f73a4be2f12f1a8148"
+reference_svr_checkpoint_sha256 = "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738"
+model_absolute_tolerance = 1e-8
+scope = "retrain one fixed SVR, CNN, two ridge components, Markov generator and VAE; regenerate one fixed reference run only"
+validation_role = "reuse historical development data for original early stopping and numerical reproduction; not new independent evaluation"
+test_used_for_model_metrics = false
