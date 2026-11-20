@@ -89,3 +89,7 @@ diff -r outputs/final_candidates_v1 outputs/candidates_rebuilt
 ```
 
 使用相同源码、生成记录和 Python 压缩运行环境时，新 ZIP 的 SHA-256 应与交接包核验记录相同。跨 Python/zlib 版本的压缩字节可能不同，应同时检查解压文件内容清单。
+
+## 8. 最新仓库的固定参考训练复现
+
+在 11 月 20 日仓库代码中已补充一组从原始数组训练、生成和评分的复现，并核验保存参数能重建输出。命令、两套环境和范围见[训练复现记录](../reports/mainline_retrain_reference_2026-11-20.md)。11 月 19 日 ZIP 是冻结快照，不包含这一后续新增入口。

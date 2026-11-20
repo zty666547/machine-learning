@@ -1,0 +1,86 @@
+{
+  "scope": "One fixed historical reference run freshly retrained using original reused-development protocol; inference checkpoints replayed. Not an independent test, new model selection, three-run reproduction or biological validation.",
+  "config_sha256": "fefd3591bd3fcd3b70b8648f20cdef98af1bf4b51a7b554dd93275c1afbfcfff",
+  "reference_report_sha256": "249d224f12b332bb202e20ecc533dead60da38b3d609a1aa0f67c549b3427805",
+  "data_sha256": {
+    "sequence": "e71911452431acb620478f0de5ae896481be5618e7a7f9712125cd98cb8e37ab",
+    "strength": "a1426fa5e5806fceff2c041218b781b6dc1f0cc84b39cf4ef626d02965fd9ce5",
+    "split": "aa3409c3f34bc370d53075b9b1b79cb8a91be7d681aebf87c1b190fb8ffe7439"
+  },
+  "numpy_replay": "2.3.5",
+  "svr_training_numpy": "2.5.4",
+  "svr_training_sklearn": "1.9.1",
+  "records": 3000,
+  "candidate_csv_byte_identical": true,
+  "generated_report_exact_match": true,
+  "svr_checkpoint_byte_identical": true,
+  "svr_portable_max_absolute_difference": 9.237055564881302e-14,
+  "cnn_epochs": 53,
+  "vae_epochs": 120,
+  "model_seed": 20260912,
+  "sampling_seed": 20261030,
+  "checkpoint_optimizer_state_saved": false,
+  "replayed_groups": [
+    {
+      "generator": "autoregressive",
+      "group": "weak",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    },
+    {
+      "generator": "vae",
+      "group": "weak",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    },
+    {
+      "generator": "autoregressive",
+      "group": "medium",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    },
+    {
+      "generator": "vae",
+      "group": "medium",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    },
+    {
+      "generator": "autoregressive",
+      "group": "strong",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    },
+    {
+      "generator": "vae",
+      "group": "strong",
+      "count": 500,
+      "sequence_replay_exact": true,
+      "m3_replay_max_absolute_difference": 0.0,
+      "svr_replay_max_absolute_difference": 0.0
+    }
+  ],
+  "local_file_sha256": {
+    "candidates_retrained.csv": "76e1c0ae5c4901aa52f5da9b15e052787be456dfc67ab8f73a4be2f12f1a8148",
+    "checkpoints/autoregressive_state.npz": "b8593288594d1e65b51fe90775e6ecd90482aac762b10711abbbfd8680a738e8",
+    "checkpoints/conditional_vae.npz": "ee6c91ca0f106d2c04e7e7f27878e8de9c70ef4c3e4c5e80d2571bd7f3e5cd43",
+    "checkpoints/global_ridge.npz": "70b1a379d0feb117665582b35c572dc0409074c9688286d03760d25dd0cfa158",
+    "checkpoints/manifest.json": "9686ad2f576f0bc9c96ccbca18988f625b4183ed35194274e7dc54d881d1ee99",
+    "checkpoints/motif_cnn.npz": "93b90523bb5c64508a55fad3dfed889f9135a2e8c04e1cec053bfb973f6972e3",
+    "checkpoints/position_ridge.npz": "b5806657ced601020de19e767798fef756e66cb0badb72e05e71221b8783931f",
+    "checkpoints/training_history.json": "71075f3d4a92e5ab6eb3a4fee415e97c19440c39e3724265dc8e568146ac6d4a",
+    "generated_retrained.json": "249d224f12b332bb202e20ecc533dead60da38b3d609a1aa0f67c549b3427805",
+    "svr.npz": "60cd03331a8735c281b7c70ee8d65cb929f8a5171bf1c9def7c2cf659bb57738",
+    "svr_retrained.json": "ed3d3959fada105be2076ccf311a2c51ee754f11712ccd88836496a10752ac7a"
+  }
+}
